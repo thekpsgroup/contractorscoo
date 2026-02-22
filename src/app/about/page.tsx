@@ -4,14 +4,14 @@ import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'About — Contractors COO | The KPS Group',
+  title: 'Why Contractor Operations Break at Scale',
   description:
-    'Why contractor operations break at scale, why cadence fixes most of it, and why execution systems matter more than strategy. A service of The KPS Group.',
+    'Past $2M, the owner-operated model stops scaling. Here is why contractor businesses hit the wall, why cadence fixes most of it, and why execution infrastructure matters more than strategy.',
   alternates: { canonical: 'https://www.contractorscoo.com/about' },
   openGraph: {
-    title: 'About — Contractors COO | The KPS Group',
+    title: 'Why Contractor Operations Break at Scale | Contractors COO',
     description:
-      'Why contractor operations break at scale — and why operational cadence is the fix. A service of The KPS Group.',
+      'The pattern is consistent: revenue grows, structure doesn\'t. Here\'s why it happens and how the Operating Foundation install fixes it. A service of The KPS Group.',
     url: 'https://www.contractorscoo.com/about',
   },
 };
@@ -66,8 +66,9 @@ export default function AboutPage() {
             Why Contractor Operations Break at Scale
           </h1>
           <p className="text-subhead" style={{ maxWidth: '540px' }}>
-            This service is built and operated by The KPS Group — an implementation practice
-            focused on owner-led contractor businesses at the growth stage.
+            Contractors COO is an implementation practice built and operated by The KPS Group.
+            We work exclusively with owner-led contractor businesses — GCs, trade contractors,
+            and home service operators at the $1M–$10M stage.
           </p>
         </div>
       </section>
@@ -178,23 +179,25 @@ export default function AboutPage() {
         <div className="container-inner">
           <span className="eyebrow">Our Position</span>
           <h2 id="execution-heading" className="text-headline" style={{ maxWidth: '620px', marginBottom: '2rem' }}>
-            Execution systems beat strategy. Every time.
+            Contractor businesses don&apos;t fail from lack of strategy. They stall from lack of structure.
           </h2>
           <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
               Every contractor team we work with already knows what they need to do. They are not short
-              on ideas. They are not short on ambition. What they are short on is follow-through
+              on ideas. They are not short on effort. What they are short on is follow-through
               infrastructure — the systems that translate a decision made on Monday into a completed
-              action with a clear owner by Friday.
+              action with a named owner by Friday.
             </p>
             <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
-              Strategy decks do not fix that. Goal-setting retreats do not fix that. More meetings
-              do not fix that. Scorecards, meeting rhythms, role ownership frameworks, and
-              decision-to-execution protocols do.
+              Strategy planning sessions do not fix that. Goal-setting retreats do not fix that.
+              More meetings do not fix that. A fixed weekly leadership cadence, a written ownership matrix,
+              a KPI scoreboard reviewed in the room, and a decision threshold that keeps the field
+              moving without calling the owner — those fix it.
             </p>
             <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
-              We build the infrastructure of execution — and we build it alongside your team
-              so it survives after we step back. That is the only deliverable that matters.
+              We build the infrastructure of execution. We build it inside your business, alongside your team,
+              and we document it so thoroughly that it holds after we step back.
+              That is the only exit condition we accept.
             </p>
           </div>
         </div>

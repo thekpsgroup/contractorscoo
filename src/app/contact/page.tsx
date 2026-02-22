@@ -4,14 +4,14 @@ import { JsonLd } from '@/components/JsonLd';
 import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact — Book a Discovery Call',
+  title: 'Book a COO Discovery Call — Contractors COO',
   description:
-    'Book a 30-minute discovery call with Contractors COO. We assess your current operating structure and tell you exactly what needs to change.',
+    'Book a 30-minute call. We map your current operating structure, identify the specific gaps, and tell you exactly what the 90-day install involves — and whether it\'s the right fit.',
   alternates: { canonical: 'https://www.contractorscoo.com/contact' },
   openGraph: {
-    title: 'Contact — Book a Discovery Call | Contractors COO',
+    title: 'Book a COO Discovery Call | Contractors COO',
     description:
-      'Start with a 30-minute discovery call. No pitch. We assess your structure and tell you whether the 90-day install is the right fit.',
+      'Thirty minutes. We assess your contractor operation and give you a direct answer on whether the install makes sense — and what it costs.',
     url: 'https://www.contractorscoo.com/contact',
   },
 };

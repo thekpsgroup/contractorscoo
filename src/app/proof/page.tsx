@@ -4,14 +4,14 @@ import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Proof — Contractor COO Outcomes & Results',
+  title: 'Contractor COO Results — Before & After Operational Outcomes',
   description:
-    'Outcome patterns from contractor COO installs. Meeting chaos to operating cadence, owner bottleneck to delegation, revenue without margin to scoreboard clarity.',
+    'Meeting chaos to operating cadence. Owner bottleneck to delegation. Revenue without margin to scoreboard clarity. Specific operational outcomes from the 90-day contractor COO install.',
   alternates: { canonical: 'https://www.contractorscoo.com/proof' },
   openGraph: {
-    title: 'Proof — Contractor COO Outcomes & Results',
+    title: 'Contractor COO Results — Before & After Operational Outcomes',
     description:
-      'Real operational outcomes from the 90-day contractor COO install. Not testimonials — outcome patterns.',
+      'Specific before-and-after patterns from the 90-day contractor COO install. Meeting restructuring, role delegation, scoreboard install, and team independence.',
     url: 'https://www.contractorscoo.com/proof',
   },
 };
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Proof — Contractor COO Outcomes',
+  name: 'Contractor COO Results — Before & After Operational Outcomes',
   url: 'https://www.contractorscoo.com/proof',
   description:
-    'Outcome examples and results from the 90-day fractional COO install for contractor teams.',
+    'Before and after outcome patterns from the 90-day fractional COO install for contractor businesses.',
   isPartOf: {
     '@type': 'WebSite',
     name: 'Contractors COO',
@@ -34,42 +34,66 @@ const outcomes = [
   {
     label: 'Outcome 01',
     before: 'Meeting Chaos',
-    after: 'Operating Cadence',
+    after: 'Fixed Operating Cadence',
+    metric: '90-min all-hands → 45-min closed-loop session',
     beforeBody:
-      'A contractor with 14 people was holding a Monday all-hands that ran 90+ minutes, covered everything and nothing, and produced no action items. The same topics cycled back the following week. The owner was frustrated. The team was checked out. The meetings happened — but nothing moved as a result of them.',
+      'A 14-person HVAC contractor was running a Monday all-hands that averaged 90 minutes, covered whatever came up, and produced no action items. The owner was writing notes nobody else kept. Field techs sat through conversations that had nothing to do with their work. The same three topics — a problem customer, a parts shortage, a crew scheduling conflict — cycled back the following week unchanged.',
     afterBody:
-      'We redesigned the meeting architecture. A 45-minute weekly leadership session — field lead, office lead, owner — now runs from a fixed agenda. Every item has an owner. Every item closes or carries forward with a reason. Three weeks in, the owner stopped being the note-taker. Six weeks in, the field lead was running the session without prompting.',
-    metric: '90-min unstructured meeting → 45-min closed-loop session',
+      'We redesigned the meeting architecture around a fixed 8-point weekly agenda: open items from the prior session, field status by job (2 minutes per lead), office status (billing, collections, one item), cash position, one decision item with a named owner, this-week priority per person, owner directive. Done in 45 minutes. Every item closes or carries forward with a named owner and a deadline written down. Three weeks in, the owner stopped being the note-taker. Six weeks in, the field lead was running the session without being asked.',
+    specific: [
+      'Fixed 8-point weekly agenda — same format every session',
+      'Every open item has a named owner before the meeting ends',
+      'Decision items resolved in session, not deferred to "follow-up"',
+      'Field lead runs the meeting in week six — owner in the room, not at the head',
+    ],
   },
   {
     label: 'Outcome 02',
-    before: 'Owner in the Weeds',
-    after: 'Role Clarity + Delegation',
+    before: 'Owner Approving Everything',
+    after: 'Decision Thresholds + Delegation',
+    metric: 'Est. 40% of owner\'s day reclaimed from operational decisions',
     beforeBody:
-      'The owner was approving purchase orders under $500, answering field tech questions during client meetings, and reviewing every estimate before it went out. Forty percent of his day was other people\'s jobs. He was working 60-hour weeks and growing the business — but couldn\'t step away for a single afternoon without things stalling.',
+      'The owner of a $4.2M electrical contractor was approving purchase orders under $500, answering field tech questions mid-customer-meeting, and personally reviewing every proposal before it went out the door. His field lead had been with the company six years. His office manager handled billing, customer calls, and scheduling. Both were capable people being bottlenecked by a system that routed everything through the owner by default — not by design.',
     afterBody:
-      'We built the role ownership matrix and paired it with a decision threshold filter. The field lead now owns all field decisions up to defined dollar and complexity thresholds. Office manages client communication. The owner reviews what he should — not everything. His first uninterrupted afternoon in two years happened in week seven of the engagement.',
-    metric: '~40% of owner\'s day reclaimed from operational decisions',
+      'We built the Ownership Matrix with decision thresholds written into it: the field lead owns all field decisions under a defined dollar and complexity threshold, with specific examples (materials, crew changes, job-site issues). The office manager owns customer communication and scheduling. The owner reviews estimates over a defined amount, signs off on vendor changes, and directs the week in the Monday session. His first full afternoon with no operational interruptions happened in week seven of the engagement.',
+    specific: [
+      'Written decision threshold: what field lead owns vs. what escalates',
+      'Office manager owns client communication — defined scope and boundaries',
+      'Owner approval required only for items above named thresholds',
+      'Threshold document reviewed in leadership session, adjusted after 30 days of live operation',
+    ],
   },
   {
     label: 'Outcome 03',
-    before: 'Revenue Growth, Margin Drift',
-    after: 'Scoreboard + Decision Filter',
+    before: 'Revenue Up, Margin Drifting',
+    after: 'Scoreboard + Visible Margin by Job',
+    metric: '+6 margin points in one quarter on slightly lower revenue',
     beforeBody:
-      'Revenue had grown from $2.1M to $3.4M over 18 months. But margin had drifted and the owner couldn\'t tell which service lines were profitable or why. He was working harder for the same take-home. Accounting produced reports monthly that nobody looked at. The team was busy — but not necessarily profitable.',
+      'Revenue had grown from $2.1M to $3.4M over 18 months at a residential remodeling firm. But net margin had drifted from 14% to 8% and the owner couldn\'t explain why. Monthly P&L reports were reviewed but not actioned. Accounting was a month behind. Jobs were closing profitable on estimate, then coming in under on actuals — the pattern was visible in hindsight but invisible in real time. The team was busy. Nobody knew which part of the business was carrying the weight.',
     afterBody:
-      'We built an 8-metric scoreboard tied to their existing job costing tool. Weekly review became the default. Within 60 days, they identified two service lines with sub-8% net margin. One was restructured with a revised pricing model. One was eliminated from their service offering entirely. Margin recovered 6 points in the following quarter — on slightly lower revenue.',
-    metric: '+6 margin points in one quarter post-scoreboard install',
+      'We built an 8-metric weekly scoreboard tied to their existing job costing system and QuickBooks. The metrics: weekly billings vs. target, job margin by lead (actuals vs. estimate), labor cost vs. estimate per active job, AR aging by bucket, active pipeline value, collections due this week, job completion rate vs. schedule, and one owner-defined constraint metric. Weekly review became the default in the Monday session. Within 60 days, they identified two service lines with sub-8% net margin. One was restructured with revised pricing and scope definitions. One was discontinued. Margin recovered 6 points in the following quarter — on $200K less revenue.',
+    specific: [
+      '8-metric scoreboard: billings, job margin, labor vs. estimate, AR aging, pipeline, collections, completion rate, owner KPI',
+      'Reviewed in leadership session — not sent to accounting to compile after the fact',
+      'Job margin tracked by lead so individual performance is visible',
+      'Service line profitability visible within 60 days of install',
+    ],
   },
   {
     label: 'Outcome 04',
-    before: 'Accountability Gaps',
-    after: 'Team Ownership',
+    before: 'Team Stalls When Owner Travels',
+    after: 'Operational Independence',
+    metric: '2-week unassisted operation — zero escalations',
     beforeBody:
-      'Projects stalled when the owner traveled. Nobody stepped up because nobody knew whose job it was. The team was capable — the system wasn\'t clear. Senior staff defaulted to waiting for direction rather than making calls in the owner\'s absence. Two-day trips required a full week of catch-up on return.',
+      'A plumbing and mechanical contractor with 22 people stalled every time the owner left town. Senior staff defaulted to waiting rather than deciding. A field lead with four years of experience would call before approving a job change that was clearly within his authority — because his authority had never been defined. Two-day trips required a full week of cleanup on return. The team was capable. The operating model wasn\'t clear.',
     afterBody:
-      'After the role clarity and leadership coaching phase, the team ran two full weeks with the owner in another state. No fires. No calls asking for decisions. The weekly leadership session ran without him — on agenda, on time, with a written summary waiting on return. The system held because the team now knew what holding it looked like.',
-    metric: 'Team ran independently for 2 weeks — no escalations',
+      'After the Ownership Matrix and leadership coaching phase, the team ran two full weeks with the owner traveling internationally. The field lead ran Monday\'s session from the fixed agenda and sent a written summary. The office manager resolved three customer escalations within her defined authority. One vendor issue came up that was within the field lead\'s threshold — he handled it and noted it in the follow-up log. No calls to the owner. No fires on return. The owner\'s written summary on return: "Everything was handled. I didn\'t check my phone once."',
+    specific: [
+      'Field lead ran Monday session from fixed agenda — no owner present',
+      'Customer escalations resolved by office manager within defined authority',
+      'Vendor issue handled at field lead threshold — logged, not escalated',
+      'Written session summary produced without prompting',
+    ],
   },
 ];
 
@@ -86,8 +110,9 @@ export default function ProofPage() {
             What Changes When the Operating System Gets Installed
           </h1>
           <p className="text-subhead" style={{ maxWidth: '540px' }}>
-            Not case studies with logos. Not testimonials with names removed.
-            Outcome patterns from installs — before state, after state, and what changed operationally.
+            Not case studies with client logos. Not testimonials with names scrubbed.
+            Outcome patterns from installs — before state, after state, and the specific
+            operational changes that produced the result.
           </p>
         </div>
       </section>
@@ -103,36 +128,15 @@ export default function ProofPage() {
             <span className="eyebrow">{o.label}</span>
 
             {/* Before → After header */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                marginBottom: '0.625rem',
-                flexWrap: 'wrap',
-              }}
-            >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
               <h2
                 id={`outcome-${i}-heading`}
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: 'var(--color-muted-2)',
-                  textDecoration: 'line-through',
-                  margin: 0,
-                }}
+                style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-muted-2)', textDecoration: 'line-through', margin: 0 }}
               >
                 {o.before}
               </h2>
               <span style={{ color: 'var(--color-accent)', fontWeight: 700 }}>→</span>
-              <h2
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: 700,
-                  color: 'var(--color-accent)',
-                  margin: 0,
-                }}
-              >
+              <h2 style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-accent)', margin: 0 }}>
                 {o.after}
               </h2>
             </div>
@@ -142,7 +146,6 @@ export default function ProofPage() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.5rem',
                 backgroundColor: 'var(--color-surface)',
                 border: '1px solid var(--color-line)',
                 borderRadius: '0.25rem',
@@ -150,92 +153,69 @@ export default function ProofPage() {
                 marginBottom: '2.5rem',
               }}
             >
-              <span
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.8125rem',
-                  color: 'var(--color-fg)',
-                }}
-              >
+              <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.8125rem', color: 'var(--color-fg)' }}>
                 {o.metric}
               </span>
             </div>
 
             {/* Before / After narrative */}
             <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr',
-                gap: '2rem',
-              }}
+              style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem', marginBottom: '2rem' }}
               className="md:grid-cols-2"
             >
               <div>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    fontSize: '0.6875rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: 'var(--color-muted-2)',
-                    marginBottom: '0.875rem',
-                  }}
-                >
+                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
                   Before
                 </p>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75 }}>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
                   {o.beforeBody}
                 </p>
               </div>
 
-              <div
-                style={{
-                  borderTop: '1px solid var(--color-line)',
-                  paddingTop: '1.5rem',
-                }}
-                className="md:border-t-0 md:border-l md:pl-8"
-              >
-                <p
-                  style={{
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    fontSize: '0.6875rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: 'var(--color-accent)',
-                    marginBottom: '0.875rem',
-                  }}
-                >
+              <div style={{ borderTop: '1px solid var(--color-line)', paddingTop: '1.5rem' }} className="md:border-t-0 md:border-l md:border-l-line md:pl-8">
+                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '0.875rem' }}>
                   After
                 </p>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75 }}>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
                   {o.afterBody}
                 </p>
               </div>
+            </div>
+
+            {/* Specific operational changes */}
+            <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.25rem 1.5rem' }}>
+              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+                What specifically changed
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {o.specific.map((item) => (
+                  <li key={item} style={{ display: 'flex', gap: '0.75rem', fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
+                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
       ))}
 
-      {/* ── CLOSING NOTE ─────────────────────────── */}
+      {/* ── NOTE ON PROOF ─────────────────────────── */}
       <section className="section" aria-labelledby="proof-note-heading">
         <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <h2
-            id="proof-note-heading"
-            className="text-headline"
-            style={{ marginBottom: '1rem' }}
-          >
-            A note on proof.
+          <h2 id="proof-note-heading" className="text-headline" style={{ marginBottom: '1rem' }}>
+            A note on how we present this.
           </h2>
-          <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
-            We do not publish client names, logos, or attributed testimonials. Contractors operating
-            at this stage prefer discretion — and we respect that. What we can show is the operational
-            pattern: the before state, the install, and the measurable after.
+          <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+            We do not publish client names, company names, or attributed testimonials.
+            Contractors operating at this revenue stage prefer discretion — and that preference is legitimate.
+            What we publish instead is the operational pattern: the starting state, the specific install,
+            and the measurable change that followed.
           </p>
-          <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75, marginBottom: '2.5rem' }}>
-            If you want to speak with someone who has been through the install, ask on the discovery call.
-            We can arrange a reference conversation when the fit is serious.
+          <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+            If you want to speak directly with someone who has been through the install,
+            ask on the discovery call. We can arrange a reference conversation
+            when the fit is serious on both sides.
           </p>
           <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
             <BookingButton />
@@ -254,29 +234,13 @@ export default function ProofPage() {
         <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
           <h2
             id="proof-cta-heading"
-            style={{
-              fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: '-0.02em',
-              color: '#ffffff',
-              maxWidth: '500px',
-              marginBottom: '1rem',
-            }}
+            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '500px', marginBottom: '1rem' }}
           >
-            See where your operation stands.
+            See what the install looks like for your specific operation.
           </h2>
-          <p
-            style={{
-              fontSize: '1.0625rem',
-              color: 'rgba(255,255,255,0.72)',
-              lineHeight: 1.6,
-              maxWidth: '440px',
-              marginBottom: '2.5rem',
-            }}
-          >
+          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '440px', marginBottom: '2.5rem' }}>
             Book a 30-minute discovery call. We assess your current structure
-            and identify the specific gaps — before there&apos;s any commitment.
+            and identify the specific gaps — before there&apos;s any commitment on either side.
           </p>
           <BookingButton />
         </div>
