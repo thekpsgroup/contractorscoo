@@ -1,11 +1,12 @@
 import Link from 'next/link';
 
 const pageLinks = [
-  { href: '/',        label: 'Home'      },
-  { href: '/offer',   label: 'The Offer' },
-  { href: '/proof',   label: 'Proof'     },
-  { href: '/about',   label: 'About'     },
-  { href: '/contact', label: 'Contact'   },
+  { href: '/',               label: 'Home'             },
+  { href: '/offer',          label: 'The Offer'        },
+  { href: '/proof',          label: 'Proof'            },
+  { href: '/about',          label: 'About'            },
+  { href: '/contact',        label: 'Contact'          },
+  { href: '/monday-agenda',  label: 'The Monday Agenda'},
 ];
 
 export function Footer() {
@@ -49,8 +50,8 @@ export function Footer() {
               <a href="tel:+14695343392" className="footer-contact-item">
                 (469) 534-3392
               </a>
-              <a href="mailto:hello@contractorscoo.com" className="footer-contact-item">
-                hello@contractorscoo.com
+              <a href="mailto:sales@thekpsgroup.com" className="footer-contact-item">
+                sales@thekpsgroup.com
               </a>
               <p className="footer-address">Caddo Mills, TX 75135</p>
             </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import { trackEvent } from '@/components/Analytics';
 
 interface FormData {
@@ -22,40 +22,38 @@ const initialData: FormData = {
 };
 
 export function ContactForm() {
-  const [data, setData] = useState<FormData>(initialData);
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [data,     setData]    = useState<FormData>(initialData);
+  const [status,   setStatus]  = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const set = (field: keyof FormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => setData((prev) => ({ ...prev, [field]: e.target.value }));
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setStatus('submitting');
+    setErrorMsg('');
 
     try {
-      /*
-       * TODO: wire up your form handler here.
-       * Options:
-       *   A) Formspree:  POST to https://formspree.io/f/{your-id}
-       *   B) API route:  POST to /api/contact  (add src/app/api/contact/route.ts)
-       *   C) Resend / SendGrid / etc.
-       *
-       * Example (Formspree):
-       * const res = await fetch('https://formspree.io/f/your-id', {
-       *   method: 'POST',
-       *   headers: { 'Content-Type': 'application/json' },
-       *   body: JSON.stringify(data),
-       * });
-       * if (!res.ok) throw new Error('Submission failed');
-       */
+      const res = await fetch('/api/contact', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(data),
+      });
 
-      // Simulated delay — replace with real fetch above
-      await new Promise((resolve) => setTimeout(resolve, 900));
+      const json = await res.json() as { ok?: boolean; error?: string };
+
+      if (!res.ok) {
+        setErrorMsg(json.error ?? 'Something went wrong. Please try again.');
+        setStatus('error');
+        return;
+      }
 
       trackEvent('form_submit_success', { form_name: 'contact' });
       setStatus('success');
     } catch {
+      setErrorMsg('Something went wrong. Please try again or email us directly.');
       setStatus('error');
     }
   };
@@ -230,12 +228,13 @@ export function ContactForm() {
                 marginTop: '0.75rem',
               }}
             >
-              Something went wrong. Please try again or email us directly at{' '}
+              {errorMsg || 'Something went wrong.'}{' '}
+              Email us directly at{' '}
               <a
-                href="mailto:hello@contractorscoo.com"
+                href="mailto:sales@thekpsgroup.com"
                 style={{ color: 'var(--color-accent)' }}
               >
-                hello@contractorscoo.com
+                sales@thekpsgroup.com
               </a>
             </p>
           )}

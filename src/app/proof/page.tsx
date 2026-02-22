@@ -109,10 +109,9 @@ export default function ProofPage() {
           <h1 className="text-display" style={{ maxWidth: '720px', marginBottom: '1.5rem' }}>
             What Changes When the Operating System Gets Installed
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '540px' }}>
-            Not case studies with client logos. Not testimonials with names scrubbed.
-            Outcome patterns from installs — before state, after state, and the specific
-            operational changes that produced the result.
+          <p className="text-subhead" style={{ maxWidth: '560px' }}>
+            Not case studies with client logos. Outcome patterns from real installs —
+            the before state, the after state, and the specific operational changes that produced the result.
           </p>
         </div>
       </section>
@@ -127,33 +126,50 @@ export default function ProofPage() {
           <div className="container-inner">
             <span className="eyebrow">{o.label}</span>
 
-            {/* Before → After header */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-              <h2
-                id={`outcome-${i}-heading`}
-                style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-muted-2)', textDecoration: 'line-through', margin: 0 }}
-              >
-                {o.before}
-              </h2>
-              <span style={{ color: 'var(--color-accent)', fontWeight: 700 }}>→</span>
-              <h2 style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-accent)', margin: 0 }}>
-                {o.after}
-              </h2>
-            </div>
+            {/* After-state headline */}
+            <h2
+              id={`outcome-${i}-heading`}
+              className="text-headline"
+              style={{ maxWidth: '640px', marginBottom: '0.625rem' }}
+            >
+              {o.after}
+            </h2>
 
-            {/* Metric callout */}
-            <div
+            {/* Previously: Before label */}
+            <p
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                backgroundColor: 'var(--color-surface)',
-                border: '1px solid var(--color-line)',
-                borderRadius: '0.25rem',
-                padding: '0.5rem 0.875rem',
-                marginBottom: '2.5rem',
+                fontFamily:    'var(--font-geist-mono, monospace)',
+                fontSize:      '0.6875rem',
+                fontWeight:    500,
+                letterSpacing: '0.08em',
+                color:         'var(--color-muted-2)',
+                marginBottom:  '1.5rem',
               }}
             >
-              <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.8125rem', color: 'var(--color-fg)' }}>
+              Previously:{' '}
+              <span style={{ textDecoration: 'line-through' }}>{o.before}</span>
+            </p>
+
+            {/* Metric badge */}
+            <div
+              style={{
+                display:         'inline-flex',
+                alignItems:      'center',
+                backgroundColor: 'var(--color-surface)',
+                border:          '1px solid var(--color-line)',
+                borderRadius:    '0.25rem',
+                padding:         '0.5rem 1rem',
+                marginBottom:    '2.5rem',
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'var(--font-geist-mono, monospace)',
+                  fontSize:   '0.8125rem',
+                  fontWeight: 600,
+                  color:      'var(--color-fg)',
+                }}
+              >
                 {o.metric}
               </span>
             </div>
@@ -187,7 +203,7 @@ export default function ProofPage() {
               <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
                 What specifically changed
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
                 {o.specific.map((item) => (
                   <li key={item} style={{ display: 'flex', gap: '0.75rem', fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
                     <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
@@ -203,7 +219,7 @@ export default function ProofPage() {
       {/* ── NOTE ON PROOF ─────────────────────────── */}
       <section className="section" aria-labelledby="proof-note-heading">
         <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <h2 id="proof-note-heading" className="text-headline" style={{ marginBottom: '1rem' }}>
+          <h2 id="proof-note-heading" className="text-headline" style={{ marginBottom: '1.25rem' }}>
             A note on how we present this.
           </h2>
           <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>

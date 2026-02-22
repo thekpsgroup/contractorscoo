@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/JsonLd';
+import { MondayAgendaForm } from '@/app/monday-agenda/MondayAgendaForm';
 
 export const metadata: Metadata = {
   title: {
@@ -417,7 +418,7 @@ export default function HomePage() {
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
                   {o.result}
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
                   {o.body}
                 </p>
               </div>
@@ -428,6 +429,96 @@ export default function HomePage() {
             <Link href="/proof" className="btn-ghost">
               Read detailed outcome examples →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4B: LEAD MAGNET ─────────────── */}
+      <section className="section" aria-labelledby="resource-heading">
+        <div className="container-inner">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr',
+              gap: '3rem',
+              alignItems: 'center',
+            }}
+            className="md:grid-cols-2"
+          >
+            {/* Left: context */}
+            <div>
+              <span className="eyebrow">Free Resource</span>
+              <h2 id="resource-heading" className="text-headline" style={{ marginBottom: '0.875rem' }}>
+                The Monday Agenda
+              </h2>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                The fixed 8-point weekly leadership session format we install into every contractor engagement.
+                Runs in under 60 minutes. Every open item closes with a named owner before the session ends.
+              </p>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.625rem',
+                }}
+              >
+                {[
+                  'Safety check, scoreboard review, open items, job status',
+                  'Office update, escalations, next-week priorities, log close',
+                  'Includes timing guide and the 5 session rules that make it hold',
+                  'PDF version formatted to print and use this Monday',
+                ].map((item) => (
+                  <li
+                    key={item}
+                    style={{
+                      display: 'flex',
+                      gap: '0.625rem',
+                      fontSize: '0.875rem',
+                      color: 'var(--color-muted)',
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/monday-agenda" className="btn-ghost">
+                See the full published agenda →
+              </Link>
+            </div>
+
+            {/* Right: form */}
+            <div
+              style={{
+                backgroundColor: 'var(--color-surface)',
+                border: '1px solid var(--color-line)',
+                borderRadius: '0.375rem',
+                padding: '1.75rem',
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: 'var(--font-geist-mono, monospace)',
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-muted-2)',
+                  marginBottom: '0.875rem',
+                }}
+              >
+                Get the PDF Version
+              </p>
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+                Enter your work email and we&apos;ll send you the formatted, print-ready PDF —
+                plus the open-item log template.
+              </p>
+              <MondayAgendaForm compact />
+            </div>
           </div>
         </div>
       </section>

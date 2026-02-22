@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contractors COO
 
-## Getting Started
+Marketing site for [contractorscoo.com](https://www.contractorscoo.com) — Fractional COO + Operations Leadership for contractor teams doing $1M–$10M/year. A service of The KPS Group.
 
-First, run the development server:
+**Stack:** Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Resend
+
+---
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
+Create a `.env.local` file in the project root (never committed):
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Google Analytics 4 — get from analytics.google.com → Admin → Data Streams
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Resend — get from resend.com/api-keys
+RESEND_API_KEY=re_...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Resend Audience ID — get from resend.com/audiences
+RESEND_AUDIENCE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
 
-## Deploy on Vercel
+For **Vercel deployment**, set these three variables in:
+`Vercel Dashboard → Project → Settings → Environment Variables`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The sending domain (`thekpsgroup.com`) must be verified in the Resend dashboard before emails deliver.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Deployment (Vercel)
+
+Vercel auto-detects Next.js. No additional configuration required.
+
+1. Push to GitHub
+2. Import repo at [vercel.com/new](https://vercel.com/new)
+3. Set the three environment variables above
+4. Deploy
+
+Build command: `next build` (auto-detected)
+Node.js: `>=18.17.0` (enforced via `engines` in `package.json`)
+
+### Custom Domain
+
+Add both `contractorscoo.com` and `www.contractorscoo.com` in Vercel domain settings.
+The `next.config.ts` redirects the apex domain to `www` automatically.
+
+---
+
+## Routes
+
+| Route | Type | Description |
+|-------|------|-------------|
+| `/` | Static | Homepage |
+| `/offer` | Static | The 90-Day COO Install |
+| `/proof` | Static | Outcome examples |
+| `/about` | Static | About / The KPS Group |
+| `/contact` | Static | Contact + discovery call |
+| `/monday-agenda` | Static | Lead magnet — The Monday Agenda |
+| `/api/contact` | Dynamic | Contact form → Resend notification email |
+| `/api/subscribe` | Dynamic | Monday Agenda signup → Resend audience + delivery email |
+| `/sitemap.xml` | Static | Generated sitemap |
+| `/robots.txt` | Static | Crawler rules |
+| `/opengraph-image` | Edge | OG image (1200×630) |
+| `/icon` | Edge | Favicon (32×32 PNG) |

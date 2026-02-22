@@ -81,18 +81,18 @@ export default function AboutPage() {
             Every contractor who grows past $1M hits the same wall.
           </h2>
           <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
               The owner-operated model that got you here stops working. You&apos;ve added people,
               but accountability hasn&apos;t followed. You&apos;ve grown revenue, but margin hasn&apos;t kept pace.
               You&apos;re in more meetings, but executing less. You&apos;re working harder to produce the
               same result — or a slightly worse one.
             </p>
-            <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
               The problem is not effort. Contractors who grow to $1M–$10M outwork almost everyone.
               The problem is structure — specifically, the absence of an operating system. The
               business grew faster than the management infrastructure needed to sustain it.
             </p>
-            <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
               That gap between revenue and operations doesn&apos;t close on its own. It compounds.
               And it is very expensive by the time most owners decide to address it.
             </p>
@@ -118,13 +118,13 @@ export default function AboutPage() {
             className="md:grid-cols-2"
           >
             <div>
-              <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                 Neither strategy sessions nor additional hiring fix a broken operational structure.
                 What works — specifically, reliably, and quickly — is cadence: a consistent, repeatable
                 operating rhythm that doesn&apos;t require the owner to personally orchestrate every
                 moving part of the business.
               </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
                 When a business has cadence, decisions move faster because there is a defined process.
                 Teams execute more reliably because accountability is clear. Owners step back from the
                 weeds because the system holds things together without their presence.
@@ -182,19 +182,19 @@ export default function AboutPage() {
             Contractor businesses don&apos;t fail from lack of strategy. They stall from lack of structure.
           </h2>
           <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
               Every contractor team we work with already knows what they need to do. They are not short
               on ideas. They are not short on effort. What they are short on is follow-through
               infrastructure — the systems that translate a decision made on Monday into a completed
               action with a named owner by Friday.
             </p>
-            <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
               Strategy planning sessions do not fix that. Goal-setting retreats do not fix that.
               More meetings do not fix that. A fixed weekly leadership cadence, a written ownership matrix,
               a KPI scoreboard reviewed in the room, and a decision threshold that keeps the field
               moving without calling the owner — those fix it.
             </p>
-            <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
               We build the infrastructure of execution. We build it inside your business, alongside your team,
               and we document it so thoroughly that it holds after we step back.
               That is the only exit condition we accept.
@@ -221,12 +221,12 @@ export default function AboutPage() {
             className="md:grid-cols-2"
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
                 The KPS Group operates a focused portfolio of implementation services for contractors
                 at the growth stage — businesses large enough that structure matters, and owner-operated
                 enough that the owner is still the primary constraint.
               </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
                 Contractors COO handles the operational structure. Our sister service,{' '}
                 <Link
                   href="https://www.contractorjobcosting.com"
@@ -243,12 +243,12 @@ export default function AboutPage() {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
                 We work in small batches. We stay close to the work. We do not operate a consulting
                 farm with junior staff running your engagement — the people who designed the install
                 are the people running it.
               </p>
-              <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
                 Both services are fixed-scope. Both are built to produce results that stay after
                 the engagement ends. Neither is an indefinite retainer designed to create dependency.
               </p>

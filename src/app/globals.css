@@ -228,6 +228,16 @@ body {
     border-color: var(--color-accent);
   }
 
+  select.form-input option {
+    background-color: var(--color-surface);
+    color: var(--color-fg);
+  }
+
+  /* Show placeholder color when no value is selected (select is :invalid while required + empty) */
+  select.form-input:invalid {
+    color: var(--color-muted-2);
+  }
+
   /* ── Nav ── */
   .site-header {
     border-bottom: 1px solid var(--color-line);

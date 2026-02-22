@@ -475,6 +475,170 @@ export default function OfferPage() {
         </div>
       </section>
 
+      {/* ── COST OF DISORDER ─────────────────────── */}
+      <section className="section" aria-labelledby="disorder-heading">
+        <div className="container-inner">
+          <span className="eyebrow">The Real Cost</span>
+          <h2 id="disorder-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+            What disorder costs your business every month.
+          </h2>
+          <p className="text-subhead" style={{ maxWidth: '560px', marginBottom: '3rem' }}>
+            Most contractors compare the engagement fee to the invoice.
+            The right comparison is what running without structure costs — month over month, before anything changes.
+          </p>
+
+          <div
+            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginBottom: '2.5rem' }}
+            className="md:grid-cols-2"
+          >
+            {/* Owner bottleneck tax */}
+            <div className="card">
+              <p
+                style={{
+                  fontFamily: 'var(--font-geist-mono, monospace)',
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-accent)',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                Owner bottleneck tax
+              </p>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                At the $2M–$8M stage, most owners spend 10–15 hours per week routing decisions that
+                should be resolved at the field or office level. Material approvals, scheduling calls,
+                subcontractor disputes, customer escalations — everything flows through the owner because
+                there is no written threshold for what doesn&apos;t.
+              </p>
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+                At a conservative $150/hr effective owner rate, that&apos;s $78K–$117K/year in misapplied labor.
+                The real cost is higher — because every hour spent approving a material order is an hour not
+                spent on estimating, client development, or actual strategy.
+              </p>
+            </div>
+
+            {/* Margin leakage */}
+            <div className="card">
+              <p
+                style={{
+                  fontFamily: 'var(--font-geist-mono, monospace)',
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-accent)',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                Margin leakage
+              </p>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                Without a live scoreboard reviewed weekly, contractors typically see job costs 30–60 days
+                after the fact — after the job is already closed and the margin is already gone.
+                Labor overruns, unbilled change orders, and subcontractor invoice gaps go undetected until
+                month-end accounting surfaces them as a surprise.
+              </p>
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+                On a $3M contractor, 3% margin leakage = $90,000/year. Most contractors doing $2M–$8M
+                without real-time job cost visibility are leaving 2–5% on the table. Not from bad estimating.
+                From no visibility mid-job.
+              </p>
+            </div>
+
+            {/* Follow-through gap */}
+            <div className="card">
+              <p
+                style={{
+                  fontFamily: 'var(--font-geist-mono, monospace)',
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-accent)',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                Follow-through gap
+              </p>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                Decisions get made in Monday&apos;s all-hands and don&apos;t reach the field until Wednesday —
+                if they reach it at all. Change orders get verbal approval and never get documented.
+                Subcontractor scope changes get handled by whoever answers the phone.
+                Every missing follow-through is a rework event, a collections delay, or a client dispute in formation.
+              </p>
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+                Each untracked change order = $500–$3,000 in margin exposure.
+                At two per week, that&apos;s $52K–$312K in annual margin at risk from a single operational gap.
+              </p>
+            </div>
+
+            {/* Execution cost of owner departure */}
+            <div className="card">
+              <p
+                style={{
+                  fontFamily: 'var(--font-geist-mono, monospace)',
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-accent)',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                Business fragility
+              </p>
+              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+                When the system lives in the owner&apos;s head, any disruption to the owner — illness,
+                vacation, a family emergency, an out-of-town project — disrupts the entire operation.
+                Field leads can&apos;t make decisions. Office staff can&apos;t resolve disputes.
+                The business doesn&apos;t slow down. It stops.
+              </p>
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+                A business that requires the owner present to function is not an asset.
+                It&apos;s an obligation. Every week without a written operating system is a week it stays that way.
+              </p>
+            </div>
+          </div>
+
+          {/* The ROI summary */}
+          <div
+            style={{
+              backgroundColor: 'color-mix(in srgb, var(--color-accent-dark) 8%, var(--color-surface))',
+              border: '1px solid color-mix(in srgb, var(--color-accent-dark) 25%, var(--color-line))',
+              borderRadius: '0.375rem',
+              padding: '1.75rem',
+              maxWidth: '740px',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: 'var(--font-geist-mono, monospace)',
+                fontSize: '0.6875rem',
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: 'var(--color-accent)',
+                marginBottom: '0.875rem',
+              }}
+            >
+              The math
+            </p>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75, marginBottom: '0.75rem' }}>
+              For a contractor doing $3M–$5M with no live scoreboard, no decision threshold, and a weekly
+              leadership session that produces no closed items: conservative disorder cost runs $150K–$300K/year
+              in combined owner time, margin leakage, and rework — before you account for the revenue that
+              isn&apos;t being pursued because the owner has no capacity to sell.
+            </p>
+            <p style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-fg)', lineHeight: 1.5 }}>
+              The engagement fee is typically one to two months of what the disorder costs.
+              That&apos;s the comparison. Not against a consulting invoice. Against what continues if nothing changes.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── PRICING ──────────────────────────────── */}
       <section className="section" aria-labelledby="pricing-heading">
         <div className="container-inner">

@@ -54,7 +54,7 @@ const organizationSchema = {
     'Fractional COO support and operational leadership for contractor teams doing $1M–$10M/year.',
   url: BASE_URL,
   telephone: '(469) 534-3392',
-  email: 'hello@contractorscoo.com',
+  email: 'sales@thekpsgroup.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '2342 FM 36, Suite A',

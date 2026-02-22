@@ -26,13 +26,13 @@ const pageSchema = {
     '@type': 'Organization',
     name: 'Contractors COO',
     telephone: '(469) 534-3392',
-    email: 'hello@contractorscoo.com',
+    email: 'sales@thekpsgroup.com',
     url: 'https://www.contractorscoo.com',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
       telephone: '(469) 534-3392',
-      email: 'hello@contractorscoo.com',
+      email: 'sales@thekpsgroup.com',
       availableLanguage: 'English',
       hoursAvailable: {
         '@type': 'OpeningHoursSpecification',
@@ -192,14 +192,14 @@ export default function ContactPage() {
                   (469) 534-3392
                 </a>
                 <a
-                  href="mailto:hello@contractorscoo.com"
+                  href="mailto:sales@thekpsgroup.com"
                   style={{
                     fontSize: '0.9375rem',
                     color: 'var(--color-accent)',
                     textDecoration: 'none',
                   }}
                 >
-                  hello@contractorscoo.com
+                  sales@thekpsgroup.com
                 </a>
               </div>
             </div>
