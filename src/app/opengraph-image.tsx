@@ -80,7 +80,7 @@ export default async function Image() {
             position: 'absolute',
             bottom: '48px',
             left: '80px',
-            color: '#64748b',
+            color: '#748398',
             fontSize: '14px',
             letterSpacing: '1px',
           }}

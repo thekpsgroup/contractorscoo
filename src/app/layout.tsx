@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Nav } from '@/components/Nav';
@@ -35,6 +35,8 @@ export const metadata: Metadata = {
     siteName: 'Contractors COO',
     locale: 'en_US',
     url: BASE_URL,
+    description:
+      'Fractional COO support for contractor teams doing $1M–$10M/year. 90-day operational install: cadence, role clarity, KPI scoreboard, and execution rhythm.',
   },
   twitter: {
     card: 'summary_large_image',
@@ -44,6 +46,12 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0a0a0a',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 const organizationSchema = {

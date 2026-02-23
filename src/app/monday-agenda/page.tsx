@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookingButton } from '@/components/BookingButton';
+import { JsonLd } from '@/components/JsonLd';
 import { MondayAgendaForm } from './MondayAgendaForm';
 
 export const metadata: Metadata = {
@@ -14,6 +15,66 @@ export const metadata: Metadata = {
       'A fixed weekly leadership session format for contractor teams. Runs in under 60 minutes. Every item closes with a named owner before the session ends.',
     url: 'https://www.contractorscoo.com/monday-agenda',
   },
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'The Monday Agenda — Weekly Leadership Meeting for Contractor Teams',
+  description:
+    'Free 8-point weekly leadership session format for contractor teams. Ends circular discussions, closes every item with a named owner, and runs in under 60 minutes.',
+  totalTime: 'PT60M',
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '0' },
+  step: [
+    {
+      '@type': 'HowToStep', position: 1,
+      name: 'Safety + Compliance Check',
+      text: 'Review near-misses, site incidents, subcontractor compliance gaps, and permit issues from the prior week. One person owns the safety log.',
+      timeRequired: 'PT2M',
+    },
+    {
+      '@type': 'HowToStep', position: 2,
+      name: 'KPI Scoreboard Review',
+      text: 'Every leadership team member reviews their numbers before the session. Review billings vs. target, job margin by lead, labor vs. estimate, AR aging, active pipeline, collections, completion rate, and one owner-defined constraint indicator.',
+      timeRequired: 'PT15M',
+    },
+    {
+      '@type': 'HowToStep', position: 3,
+      name: 'Open Items from Last Session',
+      text: 'Every item from the prior open-item log gets a status in three words or fewer: Done, In Progress (date), or Blocked (reason). Items that are overdue get a new owner or deadline.',
+      timeRequired: 'PT5M',
+    },
+    {
+      '@type': 'HowToStep', position: 4,
+      name: 'Active Job Review',
+      text: 'Each PM or field lead gives a one-sentence status on every active job: on schedule and budget, at risk, or needs resolution today. Only flagged jobs get discussion time.',
+      timeRequired: 'PT15M',
+    },
+    {
+      '@type': 'HowToStep', position: 5,
+      name: 'Office + Admin Update',
+      text: 'Review billing queue status, pending collections, new estimates due, subcontractor invoices requiring approval, and compliance items. The office lead owns this segment.',
+      timeRequired: 'PT5M',
+    },
+    {
+      '@type': 'HowToStep', position: 6,
+      name: 'Escalations + Owner Items',
+      text: 'Only items that exceeded the decision threshold and require owner input. Everything below the threshold was resolved at the field or office level before the session.',
+      timeRequired: 'PT5M',
+    },
+    {
+      '@type': 'HowToStep', position: 7,
+      name: 'Next-Week Priorities',
+      text: 'Each leadership team member states 1–2 specific, completable commitments for the coming week with a name and date attached. No vague intent statements.',
+      timeRequired: 'PT5M',
+    },
+    {
+      '@type': 'HowToStep', position: 8,
+      name: 'Open-Item Log Close',
+      text: 'The facilitator reads back every new item added during the session. Each item must have a named owner and a specific completion date before the session ends.',
+      timeRequired: 'PT3M',
+    },
+  ],
 };
 
 /* ── Agenda items ─────────────────────────── */
@@ -108,6 +169,7 @@ const sessionRules = [
 export default function MondayAgendaPage() {
   return (
     <>
+      <JsonLd data={howToSchema} />
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Monday Agenda overview">
         <div className="container-inner">
