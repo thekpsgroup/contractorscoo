@@ -4,9 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Book a COO Discovery Call — Contractors COO',
+  title: 'Book a COO Discovery Call',
   description:
-    'Book a 30-minute call. We map your current operating structure, identify the specific gaps, and tell you exactly what the 90-day install involves — and whether it\'s the right fit.',
+    'Book a 30-minute call. We map your operating structure, identify the gaps, and tell you what the 90-day install involves — and whether it\'s the right fit.',
   alternates: { canonical: 'https://www.contractorscoo.com/contact' },
   openGraph: {
     title: 'Book a COO Discovery Call | Contractors COO',

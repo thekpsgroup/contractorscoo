@@ -4,9 +4,9 @@ import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Contractor COO Results — Before & After Operational Outcomes',
+  title: 'Contractor COO Results — Before & After',
   description:
-    'Meeting chaos to operating cadence. Owner bottleneck to delegation. Revenue without margin to scoreboard clarity. Specific operational outcomes from the 90-day contractor COO install.',
+    'Meeting chaos to cadence. Owner bottleneck to delegation. Revenue without margin to scoreboard clarity. Outcomes from the 90-day contractor COO install.',
   alternates: { canonical: 'https://www.contractorscoo.com/proof' },
   openGraph: {
     title: 'Contractor COO Results — Before & After Operational Outcomes',

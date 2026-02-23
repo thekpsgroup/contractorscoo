@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: 'Contractors COO — Fractional COO for Contractors',
   },
   description:
-    'Your contractor business needs more than a good owner. It needs operating infrastructure. Fixed-scope 90-day COO install for GCs, trades, and home services doing $1M–$10M/year.',
+    'Your contractor business needs operating infrastructure. Fixed-scope 90-day COO install for GCs, trades, and home services doing $1M–$10M/year.',
   alternates: { canonical: 'https://www.contractorscoo.com' },
   openGraph: {
     title: 'Contractors COO — Fractional COO for Contractors',

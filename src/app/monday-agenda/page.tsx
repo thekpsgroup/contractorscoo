@@ -4,12 +4,12 @@ import { BookingButton } from '@/components/BookingButton';
 import { MondayAgendaForm } from './MondayAgendaForm';
 
 export const metadata: Metadata = {
-  title: 'The Monday Agenda — Weekly Leadership Meeting Template for Contractors',
+  title: 'The Monday Agenda for Contractor Teams',
   description:
-    'The 8-point weekly leadership session format used by contractor businesses to eliminate circular discussions, close every open item, and review KPIs in under 60 minutes. Free template.',
+    'Free 8-point weekly leadership template for contractor teams. Ends circular discussions, closes every item with a named owner, and runs in under 60 minutes.',
   alternates: { canonical: 'https://www.contractorscoo.com/monday-agenda' },
   openGraph: {
-    title: 'The Monday Agenda — Weekly Leadership Meeting Template for Contractors',
+    title: 'The Monday Agenda — Free Weekly Meeting Template for Contractors',
     description:
       'A fixed weekly leadership session format for contractor teams. Runs in under 60 minutes. Every item closes with a named owner before the session ends.',
     url: 'https://www.contractorscoo.com/monday-agenda',

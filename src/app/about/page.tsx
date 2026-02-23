@@ -6,12 +6,12 @@ import { JsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: 'Why Contractor Operations Break at Scale',
   description:
-    'Past $2M, the owner-operated model stops scaling. Here is why contractor businesses hit the wall, why cadence fixes most of it, and why execution infrastructure matters more than strategy.',
+    'Past $2M, the owner-operated model stops scaling. Why contractor businesses hit the wall, why cadence fixes it, and why execution infrastructure beats strategy.',
   alternates: { canonical: 'https://www.contractorscoo.com/about' },
   openGraph: {
     title: 'Why Contractor Operations Break at Scale | Contractors COO',
     description:
-      'The pattern is consistent: revenue grows, structure doesn\'t. Here\'s why it happens and how the Operating Foundation install fixes it. A service of The KPS Group.',
+      'The pattern is consistent: revenue grows, structure doesn\'t. Here\'s why it happens and how the Operating Foundation fixes it. A service of The KPS Group.',
     url: 'https://www.contractorscoo.com/about',
   },
 };

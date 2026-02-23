@@ -6,12 +6,12 @@ import { JsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: 'The 90-Day COO Install — What You Get',
   description:
-    'Exact deliverables, who it\'s built for, and how the Operating Foundation framework works. Fixed-scope fractional COO for contractor businesses doing $1M–$10M/year.',
+    'Exact deliverables, who it\'s built for, and how the Operating Foundation works. Fixed-scope fractional COO for contractor businesses doing $1M–$10M/year.',
   alternates: { canonical: 'https://www.contractorscoo.com/offer' },
   openGraph: {
     title: 'The 90-Day COO Install — What You Get | Contractors COO',
     description:
-      'Not advisory. Not a framework license. A contractor-specific operational install: meeting architecture, ownership matrix, KPI scoreboard, decision standards, and field SOPs.',
+      'Not advisory. Not a license. A contractor-specific install: meeting architecture, ownership matrix, KPI scoreboard, decision standards, and field SOPs.',
     url: 'https://www.contractorscoo.com/offer',
   },
 };
