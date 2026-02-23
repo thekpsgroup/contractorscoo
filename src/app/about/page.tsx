@@ -260,6 +260,23 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── RELATED PAGES ──────────────────────── */}
+      <section className="section" aria-label="Related pages">
+        <div className="container-inner">
+          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <Link href="/offer" className="btn-ghost">
+              See the 90-Day Install →
+            </Link>
+            <Link href="/proof" className="btn-ghost">
+              Outcome examples →
+            </Link>
+            <Link href="/fractional-coo-contractors" className="btn-ghost">
+              Fractional COO for contractors →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── FINAL CTA ────────────────────────────── */}
       <section
         aria-labelledby="about-cta-heading"
@@ -292,7 +309,7 @@ export default function AboutPage() {
             30-minute discovery call. No pitch before the conversation.
             We figure out together whether the install makes sense for your business.
           </p>
-          <BookingButton />
+          <BookingButton source="about_footer_cta" />
         </div>
       </section>
     </>

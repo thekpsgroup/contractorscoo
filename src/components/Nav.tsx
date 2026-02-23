@@ -41,7 +41,7 @@ export function Nav() {
 
           {/* Desktop CTA */}
           <div className="site-nav-cta">
-            <BookingButton />
+            <BookingButton source="nav_desktop" />
           </div>
 
           {/* Mobile: hamburger button */}
@@ -131,7 +131,7 @@ export function Nav() {
             </nav>
 
             <div style={{ marginTop: '1.25rem' }}>
-              <BookingButton />
+              <BookingButton source="nav_mobile" />
             </div>
           </div>
         </div>

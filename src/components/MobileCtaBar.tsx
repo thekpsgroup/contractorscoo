@@ -35,7 +35,7 @@ export function MobileCtaBar() {
       >
         See the Install
       </Link>
-      <BookingButton />
+      <BookingButton source="mobile_sticky_bar" />
     </div>
   );
 }

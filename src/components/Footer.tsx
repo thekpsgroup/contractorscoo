@@ -75,6 +75,9 @@ export function Footer() {
             >
               Contractor Job Costing →
             </a>
+            <span className="footer-link" style={{ color: 'var(--color-fg)', cursor: 'default' }}>
+              Contractors COO
+            </span>
             <a
               href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
               target="_blank"

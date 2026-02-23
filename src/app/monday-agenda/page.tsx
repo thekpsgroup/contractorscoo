@@ -519,7 +519,7 @@ export default function MondayAgendaPage() {
             We install all five pillars in 90 days.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-            <BookingButton label="Book a Discovery Call" />
+            <BookingButton label="Book a Discovery Call" source="monday_agenda_cta" />
             <Link href="/offer" className="btn-ghost" style={{ color: 'rgba(255,255,255,0.6)' }}>
               See the full offer →
             </Link>

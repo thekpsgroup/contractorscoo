@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: 'The 90-Day COO Install — What You Get',
   description:
-    'Exact deliverables, who it\'s built for, and how the Operating Foundation works. Fixed-scope fractional COO for contractor businesses doing $1M–$10M/year.',
+    'Exact deliverables, who it\'s built for, and how the Operating Foundation works. Fixed-scope fractional COO for contractors doing $1M–$10M/year.',
   alternates: { canonical: 'https://www.contractorscoo.com/offer' },
   openGraph: {
     title: 'The 90-Day COO Install — What You Get | Contractors COO',
@@ -166,11 +166,14 @@ export default function OfferPage() {
             owned by your business when we step back.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-            <BookingButton />
+            <BookingButton source="offer_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
+          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+            30 minutes. We scope your operation and tell you exactly what changes.
+          </p>
         </div>
       </section>
 
@@ -680,7 +683,7 @@ export default function OfferPage() {
             </ul>
           </div>
 
-          <BookingButton label="Start with a Discovery Call" />
+          <BookingButton label="Start with a Discovery Call" source="offer_pricing" />
           <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
             30 minutes. We assess your operation and tell you exactly what changes — and what it costs.
           </p>
@@ -724,7 +727,7 @@ export default function OfferPage() {
             We assess your current operating structure on the first call and tell you
             what the install involves — and whether it&apos;s the right fit for where you are.
           </p>
-          <BookingButton />
+          <BookingButton source="offer_footer_cta" />
         </div>
       </section>
     </>

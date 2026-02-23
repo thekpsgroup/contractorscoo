@@ -217,11 +217,14 @@ export default function OwnerBottleneckPage() {
             your people can actually operate from.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-            <BookingButton label="Book a Discovery Call" />
+            <BookingButton label="Book a Discovery Call" source="bottleneck_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
+          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+            30 minutes. We assess your decision flow and show you what gets off your desk.
+          </p>
         </div>
       </section>
 
@@ -497,7 +500,7 @@ export default function OwnerBottleneckPage() {
             30-minute discovery call. We assess your current decision flow and show you
             exactly what the install changes — and whether it&apos;s the right fit.
           </p>
-          <BookingButton label="Book a Discovery Call" />
+          <BookingButton label="Book a Discovery Call" source="bottleneck_footer_cta" />
           <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
             Straight assessment. No obligation. No boilerplate sales process.
           </p>

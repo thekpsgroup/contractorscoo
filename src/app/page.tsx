@@ -214,11 +214,14 @@ export default function HomePage() {
             We install the operating structure your business needs — in 90 days.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-            <BookingButton />
+            <BookingButton source="home_hero" />
             <Link href="/offer" className="btn-ghost">
               See the 90-Day Install →
             </Link>
           </div>
+          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+            30 minutes. We assess your operation and give you a straight answer.
+          </p>
         </div>
       </section>
 
@@ -589,7 +592,7 @@ export default function HomePage() {
             identify the specific gaps, and tell you exactly what the install involves —
             or whether it&apos;s not the right fit.
           </p>
-          <BookingButton label="Book a Call" />
+          <BookingButton label="Book a Call" source="home_footer_cta" />
           <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
             Straight assessment. No obligation. No boilerplate sales process.
           </p>

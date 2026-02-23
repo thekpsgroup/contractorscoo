@@ -234,7 +234,7 @@ export default function ProofPage() {
             when the fit is serious on both sides.
           </p>
           <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <BookingButton />
+            <BookingButton source="proof_note" />
             <Link href="/offer" className="btn-ghost">
               See the full offer →
             </Link>
@@ -282,7 +282,7 @@ export default function ProofPage() {
             Book a 30-minute discovery call. We assess your current structure
             and identify the specific gaps — before there&apos;s any commitment on either side.
           </p>
-          <BookingButton />
+          <BookingButton source="proof_footer_cta" />
         </div>
       </section>
     </>

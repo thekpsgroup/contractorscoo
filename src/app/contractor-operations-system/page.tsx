@@ -169,11 +169,14 @@ export default function ContractorOperationsSystemPage() {
             It&apos;s a five-pillar operating system built for how contractors actually run — installed in 90 days.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-            <BookingButton label="Book a Discovery Call" />
+            <BookingButton label="Book a Discovery Call" source="ops_system_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
+          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+            30 minutes. We assess your current structure and tell you what the install involves.
+          </p>
         </div>
       </section>
 
@@ -208,10 +211,28 @@ export default function ContractorOperationsSystemPage() {
             <div style={{ borderTop: '1px solid var(--color-line)' }} />
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
             <Link href="/offer" className="btn-ghost">
               See all seven deliverables →
             </Link>
+            <Link href="/owner-bottleneck" className="btn-ghost">
+              Fix the owner bottleneck →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MID-PAGE CTA ──────────────────────── */}
+      <section className="section" aria-label="Book a call">
+        <div className="container-inner" style={{ maxWidth: '680px' }}>
+          <div style={{ backgroundColor: 'color-mix(in srgb, var(--color-accent-dark) 8%, var(--color-surface))', border: '1px solid color-mix(in srgb, var(--color-accent-dark) 25%, var(--color-line))', borderRadius: '0.375rem', padding: '1.75rem', textAlign: 'center' }}>
+            <p style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem' }}>
+              Ready to see what the install looks like for your business?
+            </p>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', marginBottom: '1.25rem' }}>
+              30 minutes. We assess your current structure and tell you exactly what changes.
+            </p>
+            <BookingButton label="Book a Discovery Call" source="ops_system_mid" />
           </div>
         </div>
       </section>
@@ -312,7 +333,7 @@ export default function ContractorOperationsSystemPage() {
             30-minute discovery call. We assess your current structure and tell you exactly
             what the install involves — and whether it&apos;s the right fit.
           </p>
-          <BookingButton label="Book a Discovery Call" />
+          <BookingButton label="Book a Discovery Call" source="ops_system_footer_cta" />
         </div>
       </section>
     </>

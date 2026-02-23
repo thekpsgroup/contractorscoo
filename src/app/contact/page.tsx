@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BookingButton } from '@/components/BookingButton';
 import { JsonLd } from '@/components/JsonLd';
 import { ContactForm } from './ContactForm';
@@ -63,7 +64,7 @@ export default function ContactPage() {
             Thirty minutes. We&apos;ll assess your current operating structure and tell you exactly
             what needs to change — and whether this install is the right fit for your business.
           </p>
-          <BookingButton label="Book a 30-Minute Call" />
+          <BookingButton label="Book a 30-Minute Call" source="contact_hero" />
         </div>
       </section>
 
@@ -206,6 +207,23 @@ export default function ContactPage() {
 
             {/* Right: form */}
             <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* ── RELATED PAGES ──────────────────────── */}
+      <section className="section" aria-label="Related pages">
+        <div className="container-inner">
+          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <Link href="/offer" className="btn-ghost">
+              See the full offer →
+            </Link>
+            <Link href="/proof" className="btn-ghost">
+              Outcome examples →
+            </Link>
+            <Link href="/monday-agenda" className="btn-ghost">
+              Free Monday Agenda template →
+            </Link>
           </div>
         </div>
       </section>

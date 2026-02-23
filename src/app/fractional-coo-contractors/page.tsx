@@ -166,11 +166,14 @@ export default function FractionalCOOPage() {
             contractors — built with your team, owned by your business when we step back.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-            <BookingButton label="Book a Discovery Call" />
+            <BookingButton label="Book a Discovery Call" source="fractional_coo_hero" />
             <Link href="/offer" className="btn-ghost">
               See full deliverables →
             </Link>
           </div>
+          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+            30 minutes. We assess your operation and tell you exactly what changes.
+          </p>
         </div>
       </section>
 
@@ -412,7 +415,7 @@ export default function FractionalCOOPage() {
             30-minute discovery call. We assess your current structure and tell you exactly
             what changes — and whether it&apos;s the right fit.
           </p>
-          <BookingButton label="Book a Discovery Call" />
+          <BookingButton label="Book a Discovery Call" source="fractional_coo_footer_cta" />
           <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
             Straight assessment. No obligation. No boilerplate sales process.
           </p>
