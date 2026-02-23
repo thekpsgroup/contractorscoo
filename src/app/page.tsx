@@ -581,7 +581,7 @@ export default function HomePage() {
             or whether it&apos;s not the right fit.
           </p>
           <BookingButton label="Book a Call" />
-          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.45)', marginTop: '1rem' }}>
+          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
             Straight assessment. No obligation. No boilerplate sales process.
           </p>
         </div>
