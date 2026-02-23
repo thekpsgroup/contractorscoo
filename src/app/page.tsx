@@ -273,6 +273,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          <div style={{ marginTop: '2rem' }}>
+            <Link href="/owner-bottleneck" className="btn-ghost">
+              How we fix the owner bottleneck →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -330,9 +336,12 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
             <Link href="/offer" className="btn-ghost">
               Full offer details →
+            </Link>
+            <Link href="/contractor-operations-system" className="btn-ghost">
+              The five-pillar system →
             </Link>
           </div>
         </div>

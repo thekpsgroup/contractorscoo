@@ -233,6 +233,15 @@ export default function OfferPage() {
             ))}
             <div style={{ borderTop: '1px solid var(--color-line)' }} />
           </div>
+
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <Link href="/contractor-operations-system" className="btn-ghost">
+              The five-pillar operations system →
+            </Link>
+            <Link href="/owner-bottleneck" className="btn-ghost">
+              Fix the owner bottleneck →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -675,6 +684,27 @@ export default function OfferPage() {
           <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
             30 minutes. We assess your operation and tell you exactly what changes — and what it costs.
           </p>
+        </div>
+      </section>
+
+      {/* ── ECOSYSTEM ──────────────────────────── */}
+      <section className="section" aria-label="Related services">
+        <div className="container-inner" style={{ maxWidth: '680px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
+            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+              The full foundation
+            </p>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+              Need margin clarity before operations? Start with{' '}
+              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+                Contractor Job Costing
+              </a>.
+              If your fundamentals — entity, accounting, insurance — aren&apos;t set, start with{' '}
+              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+                Contractor Setup Install
+              </a>.
+            </p>
+          </div>
         </div>
       </section>
 

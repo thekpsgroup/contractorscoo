@@ -1,12 +1,15 @@
 import Link from 'next/link';
 
 const pageLinks = [
-  { href: '/',               label: 'Home'             },
-  { href: '/offer',          label: 'The Offer'        },
-  { href: '/proof',          label: 'Proof'            },
-  { href: '/about',          label: 'About'            },
-  { href: '/contact',        label: 'Contact'          },
-  { href: '/monday-agenda',  label: 'The Monday Agenda'},
+  { href: '/',                              label: 'Home'                       },
+  { href: '/offer',                         label: 'The Offer'                  },
+  { href: '/proof',                         label: 'Proof'                      },
+  { href: '/about',                         label: 'About'                      },
+  { href: '/contact',                       label: 'Contact'                    },
+  { href: '/monday-agenda',                 label: 'The Monday Agenda'          },
+  { href: '/fractional-coo-contractors',    label: 'Fractional COO'             },
+  { href: '/contractor-operations-system',  label: 'Operations System'          },
+  { href: '/owner-bottleneck',              label: 'Owner Bottleneck'           },
 ];
 
 export function Footer() {
@@ -58,19 +61,36 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Other installs */}
+        <div style={{ borderTop: '1px solid var(--color-line)', marginTop: '2rem', paddingTop: '1.5rem' }}>
+          <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.75rem' }}>
+            Other installs by The KPS Group
+          </p>
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+            <a
+              href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              Contractor Job Costing →
+            </a>
+            <a
+              href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              Contractor Setup Install →
+            </a>
+          </div>
+        </div>
+
         {/* Bottom bar */}
         <div className="footer-bottom">
           <p className="footer-copyright">
             &copy; {new Date().getFullYear()} The KPS Group. All rights reserved.
           </p>
-          <Link
-            href="https://www.contractorjobcosting.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-sister-link"
-          >
-            Also: Contractor Job Costing →
-          </Link>
         </div>
       </div>
     </footer>
