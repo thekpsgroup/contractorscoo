@@ -399,6 +399,23 @@ export default function FractionalCOOPage() {
         </div>
       </section>
 
+      {/* ── RELATED PAGES ──────────────────────── */}
+      <section className="section" aria-label="Related pages">
+        <div className="container-inner">
+          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <Link href="/fractional-coo-vs-eos" className="btn-ghost">
+              Fractional COO vs EOS →
+            </Link>
+            <Link href="/owner-bottleneck" className="btn-ghost">
+              Fix the owner bottleneck →
+            </Link>
+            <Link href="/contractor-growing-pains" className="btn-ghost">
+              Contractor growing pains →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── FINAL CTA ──────────────────────────── */}
       <section
         aria-labelledby="cta-heading"

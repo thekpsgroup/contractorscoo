@@ -10,6 +10,8 @@ const pageLinks = [
   { href: '/fractional-coo-contractors',    label: 'Fractional COO'             },
   { href: '/contractor-operations-system',  label: 'Operations System'          },
   { href: '/owner-bottleneck',              label: 'Owner Bottleneck'           },
+  { href: '/contractor-growing-pains',     label: 'Growing Pains'              },
+  { href: '/fractional-coo-vs-eos',        label: 'COO vs EOS'                 },
 ];
 
 export function Footer() {

@@ -214,7 +214,7 @@ export default function OwnerBottleneckPage() {
           <p className="text-subhead" style={{ maxWidth: '580px', marginBottom: '2.5rem' }}>
             Every decision routes through you — not because your team is weak, but because authority
             was never defined. The fix is not hiring. It&apos;s installing a delegation system
-            your people can actually operate from.
+            that lets you step out of day-to-day operations and replace yourself as the bottleneck.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
             <BookingButton label="Book a Discovery Call" source="bottleneck_hero" />
@@ -311,7 +311,7 @@ export default function OwnerBottleneckPage() {
         <div className="container-inner">
           <span className="eyebrow">The Install</span>
           <h2 id="install-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
-            Six deliverables that transfer the operating load off your desk.
+            Six deliverables that let you replace yourself as the operating bottleneck.
           </h2>
           <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
             Not a delegation framework you read. A working system your team runs — installed in 90 days.
@@ -336,9 +336,12 @@ export default function OwnerBottleneckPage() {
             <div style={{ borderTop: '1px solid var(--color-line)' }} />
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
             <Link href="/offer" className="btn-ghost">
               See the full 90-day offer →
+            </Link>
+            <Link href="/contractor-growing-pains" className="btn-ghost">
+              Contractor growing pains →
             </Link>
           </div>
         </div>
@@ -349,7 +352,7 @@ export default function OwnerBottleneckPage() {
         <div className="container-inner">
           <span className="eyebrow">The Timeline</span>
           <h2 id="how-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
-            Three phases. 90 days. You stop being the bottleneck.
+            Three phases. 90 days. You step out of the day-to-day.
           </h2>
 
           <div style={{ maxWidth: '640px' }}>
@@ -393,7 +396,7 @@ export default function OwnerBottleneckPage() {
                   Stabilize + Step Back
                 </h3>
                 <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
-                  We coach your team through live operation, adjust thresholds based on 30 days of data, and lock in the rhythm. By day 90, the business runs on cadence — not on your availability. That&apos;s the exit condition.
+                  We coach your team through live operation, adjust thresholds based on 30 days of data, and lock in the rhythm. By day 90, you&apos;ve replaced yourself in the day-to-day. The business runs on cadence — not on your availability. That&apos;s the exit condition.
                 </p>
               </div>
             </div>
@@ -494,7 +497,7 @@ export default function OwnerBottleneckPage() {
             id="cta-heading"
             style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '560px', marginBottom: '1rem' }}
           >
-            Find out what gets off your desk — and how fast.
+            Replace yourself as the bottleneck. Here&apos;s how.
           </h2>
           <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '460px', marginBottom: '2.5rem' }}>
             30-minute discovery call. We assess your current decision flow and show you

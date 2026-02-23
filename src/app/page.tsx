@@ -277,9 +277,12 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
             <Link href="/owner-bottleneck" className="btn-ghost">
               How we fix the owner bottleneck →
+            </Link>
+            <Link href="/contractor-growing-pains" className="btn-ghost">
+              Recognize these growing pains? →
             </Link>
           </div>
         </div>

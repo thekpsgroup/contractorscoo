@@ -273,6 +273,9 @@ export default function AboutPage() {
             <Link href="/fractional-coo-contractors" className="btn-ghost">
               Fractional COO for contractors →
             </Link>
+            <Link href="/contractor-growing-pains" className="btn-ghost">
+              Contractor growing pains →
+            </Link>
           </div>
         </div>
       </section>
