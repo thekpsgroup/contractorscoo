@@ -70,7 +70,7 @@ export function Footer() {
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <a
-              href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
+              href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
@@ -81,7 +81,7 @@ export function Footer() {
               Contractors COO
             </span>
             <a
-              href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
+              href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'Revenue grows. Structure doesn\'t. Recognize the 8 signs of contractor growing pains — and the operational fix that resolves them in 90 days.',
     url: 'https://www.contractorscoo.com/contractor-growing-pains',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contractor Growing Pains — Signs & Fixes',
+    description: 'Past $1M, contractor businesses hit predictable breakdowns: missed jobs, margin erosion, owner burnout. Here are the signs — and the 90-day structural fix.',
+  },
 };
 
 const serviceSchema = {
@@ -100,6 +105,15 @@ const faqSchema = {
         text: 'The engagement is fixed-scope and typically positioned in the range contractors at the $1M–$10M stage consider one to two months of operations overhead. We scope before we price because team size and complexity affect the engagement. Specifics are covered on the discovery call.',
       },
     },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Growing Pains', item: 'https://www.contractorscoo.com/contractor-growing-pains' },
   ],
 };
 
@@ -201,6 +215,7 @@ export default function ContractorGrowingPainsPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Contractor growing pains overview">
@@ -453,11 +468,11 @@ export default function ContractorGrowingPainsPage() {
             </p>
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
               Need margin visibility before fixing structure? Start with{' '}
-              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Setup Install
               </a>.
             </p>

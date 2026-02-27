@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'Not advisory. Not a license. A contractor-specific install: meeting architecture, ownership matrix, KPI scoreboard, decision standards, and field SOPs.',
     url: 'https://www.contractorscoo.com/offer',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The 90-Day COO Install — What You Get',
+    description: 'Exact deliverables, who it\'s built for, and how the Operating Foundation works. Fixed-scope fractional COO for contractors doing $1M–$10M/year.',
+  },
 };
 
 const serviceSchema = {
@@ -33,6 +38,15 @@ const serviceSchema = {
     availability: 'https://schema.org/InStock',
   },
   url: 'https://www.contractorscoo.com/offer',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Offer', item: 'https://www.contractorscoo.com/offer' },
+  ],
 };
 
 /* ── Framework pillars ──────────────────────── */
@@ -151,6 +165,7 @@ export default function OfferPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Offer overview">
@@ -699,11 +714,11 @@ export default function OfferPage() {
             </p>
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
               Need margin clarity before operations? Start with{' '}
-              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Job Costing
               </a>.
               If your fundamentals — entity, accounting, insurance — aren&apos;t set, start with{' '}
-              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Setup Install
               </a>.
             </p>

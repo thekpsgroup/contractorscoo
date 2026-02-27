@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'Five-pillar operating system built for contractor businesses at the $1M–$10M stage. Fixed-scope 90-day install. Owned by your team when we step back.',
     url: 'https://www.contractorscoo.com/contractor-operations-system',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contractor Operations System — 90 Days',
+    description: 'The operating system your contractor business is missing. Meeting cadence, ownership matrix, KPI scoreboard, and decision standards — installed in 90 days.',
+  },
 };
 
 const serviceSchema = {
@@ -87,6 +92,15 @@ const faqSchema = {
   ],
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Operations System', item: 'https://www.contractorscoo.com/contractor-operations-system' },
+  ],
+};
+
 const pillars = [
   {
     num: '01',
@@ -155,6 +169,7 @@ export default function ContractorOperationsSystemPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Operations system overview">
@@ -281,11 +296,11 @@ export default function ContractorOperationsSystemPage() {
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
               If you need margin clarity before operations,
               start with{' '}
-              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Setup Install
               </a>.
             </p>

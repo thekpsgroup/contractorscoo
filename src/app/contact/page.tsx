@@ -15,6 +15,11 @@ export const metadata: Metadata = {
       'Thirty minutes. We assess your contractor operation and give you a direct answer on whether the install makes sense — and what it costs.',
     url: 'https://www.contractorscoo.com/contact',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Book a COO Discovery Call',
+    description: 'Book a 30-minute call. We map your operating structure, identify the gaps, and tell you what the 90-day install involves — and whether it\'s the right fit.',
+  },
 };
 
 const pageSchema = {
@@ -48,10 +53,20 @@ const pageSchema = {
   },
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.contractorscoo.com/contact' },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <>
       <JsonLd data={pageSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Contact">

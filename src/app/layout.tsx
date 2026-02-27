@@ -27,8 +27,27 @@ export const metadata: Metadata = {
   },
   description:
     'Fractional COO support for contractor teams doing $1M–$10M/year. 90-day operational install: cadence, role clarity, KPI scoreboard, and execution rhythm.',
+  
+  keywords: [
+    'fractional COO for contractors',
+    'contractor operations',
+    'contractor business systems',
+    'operational leadership contractors',
+    'contractor COO services',
+    'contractor team management',
+    'contractor KPI systems',
+    'construction business operations',
+    'contractor growth systems',
+    'operational install contractors',
+  ],
+
+  authors: [{ name: 'The KPS Group', url: BASE_URL }],
+  creator: 'The KPS Group',
+  publisher: 'The KPS Group',
+
   alternates: {
     canonical: BASE_URL,
+    languages: { 'en-US': BASE_URL },
   },
   openGraph: {
     type: 'website',
@@ -40,11 +59,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'Contractors COO — Fractional COO for Contractor Teams',
+    description: 'Fractional COO support for contractor teams doing $1M–$10M/year. 90-day operational install: cadence, role clarity, KPI scoreboard, and execution rhythm.',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

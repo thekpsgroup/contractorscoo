@@ -17,6 +17,11 @@ export const metadata: Metadata = {
       'Stop running operations from your head. We install meeting architecture, role ownership, and KPI systems into contractor businesses in 90 days.',
     url: 'https://www.contractorscoo.com',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contractors COO — Fractional COO for Contractors',
+    description: 'Your contractor business needs operating infrastructure. Fixed-scope 90-day COO install for GCs, trades, and home services doing $1M–$10M/year.',
+  },
 };
 
 const serviceSchema = {

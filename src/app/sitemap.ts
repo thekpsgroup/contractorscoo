@@ -2,71 +2,76 @@ import { MetadataRoute } from 'next';
 
 const BASE = 'https://www.contractorscoo.com';
 
+// Use static dates to prevent unnecessary crawls on every deploy
+// Update these dates only when page content meaningfully changes
+const LAUNCH = new Date('2026-02-22');
+const SEO_UPDATE = new Date('2026-02-27');
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: BASE,
-      lastModified: new Date(),
+      lastModified: SEO_UPDATE,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${BASE}/offer`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${BASE}/proof`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${BASE}/about`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${BASE}/contact`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${BASE}/monday-agenda`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${BASE}/fractional-coo-contractors`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${BASE}/contractor-operations-system`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${BASE}/owner-bottleneck`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${BASE}/contractor-growing-pains`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${BASE}/fractional-coo-vs-eos`,
-      lastModified: new Date(),
+      lastModified: LAUNCH,
       changeFrequency: 'monthly',
       priority: 0.9,
     },

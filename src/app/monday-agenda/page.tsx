@@ -15,6 +15,11 @@ export const metadata: Metadata = {
       'A fixed weekly leadership session format for contractor teams. Runs in under 60 minutes. Every item closes with a named owner before the session ends.',
     url: 'https://www.contractorscoo.com/monday-agenda',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Monday Agenda for Contractor Teams',
+    description: 'Free 8-point weekly leadership template for contractor teams. Ends circular discussions, closes every item with a named owner, and runs in under 60 minutes.',
+  },
 };
 
 const howToSchema = {
@@ -74,6 +79,15 @@ const howToSchema = {
       text: 'The facilitator reads back every new item added during the session. Each item must have a named owner and a specific completion date before the session ends.',
       timeRequired: 'PT3M',
     },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Monday Agenda', item: 'https://www.contractorscoo.com/monday-agenda' },
   ],
 };
 
@@ -170,6 +184,7 @@ export default function MondayAgendaPage() {
   return (
     <>
       <JsonLd data={howToSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Monday Agenda overview">
         <div className="container-inner">

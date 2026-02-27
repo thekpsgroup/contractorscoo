@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'EOS is a framework you self-implement. A fractional COO install is a system built inside your business. Here\'s how they compare for contractor operations.',
     url: 'https://www.contractorscoo.com/fractional-coo-vs-eos',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fractional COO vs EOS for Contractors',
+    description: 'EOS works for some businesses — but not most contractors. Compare fractional COO install vs EOS Traction for contractor teams at the $1M–$10M stage.',
+  },
 };
 
 const serviceSchema = {
@@ -100,6 +105,15 @@ const faqSchema = {
         text: 'No. The install does not depend on any external framework. If you have read Traction and found the principles useful but struggled with implementation, the 90-day install solves the gap between knowing what to do and having a working system.',
       },
     },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Fractional COO vs EOS', item: 'https://www.contractorscoo.com/fractional-coo-vs-eos' },
   ],
 };
 
@@ -196,6 +210,7 @@ export default function FractionalCooVsEosPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Fractional COO vs EOS comparison">
@@ -488,11 +503,11 @@ export default function FractionalCooVsEosPage() {
             </p>
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
               Need financial clarity alongside operational structure? Start with{' '}
-              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Setup Install
               </a>.
             </p>

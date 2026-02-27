@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'Specific before-and-after patterns from the 90-day contractor COO install. Meeting restructuring, role delegation, scoreboard install, and team independence.',
     url: 'https://www.contractorscoo.com/proof',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contractor COO Results — Before & After',
+    description: 'Meeting chaos to cadence. Owner bottleneck to delegation. Revenue without margin to scoreboard clarity. Outcomes from the 90-day contractor COO install.',
+  },
 };
 
 const pageSchema = {
@@ -28,6 +33,15 @@ const pageSchema = {
     name: 'Contractors COO',
     url: 'https://www.contractorscoo.com',
   },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Proof', item: 'https://www.contractorscoo.com/proof' },
+  ],
 };
 
 const outcomes = [
@@ -101,6 +115,7 @@ export default function ProofPage() {
   return (
     <>
       <JsonLd data={pageSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Proof overview">
@@ -254,11 +269,11 @@ export default function ProofPage() {
             </p>
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
               Need margin clarity alongside operations? See{' '}
-              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Job Costing
               </a>.
               If your fundamentals — entity, accounting, insurance — aren&apos;t set, start with{' '}
-              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Setup Install
               </a>.
             </p>

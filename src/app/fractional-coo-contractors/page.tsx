@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'Not advisory. Not coaching. A 90-day operational install designed for GCs, trades, and home service contractors at the growth stage.',
     url: 'https://www.contractorscoo.com/fractional-coo-contractors',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fractional COO for Contractors — 90 Days',
+    description: 'Fractional COO built for contractor businesses doing $1M–$10M. 90-day fixed-scope install: meeting cadence, KPI scoreboard, role ownership, and field SOPs.',
+  },
 };
 
 const serviceSchema = {
@@ -103,6 +108,15 @@ const faqSchema = {
   ],
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Fractional COO', item: 'https://www.contractorscoo.com/fractional-coo-contractors' },
+  ],
+};
+
 const deliverables = [
   { title: 'Meeting Architecture', body: 'A fixed weekly leadership session with closed-loop follow-up. Field lead, office lead, owner. Runs under an hour. Every item closes with a named owner.' },
   { title: 'Ownership Matrix', body: 'Written role ownership covering every function — estimating, field coordination, purchasing, billing. No shared lanes. No ambiguity about who owns what.' },
@@ -152,6 +166,7 @@ export default function FractionalCOOPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Fractional COO overview">
@@ -387,11 +402,11 @@ export default function FractionalCOOPage() {
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
               If your fundamentals — entity structure, accounting foundation, insurance, and licensing — aren&apos;t set,
               start with{' '}
-              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Setup Install
               </a>.
               If you need margin clarity first, install{' '}
-              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Job Costing
               </a>.
             </p>

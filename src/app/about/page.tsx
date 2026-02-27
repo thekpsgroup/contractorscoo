@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'The pattern is consistent: revenue grows, structure doesn\'t. Here\'s why it happens and how the Operating Foundation fixes it. A service of The KPS Group.',
     url: 'https://www.contractorscoo.com/about',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Why Contractor Operations Break at Scale',
+    description: 'Past $2M, the owner-operated model stops scaling. Why contractor businesses hit the wall, why cadence fixes it, and why execution infrastructure beats strategy.',
+  },
 };
 
 const pageSchema = {
@@ -53,10 +58,20 @@ const pageSchema = {
   },
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.contractorscoo.com/about' },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
       <JsonLd data={pageSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="About">

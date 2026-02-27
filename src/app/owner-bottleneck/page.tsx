@@ -14,6 +14,11 @@ export const metadata: Metadata = {
       'Stop being the only person who can make decisions. 90-day install: ownership matrix, decision thresholds, and operating cadence for contractor teams.',
     url: 'https://www.contractorscoo.com/owner-bottleneck',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fix the Owner Bottleneck — For Contractors',
+    description: 'Your contractor business stalls when you leave. Install decision thresholds, role ownership, and accountability systems so your team operates without you.',
+  },
 };
 
 const serviceSchema = {
@@ -100,6 +105,15 @@ const faqSchema = {
         text: 'The engagement is fixed-scope and typically positioned in the range contractors at the $1M–$10M stage consider one to two months of operations overhead. We scope before we price because team size and complexity affect the engagement. Specifics are covered on the discovery call.',
       },
     },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.contractorscoo.com' },
+    { '@type': 'ListItem', position: 2, name: 'Owner Bottleneck', item: 'https://www.contractorscoo.com/owner-bottleneck' },
   ],
 };
 
@@ -203,6 +217,7 @@ export default function OwnerBottleneckPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="section-lg" aria-label="Owner bottleneck overview">
@@ -475,11 +490,11 @@ export default function OwnerBottleneckPage() {
             <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
               If you need margin clarity before fixing delegation,
               start with{' '}
-              <a href="https://contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
                 Contractor Setup Install
               </a>.
             </p>
