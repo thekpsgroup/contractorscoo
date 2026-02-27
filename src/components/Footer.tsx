@@ -66,28 +66,37 @@ export function Footer() {
         {/* Other installs */}
         <div style={{ borderTop: '1px solid var(--color-line)', marginTop: '2rem', paddingTop: '1.5rem' }}>
           <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.75rem' }}>
-            Other installs by The KPS Group
+            The KPS Group Service Ecosystem
           </p>
-          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <a
-              href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link"
-            >
-              Contractor Job Costing →
-            </a>
-            <span className="footer-link" style={{ color: 'var(--color-fg)', cursor: 'default' }}>
-              Contractors COO
-            </span>
-            <a
-              href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link"
-            >
-              Contractor Setup Install →
-            </a>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div>
+              <a
+                href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                Contractor Setup Install →
+              </a>
+              <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.25rem' }}>Foundation install for new contractors. Entity, banking, books, operating rhythm.</p>
+            </div>
+            <div>
+              <a
+                href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                Contractor Job Costing →
+              </a>
+              <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.25rem' }}>Job costing & cash flow for $750K–$8M contractors. Know your margin. Fix your cash flow.</p>
+            </div>
+            <div>
+              <span className="footer-link" style={{ color: 'var(--color-fg)', cursor: 'default' }}>
+                Contractors COO
+              </span>
+              <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.25rem' }}>Operations leadership for $1M–$10M teams. Cadence, accountability, execution rhythm.</p>
+            </div>
           </div>
         </div>
 

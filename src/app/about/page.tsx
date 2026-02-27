@@ -295,6 +295,48 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── SERVICE ECOSYSTEM ────────────────── */}
+      <section aria-label="Service progression" style={{ borderBottom: '1px solid var(--color-line)' }}>
+        <div className="container-inner" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 800, marginBottom: '3rem' }}>
+            Part of a Complete System
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            <div style={{ borderLeft: '3px solid var(--color-accent-subtle)', paddingLeft: '1.5rem' }}>
+              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+                Stage 1: Foundation
+              </h3>
+              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
+                <strong>Contractor Setup Install</strong> gets new contractors off to the right start. Entity structure, banking, books, and the barebone operating rhythm.
+              </p>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>
+                Learn more →
+              </a>
+            </div>
+            <div style={{ borderLeft: '3px solid var(--color-accent-subtle)', paddingLeft: '1.5rem' }}>
+              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+                Stage 2: Financial Clarity
+              </h3>
+              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
+                <strong>Contractor Job Costing</strong> gives you real margin numbers and fixes cash flow problems. Built for $750K–$8M contractors who need to know what's profitable.
+              </p>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>
+                Learn more →
+              </a>
+            </div>
+            <div style={{ borderLeft: '3px solid var(--color-accent-subtle)', paddingLeft: '1.5rem' }}>
+              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+                Stage 3: Operations Leadership
+              </h3>
+              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
+                <strong>Contractors COO</strong> is the final piece: the execution infrastructure your team actually needs to scale past the owner-operator model.
+              </p>
+              <span style={{ color: 'var(--color-muted)' }}>You are here</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FINAL CTA ────────────────────────────── */}
       <section
         aria-labelledby="about-cta-heading"

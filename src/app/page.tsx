@@ -567,6 +567,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── ECOSYSTEM POSITIONING ────────────────────────────────── */}
+      <section aria-label="Service progression" style={{ backgroundColor: 'var(--color-surface)', borderBottom: '1px solid var(--color-line)' }}>
+        <div className="container-inner" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 800, marginBottom: '3rem', maxWidth: '600px' }}>
+            Already have your foundation and margins figured out?
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            <div>
+              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+                Stage 1: Foundation
+              </h3>
+              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+                <strong>Contractor Setup Install</strong> gets owner-led contractors properly structured. Entity, banking, books, and operating rhythm in 21 days.
+              </p>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline', fontSize: '0.875rem', fontWeight: 600 }}>
+                Visit ContractorSetup →
+              </a>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+                Stage 2: Margin Clarity
+              </h3>
+              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+                <strong>Contractor Job Costing</strong> installs job-level profitability and fixes cash flow. Built for contractors doing $750K–$8M who need to stop guessing.
+              </p>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline', fontSize: '0.875rem', fontWeight: 600 }}>
+                Visit Contractor Job Costing →
+              </a>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+                Stage 3: Operations Leadership
+              </h3>
+              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+                <strong>Contractors COO</strong> is the final piece: the execution infrastructure contractors at $1M–$10M actually need to scale past owner-operator operations.
+              </p>
+              <span style={{ color: 'var(--color-muted)', fontSize: '0.875rem', fontWeight: 600 }}>You are here →</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FINAL CTA BAND ───────────────────────── */}
       <section
         aria-labelledby="cta-heading"
