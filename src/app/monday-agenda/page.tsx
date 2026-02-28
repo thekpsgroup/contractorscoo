@@ -189,43 +189,24 @@ export default function MondayAgendaPage() {
       <section className="section-lg" aria-label="Monday Agenda overview">
         <div className="container-inner">
           <span className="eyebrow">Free Resource · Contractors COO</span>
-          <h1 className="text-display" style={{ maxWidth: '720px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display growing-hero-title">
             The Monday Agenda
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '580px', marginBottom: '1.25rem' }}>
+          <p className="text-subhead growing-hero-subhead">
             A fixed 8-point weekly leadership session format for contractor teams.
             Runs in under 60 minutes. Every open item closes with a named owner before the session ends.
           </p>
-          <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted-2)', maxWidth: '520px', marginBottom: '2.5rem', lineHeight: 1.7 }}>
+          <p className="monday-hero-note">
             The full agenda is published below — no gate, no signup required.
             Enter your email to get the formatted PDF version you can print and use this Monday.
           </p>
 
           {/* Email capture */}
-          <div
-            style={{
-              backgroundColor: 'var(--color-surface)',
-              border: '1px solid var(--color-line)',
-              borderRadius: '0.375rem',
-              padding: '1.75rem',
-              maxWidth: '600px',
-              marginBottom: '1rem',
-            }}
-          >
-            <p
-              style={{
-                fontFamily: 'var(--font-geist-mono, monospace)',
-                fontSize: '0.6875rem',
-                fontWeight: 600,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'var(--color-muted-2)',
-                marginBottom: '1rem',
-              }}
-            >
+          <div className="monday-email-card">
+            <p className="monday-email-label">
               Get the PDF Version
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+            <p className="monday-email-copy">
               A print-ready PDF with the full agenda, timing guide, session rules, and open-item log template.
               Formatted for weekly use — not a reference document.
             </p>
@@ -238,107 +219,50 @@ export default function MondayAgendaPage() {
       <section className="section" aria-labelledby="agenda-heading">
         <div className="container-inner">
           <span className="eyebrow">The Format</span>
-          <h2 id="agenda-heading" className="text-headline" style={{ maxWidth: '580px', marginBottom: '0.625rem' }}>
+          <h2 id="agenda-heading" className="text-headline growing-section-title">
             The 8-Point Weekly Leadership Session
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '0.75rem' }}>
+          <p className="text-subhead growing-section-subhead">
             Fixed sequence. Fixed timing. Runs every Monday without variation.
           </p>
-          <p style={{ fontSize: '0.875rem', color: 'var(--color-muted-2)', marginBottom: '3rem', maxWidth: '460px' }}>
+          <p className="monday-agenda-note">
             Total runtime: 55 minutes. 5 minutes of buffer before it hits an hour.
             If your sessions run longer than 60 minutes consistently, the agenda is being violated somewhere.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="monday-agenda-wrap">
             {agendaItems.map((item) => (
-              <div
-                key={item.num}
-                style={{
-                  borderTop: '1px solid var(--color-line)',
-                  padding: '2rem 0',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr',
-                  gap: '1.25rem',
-                }}
-                className="md:grid-cols-[3.5rem_1fr]"
-              >
+              <div key={item.num} className="monday-agenda-item md:grid-cols-[3.5rem_1fr]">
                 {/* Number + time */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-geist-mono, monospace)',
-                      fontSize: '0.6875rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      color: 'var(--color-accent)',
-                    }}
-                  >
+                <div className="monday-item-meta">
+                  <span className="monday-item-num">
                     {item.num}
                   </span>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-geist-mono, monospace)',
-                      fontSize: '0.625rem',
-                      fontWeight: 500,
-                      letterSpacing: '0.06em',
-                      color: 'var(--color-muted-2)',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
+                  <span className="monday-item-time">
                     {item.time}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div>
-                  <h3
-                    style={{
-                      fontSize: '1.125rem',
-                      fontWeight: 700,
-                      color: 'var(--color-fg)',
-                      marginBottom: '0.625rem',
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
+                  <h3 className="monday-item-title">
                     {item.title}
                   </h3>
-                  <p
-                    style={{
-                      fontSize: '0.9375rem',
-                      color: 'var(--color-muted)',
-                      lineHeight: 1.7,
-                      marginBottom: '1rem',
-                    }}
-                  >
+                  <p className="monday-item-body">
                     {item.body}
                   </p>
-                  <div
-                    style={{
-                      borderLeft: '2px solid var(--color-accent-dark)',
-                      paddingLeft: '1rem',
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily:    'var(--font-geist-mono, monospace)',
-                        fontSize:      '0.625rem',
-                        fontWeight:    700,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color:         'var(--color-accent)',
-                        marginBottom:  '0.3rem',
-                      }}
-                    >
+                  <div className="monday-item-protocol">
+                    <p className="monday-protocol-label">
                       Protocol
                     </p>
-                    <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                    <p className="monday-protocol-text">
                       {item.rules}
                     </p>
                   </div>
                 </div>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="growing-divider" />
           </div>
         </div>
       </section>
@@ -347,44 +271,24 @@ export default function MondayAgendaPage() {
       <section className="section" aria-labelledby="rules-heading">
         <div className="container-inner">
           <span className="eyebrow">Non-Negotiables</span>
-          <h2 id="rules-heading" className="text-headline" style={{ maxWidth: '540px', marginBottom: '0.625rem' }}>
+          <h2 id="rules-heading" className="text-headline growing-section-title">
             Five rules that make the format hold.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '480px', marginBottom: '3rem' }}>
+          <p className="text-subhead growing-section-subhead">
             The agenda is a sequence. These rules are what make it a system.
             Violate any one of them consistently and the cadence collapses back into a meeting.
           </p>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }}
-            className="md:grid-cols-2 lg:grid-cols-3"
-          >
+          <div className="monday-rules-grid md:grid-cols-2 lg:grid-cols-3">
             {sessionRules.map((r) => (
               <div key={r.num} className="card">
-                <p
-                  style={{
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    fontSize: '0.6875rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    color: 'var(--color-accent)',
-                    marginBottom: '0.625rem',
-                  }}
-                >
+                <p className="monday-rule-num">
                   {r.num}
                 </p>
-                <h3
-                  style={{
-                    fontSize: '1rem',
-                    fontWeight: 700,
-                    color: 'var(--color-fg)',
-                    marginBottom: '0.625rem',
-                    letterSpacing: '-0.01em',
-                  }}
-                >
+                <h3 className="monday-rule-title">
                   {r.rule}
                 </h3>
-                <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="monday-protocol-text">
                   {r.detail}
                 </p>
               </div>
@@ -397,23 +301,15 @@ export default function MondayAgendaPage() {
       <section className="section" aria-labelledby="after-heading">
         <div className="container-inner">
           <span className="eyebrow">After the Agenda</span>
-          <h2 id="after-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '0.625rem' }}>
+          <h2 id="after-heading" className="text-headline growing-section-title">
             The agenda is the entry point. The system is what holds it.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '540px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead growing-hero-subhead">
             Most contractor businesses can run this agenda for 2–3 weeks before it starts drifting.
             The sessions get longer. Open items stop getting closed. The scoreboard arrives late or not at all.
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              gap: '1.5rem',
-              marginBottom: '3rem',
-            }}
-            className="md:grid-cols-3"
-          >
+          <div className="monday-after-grid md:grid-cols-3">
             {[
               {
                 label: 'Why sessions drift',
@@ -428,50 +324,22 @@ export default function MondayAgendaPage() {
                 body: 'Items get added but never closed. The log grows until it\'s too long to review. Then it gets abandoned. Without a close protocol at the end of every session, nothing is ever actually decided.',
               },
             ].map((item) => (
-              <div key={item.label} style={{ borderTop: '1px solid var(--color-line)', paddingTop: '1.5rem' }}>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    fontSize: '0.6875rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: 'var(--color-muted-2)',
-                    marginBottom: '0.75rem',
-                  }}
-                >
+              <div key={item.label} className="monday-after-item">
+                <p className="monday-after-label">
                   {item.label}
                 </p>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="growing-faq-answer">
                   {item.body}
                 </p>
               </div>
             ))}
           </div>
 
-          <div
-            style={{
-              backgroundColor: 'var(--color-surface)',
-              border: '1px solid var(--color-line)',
-              borderRadius: '0.375rem',
-              padding: '1.75rem',
-              maxWidth: '680px',
-            }}
-          >
-            <p
-              style={{
-                fontFamily: 'var(--font-geist-mono, monospace)',
-                fontSize: '0.6875rem',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'var(--color-muted-2)',
-                marginBottom: '0.875rem',
-              }}
-            >
+          <div className="monday-install-card">
+            <p className="growing-ecosystem-kicker">
               What the 90-Day Install adds
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75 }}>
+            <p className="monday-install-copy">
               The Monday Agenda is one component of The Operating Foundation — the five-pillar
               system we install into contractor businesses over 90 days. It includes the meeting architecture,
               the ownership matrix that defines who owns each KPI, the decision threshold that stops
@@ -486,12 +354,12 @@ export default function MondayAgendaPage() {
       {/* ── PDF FORM (REPEAT) ───────────────────── */}
       <section className="section" aria-labelledby="pdf-heading">
         <div className="container-inner">
-          <div style={{ maxWidth: '600px' }}>
+          <div className="monday-pdf-wrap">
             <span className="eyebrow">Take It With You</span>
-            <h2 id="pdf-heading" className="text-headline" style={{ maxWidth: '480px', marginBottom: '0.625rem' }}>
+            <h2 id="pdf-heading" className="text-headline monday-pdf-title">
               Get the formatted PDF version.
             </h2>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1.75rem' }}>
+            <p className="monday-pdf-copy">
               Print-ready. Includes the full agenda sequence, per-item timing, the five session rules,
               and the open-item log template. Formatted to run your first session this Monday.
             </p>
@@ -501,41 +369,19 @@ export default function MondayAgendaPage() {
       </section>
 
       {/* ── CTA TO OFFER ─────────────────────────── */}
-      <section
-        aria-labelledby="agenda-cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-          <h2
-            id="agenda-cta-heading"
-            style={{
-              fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: '-0.02em',
-              color: '#ffffff',
-              maxWidth: '560px',
-              marginBottom: '1rem',
-            }}
-          >
+      <section aria-labelledby="agenda-cta-heading" className="growing-final-cta-section">
+        <div className="container-inner growing-final-cta-inner">
+          <h2 id="agenda-cta-heading" className="growing-final-cta-title">
             Ready to build the system around the agenda?
           </h2>
-          <p
-            style={{
-              fontSize: '1.0625rem',
-              color: 'rgba(255,255,255,0.72)',
-              lineHeight: 1.6,
-              maxWidth: '480px',
-              marginBottom: '2.5rem',
-            }}
-          >
+          <p className="growing-final-cta-copy">
             The agenda is the visible part. The Operating Foundation is what makes it hold —
             ownership, decision standards, the scoreboard, and the field process set.
             We install all five pillars in 90 days.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="monday-cta-actions">
             <BookingButton label="Book a Discovery Call" source="monday_agenda_cta" />
-            <Link href="/offer" className="btn-ghost" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            <Link href="/offer" className="btn-ghost monday-cta-link">
               See the full offer →
             </Link>
           </div>

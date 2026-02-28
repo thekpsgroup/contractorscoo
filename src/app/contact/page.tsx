@@ -72,10 +72,10 @@ export default function ContactPage() {
       <section className="section-lg" aria-label="Contact">
         <div className="container-inner">
           <span className="eyebrow">Contact</span>
-          <h1 className="text-display" style={{ maxWidth: '640px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display contact-hero-title">
             Start with a Discovery Call
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead contact-hero-subhead">
             Thirty minutes. We&apos;ll assess your current operating structure and tell you exactly
             what needs to change — and whether this install is the right fit for your business.
           </p>
@@ -87,11 +87,11 @@ export default function ContactPage() {
       <section className="section" aria-labelledby="expect-heading">
         <div className="container-inner">
           <span className="eyebrow">What to Expect</span>
-          <h2 id="expect-heading" className="text-headline" style={{ maxWidth: '480px', marginBottom: '2rem' }}>
+          <h2 id="expect-heading" className="text-headline contact-expect-title">
             How the first conversation works.
           </h2>
 
-          <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '0' }}>
+          <div className="contact-steps-wrap">
             {[
               {
                 step: '01',
@@ -109,49 +109,21 @@ export default function ContactPage() {
                 body: 'If the install makes sense, we\'ll tell you what it involves and what the next step looks like. If it doesn\'t fit, we\'ll tell you that too — and point you toward what does.',
               },
             ].map((item) => (
-              <div
-                key={item.step}
-                style={{
-                  borderTop: '1px solid var(--color-line)',
-                  padding: '1.625rem 0',
-                  display: 'flex',
-                  gap: '1.5rem',
-                  alignItems: 'flex-start',
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    fontSize: '0.6875rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    color: 'var(--color-accent)',
-                    flexShrink: 0,
-                    paddingTop: '0.2rem',
-                    width: '2rem',
-                  }}
-                >
+              <div key={item.step} className="contact-step-item">
+                <span className="contact-step-num">
                   {item.step}
                 </span>
                 <div>
-                  <h3
-                    style={{
-                      fontSize: '1rem',
-                      fontWeight: 700,
-                      color: 'var(--color-fg)',
-                      marginBottom: '0.375rem',
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
+                  <h3 className="contact-step-title">
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                  <p className="growing-faq-answer">
                     {item.body}
                   </p>
                 </div>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="growing-divider" />
           </div>
         </div>
       </section>
@@ -159,62 +131,27 @@ export default function ContactPage() {
       {/* ── CONTACT FORM ─────────────────────────── */}
       <section className="section" aria-labelledby="form-heading">
         <div className="container-inner">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              gap: '3rem',
-              alignItems: 'start',
-            }}
-            className="md:grid-cols-[1fr_1.5fr]"
-          >
+          <div className="contact-form-grid md:grid-cols-[1fr_1.5fr]">
             {/* Left: context */}
             <div>
               <span className="eyebrow">Or send a message</span>
-              <h2 id="form-heading" className="text-headline" style={{ marginBottom: '1rem' }}>
+              <h2 id="form-heading" className="text-headline contact-form-title">
                 Prefer to write first?
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75, marginBottom: '2rem' }}>
+              <p className="contact-form-copy">
                 Fill out the form and we&apos;ll respond within one business day. We review every
                 submission personally — there&apos;s no auto-responder loop before a human sees it.
               </p>
 
               {/* Direct contact */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    fontSize: '0.6875rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: 'var(--color-muted-2)',
-                    marginBottom: '0.25rem',
-                  }}
-                >
+              <div className="contact-info-wrap">
+                <p className="contact-info-label">
                   Direct contact
                 </p>
-                <a
-                  href="tel:+14695343392"
-                  style={{
-                    fontSize: '0.9375rem',
-                    color: 'var(--color-muted)',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                  }}
-                >
+                <a href="tel:+14695343392" className="contact-link">
                   (469) 534-3392
                 </a>
-                <a
-                  href="mailto:sales@thekpsgroup.com"
-                  style={{
-                    fontSize: '0.9375rem',
-                    color: 'var(--color-accent)',
-                    textDecoration: 'none',
-                  }}
-                >
+                <a href="mailto:sales@thekpsgroup.com" className="contact-email-link">
                   sales@thekpsgroup.com
                 </a>
               </div>
@@ -229,7 +166,7 @@ export default function ContactPage() {
       {/* ── RELATED PAGES ──────────────────────── */}
       <section className="section" aria-label="Related pages">
         <div className="container-inner">
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="growing-related-row">
             <Link href="/offer" className="btn-ghost">
               See the full offer →
             </Link>
