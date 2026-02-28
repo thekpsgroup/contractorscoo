@@ -121,10 +121,10 @@ export default function ProofPage() {
       <section className="section-lg" aria-label="Proof overview">
         <div className="container-inner">
           <span className="eyebrow">Proof</span>
-          <h1 className="text-display" style={{ maxWidth: '720px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display proof-hero-title">
             What Changes When the Operating System Gets Installed
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '560px' }}>
+          <p className="text-subhead proof-hero-subhead">
             Not case studies with client logos. Outcome patterns from real installs —
             the before state, the after state, and the specific operational changes that produced the result.
           </p>
@@ -144,84 +144,54 @@ export default function ProofPage() {
             {/* After-state headline */}
             <h2
               id={`outcome-${i}-heading`}
-              className="text-headline"
-              style={{ maxWidth: '640px', marginBottom: '0.625rem' }}
+              className="text-headline proof-outcome-title"
             >
               {o.after}
             </h2>
 
             {/* Previously: Before label */}
-            <p
-              style={{
-                fontFamily:    'var(--font-geist-mono, monospace)',
-                fontSize:      '0.6875rem',
-                fontWeight:    500,
-                letterSpacing: '0.08em',
-                color:         'var(--color-muted-2)',
-                marginBottom:  '1.5rem',
-              }}
-            >
+            <p className="proof-prev-label">
               Previously:{' '}
-              <span style={{ textDecoration: 'line-through' }}>{o.before}</span>
+              <span className="proof-strikethrough">{o.before}</span>
             </p>
 
             {/* Metric badge */}
-            <div
-              style={{
-                display:         'inline-flex',
-                alignItems:      'center',
-                backgroundColor: 'var(--color-surface)',
-                border:          '1px solid var(--color-line)',
-                borderRadius:    '0.25rem',
-                padding:         '0.5rem 1rem',
-                marginBottom:    '2.5rem',
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize:   '0.8125rem',
-                  fontWeight: 600,
-                  color:      'var(--color-fg)',
-                }}
-              >
+            <div className="proof-metric-badge">
+              <span className="proof-metric-text">
                 {o.metric}
               </span>
             </div>
 
             {/* Before / After narrative */}
-            <div
-              style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem', marginBottom: '2rem' }}
-              className="md:grid-cols-2"
-            >
+            <div className="proof-two-col md:grid-cols-2">
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+                <p className="proof-kicker-muted">
                   Before
                 </p>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+                <p className="proof-body-copy">
                   {o.beforeBody}
                 </p>
               </div>
 
-              <div style={{ borderTop: '1px solid var(--color-line)', paddingTop: '1.5rem' }} className="md:border-t-0 md:border-l md:border-l-line md:pl-8">
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '0.875rem' }}>
+              <div className="proof-after-col md:border-t-0 md:border-l md:border-l-line md:pl-8">
+                <p className="proof-kicker-accent">
                   After
                 </p>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+                <p className="proof-body-copy">
                   {o.afterBody}
                 </p>
               </div>
             </div>
 
             {/* Specific operational changes */}
-            <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.25rem 1.5rem' }}>
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+            <div className="proof-changes-card">
+              <p className="proof-kicker-muted">
                 What specifically changed
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+              <ul className="proof-list">
                 {o.specific.map((item) => (
-                  <li key={item} style={{ display: 'flex', gap: '0.75rem', fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
+                  <li key={item} className="proof-list-item">
+                    <span className="proof-list-bullet">→</span>
                     {item}
                   </li>
                 ))}
@@ -233,22 +203,22 @@ export default function ProofPage() {
 
       {/* ── NOTE ON PROOF ─────────────────────────── */}
       <section className="section" aria-labelledby="proof-note-heading">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <h2 id="proof-note-heading" className="text-headline" style={{ marginBottom: '1.25rem' }}>
+        <div className="container-inner proof-narrow-wrap">
+          <h2 id="proof-note-heading" className="text-headline proof-note-title">
             A note on how we present this.
           </h2>
-          <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+          <p className="proof-note-copy proof-note-copy-tight">
             We do not publish client names, company names, or attributed testimonials.
             Contractors operating at this revenue stage prefer discretion — and that preference is legitimate.
             What we publish instead is the operational pattern: the starting state, the specific install,
             and the measurable change that followed.
           </p>
-          <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+          <p className="proof-note-copy proof-note-copy-loose">
             If you want to speak directly with someone who has been through the install,
             ask on the discovery call. We can arrange a reference conversation
             when the fit is serious on both sides.
           </p>
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
+          <div className="proof-links-row">
             <BookingButton source="proof_note" />
             <Link href="/offer" className="btn-ghost">
               See the full offer →
@@ -262,18 +232,18 @@ export default function ProofPage() {
 
       {/* ── ECOSYSTEM ──────────────────────────── */}
       <section className="section" aria-label="Related services">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+        <div className="container-inner proof-narrow-wrap">
+          <div className="proof-ecosystem-card">
+            <p className="proof-kicker-muted">
               The full foundation
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+            <p className="proof-ecosystem-copy">
               Need margin clarity alongside operations? See{' '}
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" className="proof-ecosystem-link">
                 Contractor Job Costing
               </a>.
               If your fundamentals — entity, accounting, insurance — aren&apos;t set, start with{' '}
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=proof" target="_blank" rel="noopener noreferrer" className="proof-ecosystem-link">
                 Contractor Setup Install
               </a>.
             </p>
@@ -282,18 +252,15 @@ export default function ProofPage() {
       </section>
 
       {/* ── FINAL CTA ────────────────────────────── */}
-      <section
-        aria-labelledby="proof-cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section aria-labelledby="proof-cta-heading" className="proof-final-cta-section">
+        <div className="container-inner proof-final-cta-inner">
           <h2
             id="proof-cta-heading"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '500px', marginBottom: '1rem' }}
+            className="proof-final-cta-title"
           >
             See what the install looks like for your specific operation.
           </h2>
-          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '440px', marginBottom: '2.5rem' }}>
+          <p className="proof-final-cta-copy">
             Book a 30-minute discovery call. We assess your current structure
             and identify the specific gaps — before there&apos;s any commitment on either side.
           </p>

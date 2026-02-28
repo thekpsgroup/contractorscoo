@@ -171,22 +171,22 @@ export default function OfferPage() {
       <section className="section-lg" aria-label="Offer overview">
         <div className="container-inner">
           <span className="eyebrow">The Offer</span>
-          <h1 className="text-display" style={{ maxWidth: '700px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display offer-hero-title">
             The 90-Day COO Install
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '600px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead offer-hero-subhead">
             A fixed-scope operational engagement. Not coaching. Not an ongoing advisory relationship.
             Not a generic framework applied to any business.
             A contractor-specific operating install — built with your team, executed in 90 days,
             owned by your business when we step back.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="offer-actions-row">
             <BookingButton source="offer_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="offer-hero-note">
             30 minutes. We scope your operation and tell you exactly what changes.
           </p>
         </div>
@@ -196,63 +196,49 @@ export default function OfferPage() {
       <section className="section" aria-labelledby="framework-heading">
         <div className="container-inner">
           <span className="eyebrow">The Framework</span>
-          <h2 id="framework-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+          <h2 id="framework-heading" className="text-headline offer-framework-title">
             The Operating Foundation
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '540px', marginBottom: '0.75rem' }}>
+          <p className="text-subhead offer-framework-subhead">
             Five pillars that define how a contractor business operates week to week.
             Each one is designed, installed, and stabilized over 90 days.
           </p>
-          <p style={{ fontSize: '0.875rem', color: 'var(--color-muted-2)', marginBottom: '3rem', maxWidth: '480px' }}>
+          <p className="offer-framework-note">
             Not a generic framework licensed from a methodology. Built around your business,
             your team, and how contractors actually operate.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+          <div className="offer-col-stack">
             {pillars.map((p) => (
               <div
                 key={p.num}
-                style={{
-                  borderTop: '1px solid var(--color-line)',
-                  padding: '1.75rem 0',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr',
-                  gap: '1rem',
-                }}
-                className="md:grid-cols-[2rem_1fr_2fr]"
+                className="offer-pillar-row md:grid-cols-[2rem_1fr_2fr]"
               >
                 {/* Number */}
-                <span style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-accent)',
-                  paddingTop: '0.2rem',
-                }}>
+                <span className="offer-num">
                   {p.num}
                 </span>
 
                 {/* Name + summary */}
                 <div>
-                  <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.25rem', letterSpacing: '-0.01em' }}>
+                  <h3 className="offer-item-title offer-item-title-tight">
                     {p.name}
                   </h3>
-                  <p style={{ fontSize: '0.8125rem', color: 'var(--color-accent)', fontWeight: 500 }}>
+                  <p className="offer-item-summary">
                     {p.summary}
                   </p>
                 </div>
 
                 {/* Detail */}
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="offer-body-copy">
                   {p.detail}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="offer-divider" />
           </div>
 
-          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="offer-links-row">
             <Link href="/contractor-operations-system" className="btn-ghost">
               The five-pillar operations system →
             </Link>
@@ -266,20 +252,17 @@ export default function OfferPage() {
       {/* ── WHO IT'S FOR ─────────────────────────── */}
       <section className="section" aria-labelledby="fit-heading">
         <div className="container-inner">
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="offer-fit-grid md:grid-cols-2">
             {/* Good fit */}
             <div>
               <span className="eyebrow">Built for</span>
-              <h2 id="fit-heading" className="text-headline" style={{ marginBottom: '2rem' }}>
+              <h2 id="fit-heading" className="text-headline offer-fit-title">
                 This is built for contractors who know the problem is internal.
               </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <ul className="offer-list">
                 {goodFit.map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0, marginTop: '0.1rem' }}>✓</span>
+                  <li key={item} className="offer-list-item">
+                    <span className="offer-bullet-check">✓</span>
                     {item}
                   </li>
                 ))}
@@ -287,15 +270,15 @@ export default function OfferPage() {
             </div>
 
             {/* Not a fit */}
-            <div style={{ borderTop: '1px solid var(--color-line)', paddingTop: '2rem' }} className="md:border-t-0 md:border-l md:border-l-line md:pl-10">
-              <span className="eyebrow" style={{ color: 'var(--color-muted-2)' }}>Not a fit</span>
-              <h2 className="text-headline" style={{ marginBottom: '2rem' }}>
+            <div className="offer-notfit md:border-t-0 md:border-l md:border-l-line md:pl-10">
+              <span className="eyebrow offer-eyebrow-muted">Not a fit</span>
+              <h2 className="text-headline offer-fit-title">
                 We&apos;re direct about who this isn&apos;t for.
               </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <ul className="offer-list">
                 {notFit.map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-muted-2)', fontWeight: 700, flexShrink: 0, marginTop: '0.1rem' }}>✕</span>
+                  <li key={item} className="offer-list-item">
+                    <span className="offer-bullet-x">✕</span>
                     {item}
                   </li>
                 ))}
@@ -309,42 +292,33 @@ export default function OfferPage() {
       <section className="section" aria-labelledby="deliverables-heading">
         <div className="container-inner">
           <span className="eyebrow">What You Get</span>
-          <h2 id="deliverables-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '0.625rem' }}>
+          <h2 id="deliverables-heading" className="text-headline offer-deliverables-title">
             Seven deliverables. No ambiguity about what we build.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '480px', marginBottom: '3rem' }}>
+          <p className="text-subhead offer-deliverables-subhead">
             Every item is built with your team — not presented as a document on the last day.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="offer-col-stack">
             {deliverables.map((d) => (
               <div
                 key={d.num}
-                style={{ borderTop: '1px solid var(--color-line)', padding: '1.75rem 0', display: 'flex', gap: '1.5rem' }}
+                className="offer-deliverable-row"
               >
-                <span style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.08em',
-                  color: 'var(--color-accent)',
-                  flexShrink: 0,
-                  paddingTop: '0.2rem',
-                  width: '2rem',
-                }}>
+                <span className="offer-deliverable-num">
                   {d.num}
                 </span>
                 <div>
-                  <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                  <h3 className="offer-item-title">
                     {d.title}
                   </h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                  <p className="offer-body-copy">
                     {d.body}
                   </p>
                 </div>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="offer-divider" />
           </div>
         </div>
       </section>
@@ -353,23 +327,20 @@ export default function OfferPage() {
       <section className="section" aria-labelledby="compare-heading">
         <div className="container-inner">
           <span className="eyebrow">The Comparison</span>
-          <h2 id="compare-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '0.625rem' }}>
+          <h2 id="compare-heading" className="text-headline offer-compare-title">
             Why not just hire an operations manager?
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead offer-compare-subhead">
             It&apos;s the most common alternative. Here&apos;s the direct answer.
           </p>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginBottom: '3rem' }}
-            className="md:grid-cols-3"
-          >
+          <div className="offer-compare-grid md:grid-cols-3">
             {/* Full-time hire */}
-            <div className="card" style={{ borderColor: 'var(--color-line)' }}>
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '1rem' }}>
+            <div className="card offer-compare-card">
+              <p className="offer-kicker-muted offer-kicker-spaced">
                 Full-time ops manager
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <ul className="offer-compare-list">
                 {[
                   '$80K–$140K salary, plus benefits',
                   '60–90 days to find and onboard',
@@ -378,8 +349,8 @@ export default function OfferPage() {
                   'You\'re managing another direct report',
                   'Generalist — not built for contractor operations',
                 ].map((item) => (
-                  <li key={item} style={{ display: 'flex', gap: '0.625rem', fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-muted-2)', flexShrink: 0 }}>–</span>
+                  <li key={item} className="offer-compare-item">
+                    <span className="offer-bullet-muted">–</span>
                     {item}
                   </li>
                 ))}
@@ -387,11 +358,11 @@ export default function OfferPage() {
             </div>
 
             {/* Business coaching / ongoing consulting */}
-            <div className="card" style={{ borderColor: 'var(--color-line)' }}>
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '1rem' }}>
+            <div className="card offer-compare-card">
+              <p className="offer-kicker-muted offer-kicker-spaced">
                 Coaching or ongoing consulting
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <ul className="offer-compare-list">
                 {[
                   'No defined scope or end date',
                   'You pay for presence, not output',
@@ -400,8 +371,8 @@ export default function OfferPage() {
                   'Accountability loops, not structural change',
                   'Engagement continues as long as budget allows',
                 ].map((item) => (
-                  <li key={item} style={{ display: 'flex', gap: '0.625rem', fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-muted-2)', flexShrink: 0 }}>–</span>
+                  <li key={item} className="offer-compare-item">
+                    <span className="offer-bullet-muted">–</span>
                     {item}
                   </li>
                 ))}
@@ -409,17 +380,11 @@ export default function OfferPage() {
             </div>
 
             {/* The install */}
-            <div
-              className="card"
-              style={{
-                borderColor: 'var(--color-accent-dark)',
-                backgroundColor: 'color-mix(in srgb, var(--color-accent-dark) 8%, var(--color-surface))',
-              }}
-            >
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '1rem' }}>
+            <div className="card offer-compare-card-accent">
+              <p className="offer-kicker-accent offer-kicker-spaced">
                 The 90-Day COO Install
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <ul className="offer-compare-list">
                 {[
                   'Fixed fee, fixed scope, defined end date',
                   'Operational from week one — contractor-specific from day one',
@@ -428,8 +393,8 @@ export default function OfferPage() {
                   'No ongoing dependency. No management overhead',
                   'Built exclusively for contractor businesses',
                 ].map((item) => (
-                  <li key={item} style={{ display: 'flex', gap: '0.625rem', fontSize: '0.875rem', color: 'var(--color-fg)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                  <li key={item} className="offer-compare-item offer-compare-item-fg">
+                    <span className="offer-bullet-check-strong">✓</span>
                     {item}
                   </li>
                 ))}
@@ -438,19 +403,11 @@ export default function OfferPage() {
           </div>
 
           {/* Why cadence beats personality */}
-          <div
-            style={{
-              backgroundColor: 'var(--color-surface)',
-              border: '1px solid var(--color-line)',
-              borderRadius: '0.375rem',
-              padding: '1.75rem',
-              maxWidth: '740px',
-            }}
-          >
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+          <div className="offer-why-card">
+            <p className="offer-kicker-muted">
               Why structure beats personality
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75 }}>
+            <p className="offer-why-copy">
               Most operational fixes depend on finding the right person — a strong ops manager, a PM who actually follows through,
               a COO who gets it. But systems built around a person fail when that person leaves, gets promoted, or has a bad month.
               The Operating Foundation builds structure that functions independently of who&apos;s in the seat.
@@ -465,34 +422,31 @@ export default function OfferPage() {
       {/* ── WHAT CHANGES / WHAT REMAINS ─────────── */}
       <section className="section" aria-labelledby="changes-heading">
         <div className="container-inner">
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="offer-fit-grid md:grid-cols-2">
             <div>
               <span className="eyebrow">Inside 90 Days</span>
-              <h2 id="changes-heading" className="text-headline" style={{ marginBottom: '2rem' }}>
+              <h2 id="changes-heading" className="text-headline offer-fit-title">
                 What changes.
               </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <ul className="offer-list">
                 {changes.map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ display: 'inline-block', width: '0.375rem', height: '0.375rem', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0, marginTop: '0.5rem' }} />
+                  <li key={item} className="offer-list-item">
+                    <span className="offer-dot offer-dot-accent" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div style={{ borderTop: '1px solid var(--color-line)', paddingTop: '2rem' }} className="md:border-t-0 md:border-l md:border-l-line md:pl-10">
+            <div className="offer-notfit md:border-t-0 md:border-l md:border-l-line md:pl-10">
               <span className="eyebrow">After 90 Days</span>
-              <h2 className="text-headline" style={{ marginBottom: '2rem' }}>
+              <h2 className="text-headline offer-fit-title">
                 What remains.
               </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <ul className="offer-list">
                 {remains.map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ display: 'inline-block', width: '0.375rem', height: '0.375rem', borderRadius: '50%', backgroundColor: 'var(--color-accent-dark)', flexShrink: 0, marginTop: '0.5rem' }} />
+                  <li key={item} className="offer-list-item">
+                    <span className="offer-dot offer-dot-dark" />
                     {item}
                   </li>
                 ))}
@@ -506,40 +460,25 @@ export default function OfferPage() {
       <section className="section" aria-labelledby="disorder-heading">
         <div className="container-inner">
           <span className="eyebrow">The Real Cost</span>
-          <h2 id="disorder-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+          <h2 id="disorder-heading" className="text-headline offer-disorder-title">
             What disorder costs your business every month.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '560px', marginBottom: '3rem' }}>
+          <p className="text-subhead offer-disorder-subhead">
             Most contractors compare the engagement fee to the invoice.
             The right comparison is what running without structure costs — month over month, before anything changes.
           </p>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', marginBottom: '2.5rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="offer-cost-grid md:grid-cols-2">
             {/* Owner bottleneck tax */}
             <div className="card">
-              <p
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-accent)',
-                  marginBottom: '0.75rem',
-                }}
-              >
-                Owner bottleneck tax
-              </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+              <p className="offer-kicker-accent">Owner bottleneck tax</p>
+              <p className="offer-body-copy offer-body-copy-tight">
                 At the $2M–$8M stage, most owners spend 10–15 hours per week routing decisions that
                 should be resolved at the field or office level. Material approvals, scheduling calls,
                 subcontractor disputes, customer escalations — everything flows through the owner because
                 there is no written threshold for what doesn&apos;t.
               </p>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+              <p className="offer-emphasis-copy">
                 At a conservative $150/hr effective owner rate, that&apos;s $78K–$117K/year in misapplied labor.
                 The real cost is higher — because every hour spent approving a material order is an hour not
                 spent on estimating, client development, or actual strategy.
@@ -548,26 +487,14 @@ export default function OfferPage() {
 
             {/* Margin leakage */}
             <div className="card">
-              <p
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-accent)',
-                  marginBottom: '0.75rem',
-                }}
-              >
-                Margin leakage
-              </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+              <p className="offer-kicker-accent">Margin leakage</p>
+              <p className="offer-body-copy offer-body-copy-tight">
                 Without a live scoreboard reviewed weekly, contractors typically see job costs 30–60 days
                 after the fact — after the job is already closed and the margin is already gone.
                 Labor overruns, unbilled change orders, and subcontractor invoice gaps go undetected until
                 month-end accounting surfaces them as a surprise.
               </p>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+              <p className="offer-emphasis-copy">
                 On a $3M contractor, 3% margin leakage = $90,000/year. Most contractors doing $2M–$8M
                 without real-time job cost visibility are leaving 2–5% on the table. Not from bad estimating.
                 From no visibility mid-job.
@@ -576,26 +503,14 @@ export default function OfferPage() {
 
             {/* Follow-through gap */}
             <div className="card">
-              <p
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-accent)',
-                  marginBottom: '0.75rem',
-                }}
-              >
-                Follow-through gap
-              </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+              <p className="offer-kicker-accent">Follow-through gap</p>
+              <p className="offer-body-copy offer-body-copy-tight">
                 Decisions get made in Monday&apos;s all-hands and don&apos;t reach the field until Wednesday —
                 if they reach it at all. Change orders get verbal approval and never get documented.
                 Subcontractor scope changes get handled by whoever answers the phone.
                 Every missing follow-through is a rework event, a collections delay, or a client dispute in formation.
               </p>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+              <p className="offer-emphasis-copy">
                 Each untracked change order = $500–$3,000 in margin exposure.
                 At two per week, that&apos;s $52K–$312K in annual margin at risk from a single operational gap.
               </p>
@@ -603,26 +518,14 @@ export default function OfferPage() {
 
             {/* Execution cost of owner departure */}
             <div className="card">
-              <p
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-accent)',
-                  marginBottom: '0.75rem',
-                }}
-              >
-                Business fragility
-              </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+              <p className="offer-kicker-accent">Business fragility</p>
+              <p className="offer-body-copy offer-body-copy-tight">
                 When the system lives in the owner&apos;s head, any disruption to the owner — illness,
                 vacation, a family emergency, an out-of-town project — disrupts the entire operation.
                 Field leads can&apos;t make decisions. Office staff can&apos;t resolve disputes.
                 The business doesn&apos;t slow down. It stops.
               </p>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-fg)', fontWeight: 600 }}>
+              <p className="offer-emphasis-copy">
                 A business that requires the owner present to function is not an asset.
                 It&apos;s an obligation. Every week without a written operating system is a week it stays that way.
               </p>
@@ -630,35 +533,17 @@ export default function OfferPage() {
           </div>
 
           {/* The ROI summary */}
-          <div
-            style={{
-              backgroundColor: 'color-mix(in srgb, var(--color-accent-dark) 8%, var(--color-surface))',
-              border: '1px solid color-mix(in srgb, var(--color-accent-dark) 25%, var(--color-line))',
-              borderRadius: '0.375rem',
-              padding: '1.75rem',
-              maxWidth: '740px',
-            }}
-          >
-            <p
-              style={{
-                fontFamily: 'var(--font-geist-mono, monospace)',
-                fontSize: '0.6875rem',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'var(--color-accent)',
-                marginBottom: '0.875rem',
-              }}
-            >
+          <div className="offer-math-card">
+            <p className="offer-kicker-accent offer-kicker-spaced">
               The math
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75, marginBottom: '0.75rem' }}>
+            <p className="offer-why-copy offer-body-copy-tight">
               For a contractor doing $3M–$5M with no live scoreboard, no decision threshold, and a weekly
               leadership session that produces no closed items: conservative disorder cost runs $150K–$300K/year
               in combined owner time, margin leakage, and rework — before you account for the revenue that
               isn&apos;t being pursued because the owner has no capacity to sell.
             </p>
-            <p style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-fg)', lineHeight: 1.5 }}>
+            <p className="offer-math-emphasis">
               The engagement fee is typically one to two months of what the disorder costs.
               That&apos;s the comparison. Not against a consulting invoice. Against what continues if nothing changes.
             </p>
@@ -670,28 +555,28 @@ export default function OfferPage() {
       <section className="section" aria-labelledby="pricing-heading">
         <div className="container-inner">
           <span className="eyebrow">Investment</span>
-          <h2 id="pricing-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '0.75rem' }}>
+          <h2 id="pricing-heading" className="text-headline offer-pricing-title">
             Priced for the cost of not having structure.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '560px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead offer-pricing-subhead">
             The 90-Day Install is positioned in the range most contractors at this revenue stage consider
             one to two months of operations overhead. The comparison point is not the service fee —
             it&apos;s what owner bottleneck, margin leakage, and execution gaps cost monthly when nothing changes.
           </p>
 
-          <div className="card" style={{ maxWidth: '540px', marginBottom: '2rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '1rem' }}>
+          <div className="card offer-pricing-card">
+            <p className="offer-kicker-muted offer-kicker-spaced">
               How we scope + price
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <ul className="offer-compare-list">
               {[
                 'We scope before we price — team size and complexity affect the engagement',
                 'Fixed-scope structure means no scope creep and no cost ambiguity mid-engagement',
                 'No retainer deposit until we\'re aligned on scope and expected outcomes',
                 'Pricing is covered on the discovery call — not published because context matters',
               ].map((item) => (
-                <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                  <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
+                <li key={item} className="offer-list-item">
+                  <span className="offer-bullet-check-strong">→</span>
                   {item}
                 </li>
               ))}
@@ -699,7 +584,7 @@ export default function OfferPage() {
           </div>
 
           <BookingButton label="Start with a Discovery Call" source="offer_pricing" />
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="offer-hero-note">
             30 minutes. We assess your operation and tell you exactly what changes — and what it costs.
           </p>
         </div>
@@ -707,18 +592,18 @@ export default function OfferPage() {
 
       {/* ── ECOSYSTEM ──────────────────────────── */}
       <section className="section" aria-label="Related services">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+        <div className="container-inner proof-narrow-wrap">
+          <div className="proof-ecosystem-card">
+            <p className="proof-kicker-muted">
               The full foundation
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+            <p className="proof-ecosystem-copy">
               Need margin clarity before operations? Start with{' '}
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" className="proof-ecosystem-link">
                 Contractor Job Costing
               </a>.
               If your fundamentals — entity, accounting, insurance — aren&apos;t set, start with{' '}
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=offer" target="_blank" rel="noopener noreferrer" className="proof-ecosystem-link">
                 Contractor Setup Install
               </a>.
             </p>
@@ -727,18 +612,15 @@ export default function OfferPage() {
       </section>
 
       {/* ── FINAL CTA ────────────────────────────── */}
-      <section
-        aria-labelledby="offer-cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section aria-labelledby="offer-cta-heading" className="proof-final-cta-section">
+        <div className="container-inner proof-final-cta-inner">
           <h2
             id="offer-cta-heading"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '520px', marginBottom: '1rem' }}
+            className="offer-final-cta-title"
           >
             Book a call. Get a straight answer on both sides.
           </h2>
-          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '460px', marginBottom: '2.5rem' }}>
+          <p className="offer-final-cta-copy">
             We assess your current operating structure on the first call and tell you
             what the install involves — and whether it&apos;s the right fit for where you are.
           </p>

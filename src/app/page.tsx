@@ -210,21 +210,21 @@ export default function HomePage() {
       <section className="section-lg" aria-label="Introduction">
         <div className="container-inner">
           <span className="eyebrow">For contractors doing $1M–$10M · A service of The KPS Group</span>
-          <h1 className="text-display" style={{ maxWidth: '780px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display home-hero-title">
             Fractional COO for Contractors
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '560px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead home-hero-subhead">
             Most contractors past $2M are still running operations from their own head.
             The fix isn&apos;t software or a coach.
             We install the operating structure your business needs — in 90 days.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="home-actions-row">
             <BookingButton source="home_hero" />
             <Link href="/offer" className="btn-ghost">
               See the 90-Day Install →
             </Link>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="home-hero-note">
             30 minutes. We assess your operation and give you a straight answer.
           </p>
         </div>
@@ -234,55 +234,33 @@ export default function HomePage() {
       <section className="section" aria-labelledby="problem-heading">
         <div className="container-inner">
           <span className="eyebrow">The Plateau</span>
-          <h2 id="problem-heading" className="text-headline" style={{ maxWidth: '620px', marginBottom: '0.625rem' }}>
+          <h2 id="problem-heading" className="text-headline home-problem-title">
             The same four problems show up in every contractor business past $2M.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '420px', marginBottom: '3rem' }}>
+          <p className="text-subhead home-problem-subhead">
             Not morale problems. Not people problems. Structural ones.
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              borderTop: '1px solid var(--color-line)',
-            }}
-            className="md:grid-cols-2"
-          >
+          <div className="home-grid-lines md:grid-cols-2">
             {problems.map((p, i) => (
               <div
                 key={p.num}
-                style={{
-                  padding: '1.75rem 0',
-                  borderBottom: '1px solid var(--color-line)',
-                  paddingRight: i % 2 === 0 ? '2.5rem' : '0',
-                  paddingLeft: i % 2 === 1 ? '2.5rem' : '0',
-                }}
-                className={i % 2 === 1 ? 'md:border-l md:border-l-line' : ''}
+                className={`home-grid-item ${i % 2 === 1 ? 'md:border-l md:border-l-line home-grid-item-right' : 'home-grid-item-left'}`}
               >
-                <p
-                  style={{
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    fontSize: '0.6875rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.1em',
-                    color: 'var(--color-accent)',
-                    marginBottom: '0.625rem',
-                  }}
-                >
+                <p className="home-grid-num">
                   {p.num}
                 </p>
-                <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                <h3 className="home-card-title">
                   {p.title}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="home-card-copy">
                   {p.body}
                 </p>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="home-links-row">
             <Link href="/owner-bottleneck" className="btn-ghost">
               How we fix the owner bottleneck →
             </Link>
@@ -297,49 +275,25 @@ export default function HomePage() {
       <section className="section" aria-labelledby="install-heading">
         <div className="container-inner">
           <span className="eyebrow">The Install</span>
-          <h2 id="install-heading" className="text-headline" style={{ maxWidth: '620px', marginBottom: '0.625rem' }}>
+          <h2 id="install-heading" className="text-headline home-install-title">
             Six operating systems built into your business in 90 days.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead home-install-subhead">
             Not a framework license. Not a coaching program. An operational structure built with your team and owned by your business when we step back.
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              borderTop: '1px solid var(--color-line)',
-            }}
-            className="md:grid-cols-2"
-          >
+          <div className="home-grid-lines md:grid-cols-2">
             {installs.map((item, i) => (
               <div
                 key={item.title}
-                style={{
-                  padding: '1.75rem 0',
-                  borderBottom: '1px solid var(--color-line)',
-                  display: 'flex',
-                  gap: '1rem',
-                  paddingRight: i % 2 === 0 ? '2.5rem' : '0',
-                  paddingLeft: i % 2 === 1 ? '2.5rem' : '0',
-                }}
-                className={i % 2 === 1 ? 'md:border-l md:border-l-line' : ''}
+                className={`home-install-item ${i % 2 === 1 ? 'md:border-l md:border-l-line home-grid-item-right' : 'home-grid-item-left'}`}
               >
-                <div
-                  style={{
-                    width: '0.25rem',
-                    flexShrink: 0,
-                    backgroundColor: 'var(--color-accent-dark)',
-                    borderRadius: '2px',
-                    marginTop: '0.25rem',
-                    alignSelf: 'stretch',
-                  }}
-                />
+                <div className="home-install-bar" />
                 <div>
-                  <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                  <h3 className="home-card-title">
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                  <p className="home-card-copy">
                     {item.body}
                   </p>
                 </div>
@@ -347,7 +301,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="home-links-row">
             <Link href="/offer" className="btn-ghost">
               Full offer details →
             </Link>
@@ -362,24 +316,24 @@ export default function HomePage() {
       <section className="section" aria-labelledby="timeline-heading">
         <div className="container-inner">
           <span className="eyebrow">The Timeline</span>
-          <h2 id="timeline-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '0.625rem' }}>
+          <h2 id="timeline-heading" className="text-headline home-timeline-title">
             The 90-Day COO Install
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '480px', marginBottom: '3rem' }}>
+          <p className="text-subhead home-timeline-subhead">
             Three phases. Fixed scope. Designed to hold after we step back.
           </p>
 
-          <div style={{ maxWidth: '640px' }}>
+          <div className="fcoo-phase-wrap">
             <div className="phase-item">
               <div className="phase-number">01</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="fcoo-phase-kicker">
                   Days 1–30
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="fcoo-phase-title">
                   Diagnose + Design
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-phase-copy">
                   We audit your current operating structure — how decisions get made, how jobs get owned, how field and office communicate, and where accountability breaks down. You get a written install plan specific to your business, your team size, and your stage.
                 </p>
               </div>
@@ -388,28 +342,28 @@ export default function HomePage() {
             <div className="phase-item">
               <div className="phase-number">02</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="fcoo-phase-kicker">
                   Days 31–60
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="fcoo-phase-title">
                   Install Cadence + Accountability
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-phase-copy">
                   We run your first leadership sessions, activate the ownership matrix, install the scoreboard, and build your decision threshold. The system goes live with us in the room — so your team learns it by running it, not by reading about it.
                 </p>
               </div>
             </div>
 
-            <div className="phase-item" style={{ paddingBottom: 0 }}>
+            <div className="phase-item fcoo-phase-last">
               <div className="phase-number">03</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="fcoo-phase-kicker">
                   Days 61–90
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="fcoo-phase-title">
                   Leadership Coaching + Stabilization
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-phase-copy">
                   We coach your team through the operating model, close the gaps that surface in live operation, and lock in the rhythm. By day 90, the system runs on its own. That&apos;s the only acceptable exit condition.
                 </p>
               </div>
@@ -422,30 +376,27 @@ export default function HomePage() {
       <section className="section" aria-labelledby="outcomes-heading">
         <div className="container-inner">
           <span className="eyebrow">Proof</span>
-          <h2 id="outcomes-heading" className="text-headline" style={{ maxWidth: '540px', marginBottom: '0.625rem' }}>
+          <h2 id="outcomes-heading" className="text-headline home-outcomes-title">
             What actually changes in the first 90 days.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '480px', marginBottom: '3rem' }}>
+          <p className="text-subhead home-outcomes-subhead">
             Operational shifts with specific metrics — not outcomes from a generic business framework.
           </p>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="fcoo-card-grid md:grid-cols-2">
             {outcomes.map((o) => (
               <div key={o.result} className="card">
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                <h3 className="home-outcome-title">
                   {o.result}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="home-card-copy">
                   {o.body}
                 </p>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div className="fcoo-proof-link-wrap">
             <Link href="/proof" className="btn-ghost">
               Read detailed outcome examples →
             </Link>
@@ -456,52 +407,26 @@ export default function HomePage() {
       {/* ── SECTION 4B: LEAD MAGNET ─────────────── */}
       <section className="section" aria-labelledby="resource-heading">
         <div className="container-inner">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              gap: '3rem',
-              alignItems: 'center',
-            }}
-            className="md:grid-cols-2"
-          >
+          <div className="home-resource-grid md:grid-cols-2">
             {/* Left: context */}
             <div>
               <span className="eyebrow">Free Resource</span>
-              <h2 id="resource-heading" className="text-headline" style={{ marginBottom: '0.875rem' }}>
+              <h2 id="resource-heading" className="text-headline home-resource-title">
                 The Monday Agenda
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+              <p className="home-resource-copy">
                 The fixed 8-point weekly leadership session format we install into every contractor engagement.
                 Runs in under 60 minutes. Every open item closes with a named owner before the session ends.
               </p>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: '0 0 1.5rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.625rem',
-                }}
-              >
+              <ul className="home-resource-list">
                 {[
                   'Safety check, scoreboard review, open items, job status',
                   'Office update, escalations, next-week priorities, log close',
                   'Includes timing guide and the 5 session rules that make it hold',
                   'PDF version formatted to print and use this Monday',
                 ].map((item) => (
-                  <li
-                    key={item}
-                    style={{
-                      display: 'flex',
-                      gap: '0.625rem',
-                      fontSize: '0.875rem',
-                      color: 'var(--color-muted)',
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
+                  <li key={item} className="home-resource-item">
+                    <span className="home-resource-bullet">→</span>
                     {item}
                   </li>
                 ))}
@@ -512,28 +437,11 @@ export default function HomePage() {
             </div>
 
             {/* Right: form */}
-            <div
-              style={{
-                backgroundColor: 'var(--color-surface)',
-                border: '1px solid var(--color-line)',
-                borderRadius: '0.375rem',
-                padding: '1.75rem',
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-muted-2)',
-                  marginBottom: '0.875rem',
-                }}
-              >
+            <div className="home-resource-card">
+              <p className="home-resource-card-kicker">
                 Get the PDF Version
               </p>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+              <p className="home-resource-card-copy">
                 Enter your work email and we&apos;ll send you the formatted, print-ready PDF —
                 plus the open-item log template.
               </p>
@@ -547,103 +455,84 @@ export default function HomePage() {
       <section className="section" aria-labelledby="faq-heading">
         <div className="container-inner">
           <span className="eyebrow">FAQ</span>
-          <h2 id="faq-heading" className="text-headline" style={{ maxWidth: '480px', marginBottom: '3rem' }}>
+          <h2 id="faq-heading" className="text-headline home-faq-title">
             Questions worth asking before you book.
           </h2>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="fcoo-faq-wrap">
             {faqs.map((faq, i) => (
-              <div key={i} style={{ borderTop: '1px solid var(--color-line)', padding: '1.5rem 0' }}>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+              <div key={i} className="fcoo-faq-item">
+                <h3 className="fcoo-faq-question">
                   {faq.q}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-faq-answer">
                   {faq.a}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="fcoo-divider" />
           </div>
         </div>
       </section>
 
       {/* ── ECOSYSTEM POSITIONING ────────────────────────────────── */}
-      <section aria-label="Service progression" style={{ backgroundColor: 'var(--color-surface)', borderBottom: '1px solid var(--color-line)' }}>
-        <div className="container-inner" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
-          <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 800, marginBottom: '3rem', maxWidth: '600px' }}>
+      <section aria-label="Service progression" className="home-ecosystem-section">
+        <div className="container-inner home-ecosystem-inner">
+          <h2 className="home-ecosystem-title">
             Already have your foundation and margins figured out?
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div className="home-ecosystem-grid">
             <div>
-              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+              <h3 className="home-ecosystem-stage">
                 Stage 1: Foundation
               </h3>
-              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+              <p className="home-ecosystem-copy">
                 <strong>Contractor Setup Install</strong> gets owner-led contractors properly structured. Entity, banking, books, and operating rhythm in 21 days.
               </p>
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline', fontSize: '0.875rem', fontWeight: 600 }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="home-ecosystem-link">
                 Visit ContractorSetup →
               </a>
             </div>
             <div>
-              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+              <h3 className="home-ecosystem-stage">
                 Stage 2: Margin Clarity
               </h3>
-              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+              <p className="home-ecosystem-copy">
                 <strong>Contractor Job Costing</strong> installs job-level profitability and fixes cash flow. Built for contractors doing $750K–$8M who need to stop guessing.
               </p>
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline', fontSize: '0.875rem', fontWeight: 600 }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="home-ecosystem-link">
                 Visit Contractor Job Costing →
               </a>
             </div>
             <div>
-              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+              <h3 className="home-ecosystem-stage">
                 Stage 3: Operations Leadership
               </h3>
-              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+              <p className="home-ecosystem-copy">
                 <strong>Contractors COO</strong> is the final piece: the execution infrastructure contractors at $1M–$10M actually need to scale past owner-operator operations.
               </p>
-              <span style={{ color: 'var(--color-muted)', fontSize: '0.875rem', fontWeight: 600 }}>You are here →</span>
+              <span className="home-ecosystem-current">You are here →</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── FINAL CTA BAND ───────────────────────── */}
-      <section
-        aria-labelledby="cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section aria-labelledby="cta-heading" className="home-final-cta-section">
+        <div className="container-inner home-final-cta-inner">
           <h2
             id="cta-heading"
-            style={{
-              fontSize: 'clamp(1.75rem, 3.5vw, 2.625rem)',
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: '-0.02em',
-              color: '#ffffff',
-              maxWidth: '600px',
-              marginBottom: '1rem',
-            }}
+            className="home-final-cta-title"
           >
             Ready to stop being the only thing holding your operation together?
           </h2>
-          <p
-            style={{
-              fontSize: '1.0625rem',
-              color: 'rgba(255,255,255,0.72)',
-              lineHeight: 1.6,
-              maxWidth: '480px',
-              marginBottom: '2.5rem',
-            }}
-          >
+          <p className="home-final-cta-copy">
             Book a 30-minute discovery call. We&apos;ll map your current operating structure,
             identify the specific gaps, and tell you exactly what the install involves —
             or whether it&apos;s not the right fit.
           </p>
           <BookingButton label="Book a Call" source="home_footer_cta" />
-          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
+          <p className="home-final-cta-note">
             Straight assessment. No obligation. No boilerplate sales process.
           </p>
         </div>
