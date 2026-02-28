@@ -7,6 +7,7 @@
    Family: contractorjobcosting.com (amber → blue swap)
 ───────────────────────────────────────── */
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme {
   /* Canvas + Surfaces */
   --color-canvas:    #0a0a0a;
@@ -2357,8 +2358,8 @@ body {
   }
 
   .ops-mid-cta-card {
-    background-color: color-mix(in srgb, var(--color-accent-dark) 8%, var(--color-surface));
-    border: 1px solid color-mix(in srgb, var(--color-accent-dark) 25%, var(--color-line));
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-line);
     border-radius: 0.375rem;
     padding: 1.75rem;
     text-align: center;
@@ -2480,7 +2481,7 @@ body {
   }
 
   .about-service-section {
-    paddingTop: 4rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
   }
 
