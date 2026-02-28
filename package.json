@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "test": "node -e \"console.log('No automated tests configured')\""
   },
   "dependencies": {
     "next": "16.1.6",

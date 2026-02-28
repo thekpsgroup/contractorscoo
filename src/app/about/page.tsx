@@ -318,7 +318,7 @@ export default function AboutPage() {
                 Stage 2: Financial Clarity
               </h3>
               <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
-                <strong>Contractor Job Costing</strong> gives you real margin numbers and fixes cash flow problems. Built for $750K–$8M contractors who need to know what's profitable.
+                <strong>Contractor Job Costing</strong> gives you real margin numbers and fixes cash flow problems. Built for $750K–$8M contractors who need to know what&apos;s profitable.
               </p>
               <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>
                 Learn more →
