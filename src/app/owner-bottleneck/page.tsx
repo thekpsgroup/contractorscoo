@@ -223,21 +223,21 @@ export default function OwnerBottleneckPage() {
       <section className="section-lg" aria-label="Owner bottleneck overview">
         <div className="container-inner">
           <span className="eyebrow">Owner Delegation · The Bottleneck Fix</span>
-          <h1 className="text-display" style={{ maxWidth: '780px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display bottleneck-hero-title">
             Your Team Can Run the Business. They Just Don&apos;t Have Permission Yet.
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '580px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead bottleneck-hero-subhead">
             Every decision routes through you — not because your team is weak, but because authority
             was never defined. The fix is not hiring. It&apos;s installing a delegation system
             that lets you step out of day-to-day operations and replace yourself as the bottleneck.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="bottleneck-actions-row">
             <BookingButton label="Book a Discovery Call" source="bottleneck_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="bottleneck-hero-note">
             30 minutes. We assess your decision flow and show you what gets off your desk.
           </p>
         </div>
@@ -247,36 +247,23 @@ export default function OwnerBottleneckPage() {
       <section className="section" aria-labelledby="symptoms-heading">
         <div className="container-inner">
           <span className="eyebrow">The Pattern</span>
-          <h2 id="symptoms-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+          <h2 id="symptoms-heading" className="text-headline bottleneck-section-title">
             Six signs the business runs through you — not under you.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead bottleneck-section-subhead">
             Not personality problems. Structural ones. Every one has a fix.
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              borderTop: '1px solid var(--color-line)',
-            }}
-            className="md:grid-cols-2"
-          >
+          <div className="bottleneck-symptoms-grid md:grid-cols-2">
             {symptoms.map((s, i) => (
               <div
                 key={s.title}
-                style={{
-                  padding: '1.75rem 0',
-                  borderBottom: '1px solid var(--color-line)',
-                  paddingRight: i % 2 === 0 ? '2.5rem' : '0',
-                  paddingLeft: i % 2 === 1 ? '2.5rem' : '0',
-                }}
-                className={i % 2 === 1 ? 'md:border-l md:border-l-line' : ''}
+                className={`bottleneck-symptom-item ${i % 2 === 1 ? 'md:border-l md:border-l-line md:pl-10' : 'md:pr-10'}`}
               >
-                <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                <h3 className="bottleneck-item-title">
                   {s.title}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="bottleneck-body-copy">
                   {s.body}
                 </p>
               </div>
@@ -289,29 +276,26 @@ export default function OwnerBottleneckPage() {
       <section className="section" aria-labelledby="cost-heading">
         <div className="container-inner">
           <span className="eyebrow">The Real Cost</span>
-          <h2 id="cost-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '2rem' }}>
+          <h2 id="cost-heading" className="text-headline bottleneck-cost-title">
             What the owner bottleneck costs every month.
           </h2>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', maxWidth: '740px' }}
-            className="md:grid-cols-2"
-          >
+          <div className="bottleneck-cost-grid md:grid-cols-2">
             <div className="card">
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+              <p className="offer-kicker-accent">
                 Owner time misapplied
               </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+              <p className="bottleneck-body-copy">
                 10–15 hours per week routing decisions that should resolve at the field or office level.
                 At $150/hr effective rate: $78K–$117K/year in misapplied owner labor. The real cost is higher — because
                 every hour spent approving a material order is an hour not spent estimating, selling, or directing.
               </p>
             </div>
             <div className="card">
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+              <p className="offer-kicker-accent">
                 Business fragility
               </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+              <p className="bottleneck-body-copy">
                 When the system lives in the owner&apos;s head, any disruption — illness, vacation, a family emergency — disrupts
                 the entire operation. Field leads can&apos;t decide. Office staff can&apos;t resolve.
                 A business that requires the owner present to function is not an asset. It&apos;s an obligation.
@@ -325,33 +309,33 @@ export default function OwnerBottleneckPage() {
       <section className="section" aria-labelledby="install-heading">
         <div className="container-inner">
           <span className="eyebrow">The Install</span>
-          <h2 id="install-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+          <h2 id="install-heading" className="text-headline bottleneck-section-title">
             Six deliverables that let you replace yourself as the operating bottleneck.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead bottleneck-section-subhead">
             Not a delegation framework you read. A working system your team runs — installed in 90 days.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+          <div className="bottleneck-deliverables-stack">
             {deliverables.map((d) => (
-              <div key={d.num} style={{ borderTop: '1px solid var(--color-line)', padding: '1.75rem 0', display: 'flex', gap: '1.5rem' }}>
-                <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', color: 'var(--color-accent)', flexShrink: 0, paddingTop: '0.2rem', width: '2rem' }}>
+              <div key={d.num} className="bottleneck-deliverable-row">
+                <span className="bottleneck-deliverable-num">
                   {d.num}
                 </span>
                 <div>
-                  <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                  <h3 className="bottleneck-item-title">
                     {d.title}
                   </h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                  <p className="bottleneck-body-copy">
                     {d.body}
                   </p>
                 </div>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="bottleneck-divider" />
           </div>
 
-          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="bottleneck-links-row">
             <Link href="/offer" className="btn-ghost">
               See the full 90-day offer →
             </Link>
@@ -366,21 +350,21 @@ export default function OwnerBottleneckPage() {
       <section className="section" aria-labelledby="how-heading">
         <div className="container-inner">
           <span className="eyebrow">The Timeline</span>
-          <h2 id="how-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <h2 id="how-heading" className="text-headline bottleneck-timeline-title">
             Three phases. 90 days. You step out of the day-to-day.
           </h2>
 
-          <div style={{ maxWidth: '640px' }}>
+          <div className="bottleneck-timeline-wrap">
             <div className="phase-item">
               <div className="phase-number">01</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="bottleneck-phase-label">
                   Days 1–30
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="bottleneck-phase-title">
                   Map the Bottleneck
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="bottleneck-phase-copy">
                   We audit your current decision flow — where decisions stall, which ones should never reach you, and what authority your team already has but isn&apos;t using. You get a written install plan with specific thresholds.
                 </p>
               </div>
@@ -389,28 +373,28 @@ export default function OwnerBottleneckPage() {
             <div className="phase-item">
               <div className="phase-number">02</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="bottleneck-phase-label">
                   Days 31–60
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="bottleneck-phase-title">
                   Install Ownership + Thresholds
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="bottleneck-phase-copy">
                   We activate the ownership matrix, install decision standards, and run your first structured leadership sessions. Your team starts making decisions at the threshold level — with you in the room but not at the wheel.
                 </p>
               </div>
             </div>
 
-            <div className="phase-item" style={{ paddingBottom: 0 }}>
+            <div className="phase-item phase-item-last">
               <div className="phase-number">03</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="bottleneck-phase-label">
                   Days 61–90
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="bottleneck-phase-title">
                   Stabilize + Step Back
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="bottleneck-phase-copy">
                   We coach your team through live operation, adjust thresholds based on 30 days of data, and lock in the rhythm. By day 90, you&apos;ve replaced yourself in the day-to-day. The business runs on cadence — not on your availability. That&apos;s the exit condition.
                 </p>
               </div>
@@ -423,14 +407,11 @@ export default function OwnerBottleneckPage() {
       <section className="section" aria-labelledby="proof-heading">
         <div className="container-inner">
           <span className="eyebrow">Outcomes</span>
-          <h2 id="proof-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '3rem' }}>
+          <h2 id="proof-heading" className="text-headline bottleneck-proof-title">
             What delegation looks like after 90 days.
           </h2>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="bottleneck-proof-grid md:grid-cols-2">
             {[
               { metric: '~40% of owner\'s day reclaimed', result: 'Decision thresholds installed. Field leads resolve issues independently. The owner stops being the first phone call for operational decisions.' },
               { metric: '2-week unassisted operation', result: 'Owner traveled internationally. Team ran the business from the fixed agenda. Zero escalations. Zero fires on return.' },
@@ -438,17 +419,17 @@ export default function OwnerBottleneckPage() {
               { metric: '+6 margin points in one quarter', result: 'Scoreboard made job profitability visible weekly. Two underperforming service lines identified and restructured.' },
             ].map((o) => (
               <div key={o.metric} className="card">
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.8125rem', fontWeight: 600, color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+                <p className="bottleneck-outcome-metric">
                   {o.metric}
                 </p>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="bottleneck-body-copy">
                   {o.result}
                 </p>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div className="bottleneck-proof-link">
             <Link href="/proof" className="btn-ghost">
               Read detailed outcome examples →
             </Link>
@@ -460,41 +441,41 @@ export default function OwnerBottleneckPage() {
       <section className="section" aria-labelledby="faq-heading">
         <div className="container-inner">
           <span className="eyebrow">FAQ</span>
-          <h2 id="faq-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <h2 id="faq-heading" className="text-headline bottleneck-faq-title">
             Questions about breaking the owner bottleneck.
           </h2>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="bottleneck-faq-wrap">
             {faqs.map((faq, i) => (
-              <div key={i} style={{ borderTop: '1px solid var(--color-line)', padding: '1.5rem 0' }}>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+              <div key={i} className="bottleneck-faq-item">
+                <h3 className="bottleneck-faq-question">
                   {faq.q}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="bottleneck-faq-answer">
                   {faq.a}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="bottleneck-divider" />
           </div>
         </div>
       </section>
 
       {/* ── ECOSYSTEM ──────────────────────────── */}
       <section className="section" aria-label="Related services">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+        <div className="container-inner bottleneck-ecosystem-inner">
+          <div className="bottleneck-ecosystem-card">
+            <p className="bottleneck-ecosystem-kicker">
               The full foundation
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+            <p className="bottleneck-ecosystem-copy">
               If you need margin clarity before fixing delegation,
               start with{' '}
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="bottleneck-ecosystem-link">
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="bottleneck-ecosystem-link">
                 Contractor Setup Install
               </a>.
             </p>
@@ -503,23 +484,17 @@ export default function OwnerBottleneckPage() {
       </section>
 
       {/* ── FINAL CTA ──────────────────────────── */}
-      <section
-        aria-labelledby="cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-          <h2
-            id="cta-heading"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '560px', marginBottom: '1rem' }}
-          >
+      <section aria-labelledby="cta-heading" className="bottleneck-final-cta-section">
+        <div className="container-inner bottleneck-final-cta-inner">
+          <h2 id="cta-heading" className="bottleneck-final-cta-title">
             Replace yourself as the bottleneck. Here&apos;s how.
           </h2>
-          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '460px', marginBottom: '2.5rem' }}>
+          <p className="bottleneck-final-cta-copy">
             30-minute discovery call. We assess your current decision flow and show you
             exactly what the install changes — and whether it&apos;s the right fit.
           </p>
           <BookingButton label="Book a Discovery Call" source="bottleneck_footer_cta" />
-          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
+          <p className="bottleneck-final-cta-note">
             Straight assessment. No obligation. No boilerplate sales process.
           </p>
         </div>
