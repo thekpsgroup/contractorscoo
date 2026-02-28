@@ -175,21 +175,21 @@ export default function ContractorOperationsSystemPage() {
       <section className="section-lg" aria-label="Operations system overview">
         <div className="container-inner">
           <span className="eyebrow">The Operating Foundation · 90-Day Install</span>
-          <h1 className="text-display" style={{ maxWidth: '780px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display growing-hero-title">
             The Operations System Your Contractor Business Is Missing
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '580px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead growing-hero-subhead">
             Revenue grew. The operating structure didn&apos;t.
             The fix is not more people or more software.
             It&apos;s a five-pillar operating system built for how contractors actually run — installed in 90 days.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="growing-actions-row">
             <BookingButton label="Book a Discovery Call" source="ops_system_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="growing-hero-note">
             30 minutes. We assess your current structure and tell you what the install involves.
           </p>
         </div>
@@ -199,34 +199,34 @@ export default function ContractorOperationsSystemPage() {
       <section className="section" aria-labelledby="pillars-heading">
         <div className="container-inner">
           <span className="eyebrow">Five Pillars</span>
-          <h2 id="pillars-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+          <h2 id="pillars-heading" className="text-headline growing-section-title">
             The Operating Foundation
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead growing-section-subhead">
             Not a generic framework licensed from a methodology.
             Built around your business, your team, and how contractors actually operate.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+          <div className="ops-pillars-wrap">
             {pillars.map((p) => (
-              <div key={p.num} style={{ borderTop: '1px solid var(--color-line)', padding: '1.75rem 0', display: 'flex', gap: '1.5rem' }}>
-                <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', color: 'var(--color-accent)', flexShrink: 0, paddingTop: '0.2rem', width: '2rem' }}>
+              <div key={p.num} className="ops-pillar-item">
+                <span className="ops-pillar-num">
                   {p.num}
                 </span>
                 <div>
-                  <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                  <h3 className="growing-item-title">
                     {p.name}
                   </h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                  <p className="growing-body-copy">
                     {p.body}
                   </p>
                 </div>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="growing-divider" />
           </div>
 
-          <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="growing-links-row">
             <Link href="/offer" className="btn-ghost">
               See all seven deliverables →
             </Link>
@@ -239,12 +239,12 @@ export default function ContractorOperationsSystemPage() {
 
       {/* ── MID-PAGE CTA ──────────────────────── */}
       <section className="section" aria-label="Book a call">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'color-mix(in srgb, var(--color-accent-dark) 8%, var(--color-surface))', border: '1px solid color-mix(in srgb, var(--color-accent-dark) 25%, var(--color-line))', borderRadius: '0.375rem', padding: '1.75rem', textAlign: 'center' }}>
-            <p style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem' }}>
+        <div className="container-inner growing-mid-cta-inner">
+          <div className="ops-mid-cta-card">
+            <p className="ops-mid-cta-title">
               Ready to see what the install looks like for your business?
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', marginBottom: '1.25rem' }}>
+            <p className="ops-mid-cta-copy">
               30 minutes. We assess your current structure and tell you exactly what changes.
             </p>
             <BookingButton label="Book a Discovery Call" source="ops_system_mid" />
@@ -256,28 +256,25 @@ export default function ContractorOperationsSystemPage() {
       <section className="section" aria-labelledby="cost-heading">
         <div className="container-inner">
           <span className="eyebrow">The Real Cost</span>
-          <h2 id="cost-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '2rem' }}>
+          <h2 id="cost-heading" className="text-headline ops-cost-title">
             What running without an operations system costs every month.
           </h2>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', maxWidth: '740px' }}
-            className="md:grid-cols-2"
-          >
+          <div className="ops-cost-grid md:grid-cols-2">
             <div className="card">
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+              <p className="ops-cost-kicker">
                 Owner bottleneck tax
               </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+              <p className="ops-cost-copy">
                 10–15 hours per week routing decisions that should resolve at the field or office level.
                 At $150/hr effective rate: $78K–$117K/year in misapplied labor.
               </p>
             </div>
             <div className="card">
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '0.75rem' }}>
+              <p className="ops-cost-kicker">
                 Margin leakage
               </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+              <p className="ops-cost-copy">
                 Without a live scoreboard, job costs surface 30–60 days after the fact.
                 On a $3M contractor, 3% margin leakage = $90,000/year.
               </p>
@@ -288,19 +285,19 @@ export default function ContractorOperationsSystemPage() {
 
       {/* ── ECOSYSTEM ──────────────────────────── */}
       <section className="section" aria-label="Related services">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+        <div className="container-inner growing-ecosystem-inner">
+          <div className="growing-ecosystem-card">
+            <p className="growing-ecosystem-kicker">
               The full foundation
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+            <p className="growing-ecosystem-copy">
               If you need margin clarity before operations,
               start with{' '}
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="growing-ecosystem-link">
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="growing-ecosystem-link">
                 Contractor Setup Install
               </a>.
             </p>
@@ -312,39 +309,33 @@ export default function ContractorOperationsSystemPage() {
       <section className="section" aria-labelledby="faq-heading">
         <div className="container-inner">
           <span className="eyebrow">FAQ</span>
-          <h2 id="faq-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <h2 id="faq-heading" className="text-headline growing-faq-title">
             Questions about contractor operations systems.
           </h2>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="growing-faq-wrap">
             {faqs.map((faq, i) => (
-              <div key={i} style={{ borderTop: '1px solid var(--color-line)', padding: '1.5rem 0' }}>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+              <div key={i} className="growing-faq-item">
+                <h3 className="growing-faq-question">
                   {faq.q}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="growing-faq-answer">
                   {faq.a}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="growing-divider" />
           </div>
         </div>
       </section>
 
       {/* ── FINAL CTA ──────────────────────────── */}
-      <section
-        aria-labelledby="cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-          <h2
-            id="cta-heading"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '560px', marginBottom: '1rem' }}
-          >
+      <section aria-labelledby="cta-heading" className="growing-final-cta-section">
+        <div className="container-inner growing-final-cta-inner">
+          <h2 id="cta-heading" className="growing-final-cta-title">
             See what the operating system looks like for your business.
           </h2>
-          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '460px', marginBottom: '2.5rem' }}>
+          <p className="growing-final-cta-copy">
             30-minute discovery call. We assess your current structure and tell you exactly
             what the install involves — and whether it&apos;s the right fit.
           </p>

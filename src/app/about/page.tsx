@@ -77,10 +77,10 @@ export default function AboutPage() {
       <section className="section-lg" aria-label="About">
         <div className="container-inner">
           <span className="eyebrow">About</span>
-          <h1 className="text-display" style={{ maxWidth: '720px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display about-hero-title">
             Why Contractor Operations Break at Scale
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '540px' }}>
+          <p className="text-subhead about-hero-subhead">
             Contractors COO is an implementation practice built and operated by The KPS Group.
             We work exclusively with owner-led contractor businesses — GCs, trade contractors,
             and home service operators at the $1M–$10M stage.
@@ -92,22 +92,22 @@ export default function AboutPage() {
       <section className="section" aria-labelledby="pattern-heading">
         <div className="container-inner">
           <span className="eyebrow">The Pattern</span>
-          <h2 id="pattern-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '2rem' }}>
+          <h2 id="pattern-heading" className="text-headline about-section-title">
             Every contractor who grows past $1M hits the same wall.
           </h2>
-          <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+          <div className="about-content-wrap">
+            <p className="growing-why-copy">
               The owner-operated model that got you here stops working. You&apos;ve added people,
               but accountability hasn&apos;t followed. You&apos;ve grown revenue, but margin hasn&apos;t kept pace.
               You&apos;re in more meetings, but executing less. You&apos;re working harder to produce the
               same result — or a slightly worse one.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="growing-why-copy">
               The problem is not effort. Contractors who grow to $1M–$10M outwork almost everyone.
               The problem is structure — specifically, the absence of an operating system. The
               business grew faster than the management infrastructure needed to sustain it.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="growing-why-copy">
               That gap between revenue and operations doesn&apos;t close on its own. It compounds.
               And it is very expensive by the time most owners decide to address it.
             </p>
@@ -119,27 +119,19 @@ export default function AboutPage() {
       <section className="section" aria-labelledby="cadence-heading">
         <div className="container-inner">
           <span className="eyebrow">The Fix</span>
-          <h2 id="cadence-heading" className="text-headline" style={{ maxWidth: '580px', marginBottom: '2rem' }}>
+          <h2 id="cadence-heading" className="text-headline about-section-title">
             Strategy doesn&apos;t fix a failing operation. Cadence does.
           </h2>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              gap: '2.5rem',
-              maxWidth: '900px',
-            }}
-            className="md:grid-cols-2"
-          >
-            <div>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+          <div className="about-grid-2col md:grid-cols-2">
+            <div className="about-column">
+              <p className="growing-why-copy">
                 Neither strategy sessions nor additional hiring fix a broken operational structure.
                 What works — specifically, reliably, and quickly — is cadence: a consistent, repeatable
                 operating rhythm that doesn&apos;t require the owner to personally orchestrate every
                 moving part of the business.
               </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p className="growing-why-copy">
                 When a business has cadence, decisions move faster because there is a defined process.
                 Teams execute more reliably because accountability is clear. Owners step back from the
                 weeds because the system holds things together without their presence.
@@ -147,20 +139,10 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <p
-                style={{
-                  fontFamily: 'var(--font-geist-mono, monospace)',
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-muted-2)',
-                  marginBottom: '1rem',
-                }}
-              >
+              <p className="about-list-kicker">
                 What cadence produces
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <ul className="about-list">
                 {[
                   'Decisions that move from discussion to closure',
                   'Meetings with outputs, not just attendance',
@@ -168,18 +150,8 @@ export default function AboutPage() {
                   'An owner who leads instead of operates',
                   'A business that can function without the owner in every room',
                 ].map((item) => (
-                  <li
-                    key={item}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '0.75rem',
-                      fontSize: '0.9375rem',
-                      color: 'var(--color-muted)',
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
+                  <li key={item} className="about-list-item">
+                    <span className="about-list-arrow">→</span>
                     {item}
                   </li>
                 ))}
@@ -193,23 +165,23 @@ export default function AboutPage() {
       <section className="section" aria-labelledby="execution-heading">
         <div className="container-inner">
           <span className="eyebrow">Our Position</span>
-          <h2 id="execution-heading" className="text-headline" style={{ maxWidth: '620px', marginBottom: '2rem' }}>
+          <h2 id="execution-heading" className="text-headline about-section-title">
             Contractor businesses don&apos;t fail from lack of strategy. They stall from lack of structure.
           </h2>
-          <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+          <div className="about-content-wrap">
+            <p className="growing-why-copy">
               Every contractor team we work with already knows what they need to do. They are not short
               on ideas. They are not short on effort. What they are short on is follow-through
               infrastructure — the systems that translate a decision made on Monday into a completed
               action with a named owner by Friday.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="growing-why-copy">
               Strategy planning sessions do not fix that. Goal-setting retreats do not fix that.
               More meetings do not fix that. A fixed weekly leadership cadence, a written ownership matrix,
               a KPI scoreboard reviewed in the room, and a decision threshold that keeps the field
               moving without calling the owner — those fix it.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="growing-why-copy">
               We build the infrastructure of execution. We build it inside your business, alongside your team,
               and we document it so thoroughly that it holds after we step back.
               That is the only exit condition we accept.
@@ -222,33 +194,20 @@ export default function AboutPage() {
       <section className="section" aria-labelledby="kps-heading">
         <div className="container-inner">
           <span className="eyebrow">The KPS Group</span>
-          <h2 id="kps-heading" className="text-headline" style={{ maxWidth: '540px', marginBottom: '2rem' }}>
+          <h2 id="kps-heading" className="text-headline about-section-title">
             An implementation practice. Not a consulting firm.
           </h2>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              gap: '2.5rem',
-              maxWidth: '900px',
-            }}
-            className="md:grid-cols-2"
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+          <div className="about-grid-2col md:grid-cols-2">
+            <div className="about-column">
+              <p className="growing-why-copy">
                 The KPS Group operates a focused portfolio of implementation services for contractors
                 at the growth stage — businesses large enough that structure matters, and owner-operated
                 enough that the owner is still the primary constraint.
               </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p className="growing-why-copy">
                 Contractors COO handles the operational structure. Our sister service,{' '}
-                <Link
-                  href="https://www.contractorjobcosting.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: 'var(--color-accent)', textDecoration: 'none' }}
-                >
+                <Link href="https://www.contractorjobcosting.com" target="_blank" rel="noopener noreferrer" className="growing-ecosystem-link">
                   Contractor Job Costing
                 </Link>
                 , handles the financial visibility — job costing and cash flow clarity for the
@@ -257,17 +216,17 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <div className="about-column">
+              <p className="growing-why-copy">
                 We work in small batches. We stay close to the work. We do not operate a consulting
                 farm with junior staff running your engagement — the people who designed the install
                 are the people running it.
               </p>
-              <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+              <p className="growing-why-copy">
                 Both services are fixed-scope. Both are built to produce results that stay after
                 the engagement ends. Neither is an indefinite retainer designed to create dependency.
               </p>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-muted-2)', lineHeight: 1.7 }}>
+              <p className="growing-hero-note">
                 Based in Caddo Mills, TX. Working with contractors nationwide.
               </p>
             </div>
@@ -278,7 +237,7 @@ export default function AboutPage() {
       {/* ── RELATED PAGES ──────────────────────── */}
       <section className="section" aria-label="Related pages">
         <div className="container-inner">
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="growing-related-row">
             <Link href="/offer" className="btn-ghost">
               See the 90-Day Install →
             </Link>
@@ -296,76 +255,54 @@ export default function AboutPage() {
       </section>
 
       {/* ── SERVICE ECOSYSTEM ────────────────── */}
-      <section aria-label="Service progression" style={{ borderBottom: '1px solid var(--color-line)' }}>
-        <div className="container-inner" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
-          <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 800, marginBottom: '3rem' }}>
+      <section className="border-bottom" aria-label="Service progression">
+        <div className="container-inner about-service-section">
+          <h2 className="about-service-title">
             Part of a Complete System
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            <div style={{ borderLeft: '3px solid var(--color-accent-subtle)', paddingLeft: '1.5rem' }}>
-              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+          <div className="about-service-grid">
+            <div className="about-service-card">
+              <h3 className="about-service-stage">
                 Stage 1: Foundation
               </h3>
-              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
+              <p className="about-service-copy">
                 <strong>Contractor Setup Install</strong> gets new contractors off to the right start. Entity structure, banking, books, and the barebone operating rhythm.
               </p>
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="about-service-link">
                 Learn more →
               </a>
             </div>
-            <div style={{ borderLeft: '3px solid var(--color-accent-subtle)', paddingLeft: '1.5rem' }}>
-              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+            <div className="about-service-card">
+              <h3 className="about-service-stage">
                 Stage 2: Financial Clarity
               </h3>
-              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
+              <p className="about-service-copy">
                 <strong>Contractor Job Costing</strong> gives you real margin numbers and fixes cash flow problems. Built for $750K–$8M contractors who need to know what&apos;s profitable.
               </p>
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="about-service-link">
                 Learn more →
               </a>
             </div>
-            <div style={{ borderLeft: '3px solid var(--color-accent-subtle)', paddingLeft: '1.5rem' }}>
-              <h3 style={{ fontSize: '0.9375rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+            <div className="about-service-card">
+              <h3 className="about-service-stage">
                 Stage 3: Operations Leadership
               </h3>
-              <p style={{ color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
+              <p className="about-service-copy">
                 <strong>Contractors COO</strong> is the final piece: the execution infrastructure your team actually needs to scale past the owner-operator model.
               </p>
-              <span style={{ color: 'var(--color-muted)' }}>You are here</span>
+              <span className="about-service-current">You are here</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── FINAL CTA ────────────────────────────── */}
-      <section
-        aria-labelledby="about-cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-          <h2
-            id="about-cta-heading"
-            style={{
-              fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: '-0.02em',
-              color: '#ffffff',
-              maxWidth: '520px',
-              marginBottom: '1rem',
-            }}
-          >
+      <section aria-labelledby="about-cta-heading" className="growing-final-cta-section">
+        <div className="container-inner growing-final-cta-inner">
+          <h2 id="about-cta-heading" className="growing-final-cta-title">
             If the pattern sounds familiar, let&apos;s talk.
           </h2>
-          <p
-            style={{
-              fontSize: '1.0625rem',
-              color: 'rgba(255,255,255,0.72)',
-              lineHeight: 1.6,
-              maxWidth: '440px',
-              marginBottom: '2.5rem',
-            }}
-          >
+          <p className="growing-final-cta-copy">
             30-minute discovery call. No pitch before the conversation.
             We figure out together whether the install makes sense for your business.
           </p>
