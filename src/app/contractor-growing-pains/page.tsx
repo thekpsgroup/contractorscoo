@@ -221,21 +221,21 @@ export default function ContractorGrowingPainsPage() {
       <section className="section-lg" aria-label="Contractor growing pains overview">
         <div className="container-inner">
           <span className="eyebrow">Contractor Growing Pains</span>
-          <h1 className="text-display" style={{ maxWidth: '780px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display growing-hero-title">
             Your Business Grew. Your Structure Didn&apos;t. That&apos;s the Problem.
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '580px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead growing-hero-subhead">
             Past $1M, every contractor hits the same wall: more revenue, more people, more
             chaos — and an owner working harder to produce the same result. The fix is not more
             effort. It&apos;s installing the operating structure you skipped during growth.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="growing-actions-row">
             <BookingButton label="Book a Discovery Call" source="growing_pains_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="growing-hero-note">
             30 minutes. We assess your operating structure and give you a straight answer.
           </p>
         </div>
@@ -245,36 +245,23 @@ export default function ContractorGrowingPainsPage() {
       <section className="section" aria-labelledby="signs-heading">
         <div className="container-inner">
           <span className="eyebrow">The Signs</span>
-          <h2 id="signs-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+          <h2 id="signs-heading" className="text-headline growing-section-title">
             Eight signs your contractor business has outgrown its structure.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead growing-section-subhead">
             If three or more describe your current reality, it&apos;s structural — not situational.
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              borderTop: '1px solid var(--color-line)',
-            }}
-            className="md:grid-cols-2"
-          >
+          <div className="growing-signs-grid md:grid-cols-2">
             {signs.map((s, i) => (
               <div
                 key={s.title}
-                style={{
-                  padding: '1.75rem 0',
-                  borderBottom: '1px solid var(--color-line)',
-                  paddingRight: i % 2 === 0 ? '2.5rem' : '0',
-                  paddingLeft: i % 2 === 1 ? '2.5rem' : '0',
-                }}
-                className={i % 2 === 1 ? 'md:border-l md:border-l-line' : ''}
+                className={`growing-sign-item ${i % 2 === 0 ? 'growing-sign-item-left' : 'growing-sign-item-right'} ${i % 2 === 1 ? 'md:border-l md:border-l-line' : ''}`}
               >
-                <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                <h3 className="growing-item-title">
                   {s.title}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="growing-body-copy">
                   {s.body}
                 </p>
               </div>
@@ -287,22 +274,22 @@ export default function ContractorGrowingPainsPage() {
       <section className="section" aria-labelledby="why-heading">
         <div className="container-inner">
           <span className="eyebrow">The Root Cause</span>
-          <h2 id="why-heading" className="text-headline" style={{ maxWidth: '620px', marginBottom: '2rem' }}>
+          <h2 id="why-heading" className="text-headline growing-why-title">
             Growing pains are not about effort. They&apos;re about missing infrastructure.
           </h2>
-          <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+          <div className="growing-why-wrap">
+            <p className="growing-why-copy">
               Contractors who build to $1M–$5M outwork almost everyone. The problem is never
               effort. The problem is that the business grew faster than the management
               infrastructure needed to sustain it. Revenue scaled. Structure didn&apos;t.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="growing-why-copy">
               The owner-operated model that got you here — personal management, verbal delegation,
               tribal knowledge — stops working the moment you have more jobs and people than one
               person can personally oversee. That gap between revenue and operations does not close
               on its own. It compounds — and it gets very expensive.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="growing-why-copy">
               The fix is not a new hire. It is not a strategy session. It is installing the
               operating system your business was supposed to have before it reached this size:
               defined roles, structured cadence, written decision authority, and a scoreboard that
@@ -316,45 +303,39 @@ export default function ContractorGrowingPainsPage() {
       <section className="section" aria-labelledby="stages-heading">
         <div className="container-inner">
           <span className="eyebrow">The Growth Map</span>
-          <h2 id="stages-heading" className="text-headline" style={{ maxWidth: '580px', marginBottom: '3rem' }}>
+          <h2 id="stages-heading" className="text-headline growing-stages-title">
             Where growing pains hit — and when they become expensive.
           </h2>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="growing-stages-wrap">
             {stages.map((stage) => (
-              <div key={stage.range} style={{ borderTop: '1px solid var(--color-line)', padding: '1.75rem 0', display: 'flex', gap: '1.5rem' }}>
-                <div style={{ flexShrink: 0, width: '5.5rem' }}>
-                  <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.8125rem', fontWeight: 700, color: 'var(--color-accent)' }}>
+              <div key={stage.range} className="growing-stage-item">
+                <div className="growing-stage-range-col">
+                  <span className="growing-stage-range">
                     {stage.range}
                   </span>
-                  <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', color: 'var(--color-muted-2)', marginTop: '0.125rem' }}>
+                  <p className="growing-stage-label">
                     {stage.label}
                   </p>
                 </div>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="growing-body-copy">
                   {stage.desc}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="growing-divider" />
           </div>
         </div>
       </section>
 
       {/* ── MID-PAGE CTA ──────────────────────── */}
       <section className="section" aria-label="Book a call">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div
-            style={{
-              backgroundColor: 'var(--color-accent-deeper)',
-              borderRadius: '0.375rem',
-              padding: '2.5rem',
-            }}
-          >
-            <h2 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)', fontWeight: 800, color: '#ffffff', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+        <div className="container-inner growing-mid-cta-inner">
+          <div className="growing-mid-cta-card">
+            <h2 className="growing-mid-cta-title">
               Recognize three or more signs?
             </h2>
-            <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+            <p className="growing-mid-cta-copy">
               30-minute discovery call. We assess your operating structure and tell you exactly
               where the breakdowns are — and whether the 90-day install is the right fix.
             </p>
@@ -367,17 +348,14 @@ export default function ContractorGrowingPainsPage() {
       <section className="section" aria-labelledby="fix-heading">
         <div className="container-inner">
           <span className="eyebrow">The Fix</span>
-          <h2 id="fix-heading" className="text-headline" style={{ maxWidth: '620px', marginBottom: '0.625rem' }}>
+          <h2 id="fix-heading" className="text-headline growing-fix-title">
             The 90-day install that resolves growing pains at the structural level.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead growing-fix-subhead">
             Not training. Not coaching. Not strategy. Operating infrastructure — installed alongside your team.
           </p>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', maxWidth: '900px' }}
-            className="md:grid-cols-2"
-          >
+          <div className="growing-fix-grid md:grid-cols-2">
             {[
               {
                 num: '01',
@@ -411,20 +389,20 @@ export default function ContractorGrowingPainsPage() {
               },
             ].map((d) => (
               <div key={d.num} className="card">
-                <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', color: 'var(--color-accent)', display: 'block', marginBottom: '0.5rem' }}>
+                <span className="growing-fix-num">
                   {d.num}
                 </span>
-                <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                <h3 className="growing-item-title">
                   {d.title}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="growing-body-copy">
                   {d.body}
                 </p>
               </div>
             ))}
           </div>
 
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+          <div className="growing-links-row">
             <Link href="/offer" className="btn-ghost">
               See the full 90-day offer →
             </Link>
@@ -439,40 +417,40 @@ export default function ContractorGrowingPainsPage() {
       <section className="section" aria-labelledby="faq-heading">
         <div className="container-inner">
           <span className="eyebrow">FAQ</span>
-          <h2 id="faq-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <h2 id="faq-heading" className="text-headline growing-faq-title">
             Questions about contractor growing pains.
           </h2>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="growing-faq-wrap">
             {faqs.map((faq, i) => (
-              <div key={i} style={{ borderTop: '1px solid var(--color-line)', padding: '1.5rem 0' }}>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+              <div key={i} className="growing-faq-item">
+                <h3 className="growing-faq-question">
                   {faq.q}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="growing-faq-answer">
                   {faq.a}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="growing-divider" />
           </div>
         </div>
       </section>
 
       {/* ── ECOSYSTEM ──────────────────────────── */}
       <section className="section" aria-label="Related services">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+        <div className="container-inner growing-ecosystem-inner">
+          <div className="growing-ecosystem-card">
+            <p className="growing-ecosystem-kicker">
               The full foundation
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+            <p className="growing-ecosystem-copy">
               Need margin visibility before fixing structure? Start with{' '}
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="growing-ecosystem-link">
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="growing-ecosystem-link">
                 Contractor Setup Install
               </a>.
             </p>
@@ -483,7 +461,7 @@ export default function ContractorGrowingPainsPage() {
       {/* ── RELATED PAGES ──────────────────────── */}
       <section className="section" aria-label="Related pages">
         <div className="container-inner">
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="growing-related-row">
             <Link href="/contractor-operations-system" className="btn-ghost">
               The Operating Foundation →
             </Link>
@@ -498,23 +476,17 @@ export default function ContractorGrowingPainsPage() {
       </section>
 
       {/* ── FINAL CTA ──────────────────────────── */}
-      <section
-        aria-labelledby="cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-          <h2
-            id="cta-heading"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '560px', marginBottom: '1rem' }}
-          >
+      <section aria-labelledby="cta-heading" className="growing-final-cta-section">
+        <div className="container-inner growing-final-cta-inner">
+          <h2 id="cta-heading" className="growing-final-cta-title">
             Growing pains don&apos;t fix themselves. Let&apos;s fix the structure.
           </h2>
-          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '460px', marginBottom: '2.5rem' }}>
+          <p className="growing-final-cta-copy">
             30-minute discovery call. We map the structural gaps, tell you what the 90-day install
             involves, and give you a straight answer on whether it&apos;s the right fit.
           </p>
           <BookingButton label="Book a Discovery Call" source="growing_pains_footer_cta" />
-          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
+          <p className="growing-final-cta-note">
             Straight assessment. No obligation. No boilerplate sales process.
           </p>
         </div>
