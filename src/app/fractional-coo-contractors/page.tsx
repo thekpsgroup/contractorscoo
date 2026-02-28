@@ -172,21 +172,21 @@ export default function FractionalCOOPage() {
       <section className="section-lg" aria-label="Fractional COO overview">
         <div className="container-inner">
           <span className="eyebrow">Fractional COO · For Contractors Doing $1M–$10M</span>
-          <h1 className="text-display" style={{ maxWidth: '780px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display fcoo-hero-title">
             A Fractional COO Built for Contractor Businesses
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '580px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead fcoo-hero-subhead">
             Not a generic operations consultant applied to construction.
             A 90-day fixed-scope install designed specifically for GCs, trades, and home service
             contractors — built with your team, owned by your business when we step back.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="fcoo-actions">
             <BookingButton label="Book a Discovery Call" source="fractional_coo_hero" />
             <Link href="/offer" className="btn-ghost">
               See full deliverables →
             </Link>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="fcoo-hero-note">
             30 minutes. We assess your operation and tell you exactly what changes.
           </p>
         </div>
@@ -196,23 +196,20 @@ export default function FractionalCOOPage() {
       <section className="section" aria-labelledby="what-heading">
         <div className="container-inner">
           <span className="eyebrow">What You Get</span>
-          <h2 id="what-heading" className="text-headline" style={{ maxWidth: '600px', marginBottom: '0.625rem' }}>
+          <h2 id="what-heading" className="text-headline fcoo-what-title">
             Six operating systems installed into your business in 90 days.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead fcoo-what-subhead">
             Fixed scope. Fixed fee. Contractor-specific from day one.
           </p>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="fcoo-card-grid md:grid-cols-2">
             {deliverables.map((d) => (
               <div key={d.title} className="card">
-                <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                <h3 className="fcoo-card-title">
                   {d.title}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="fcoo-card-copy">
                   {d.body}
                 </p>
               </div>
@@ -224,16 +221,13 @@ export default function FractionalCOOPage() {
       {/* ── WHO IT'S FOR ────────────────────────── */}
       <section className="section" aria-labelledby="fit-heading">
         <div className="container-inner">
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="fcoo-fit-grid md:grid-cols-2">
             <div>
               <span className="eyebrow">Built For</span>
-              <h2 id="fit-heading" className="text-headline" style={{ marginBottom: '2rem' }}>
+              <h2 id="fit-heading" className="text-headline fcoo-fit-title">
                 Contractors who know the problem is internal.
               </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <ul className="fcoo-list">
                 {[
                   'General contractor, trade contractor, or home service business',
                   '$1M–$10M in annual revenue',
@@ -242,20 +236,20 @@ export default function FractionalCOOPage() {
                   'Owner is the bottleneck on daily decisions',
                   'Want a system, not a coach or accountability partner',
                 ].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0, marginTop: '0.1rem' }}>✓</span>
+                  <li key={item} className="fcoo-list-item">
+                    <span className="fcoo-bullet-check">✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div style={{ borderTop: '1px solid var(--color-line)', paddingTop: '2rem' }} className="md:border-t-0 md:border-l md:border-l-line md:pl-10">
-              <span className="eyebrow" style={{ color: 'var(--color-muted-2)' }}>Not a fit</span>
-              <h2 className="text-headline" style={{ marginBottom: '2rem' }}>
+            <div className="fcoo-notfit md:border-t-0 md:border-l md:border-l-line md:pl-10">
+              <span className="eyebrow fcoo-eyebrow-muted">Not a fit</span>
+              <h2 className="text-headline fcoo-fit-title">
                 We&apos;re direct about who this isn&apos;t for.
               </h2>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+              <ul className="fcoo-list">
                 {[
                   'Below $750K in revenue — structure isn\'t the constraint yet',
                   'Looking for strategic advisory without implementation',
@@ -263,8 +257,8 @@ export default function FractionalCOOPage() {
                   'Sole proprietor with no team to install into',
                   'Already running a disciplined operating system',
                 ].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-muted-2)', fontWeight: 700, flexShrink: 0, marginTop: '0.1rem' }}>✕</span>
+                  <li key={item} className="fcoo-list-item">
+                    <span className="fcoo-bullet-x">✕</span>
                     {item}
                   </li>
                 ))}
@@ -278,21 +272,21 @@ export default function FractionalCOOPage() {
       <section className="section" aria-labelledby="how-heading">
         <div className="container-inner">
           <span className="eyebrow">The Timeline</span>
-          <h2 id="how-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <h2 id="how-heading" className="text-headline fcoo-how-title">
             Three phases. 90 days. Fixed scope.
           </h2>
 
-          <div style={{ maxWidth: '640px' }}>
+          <div className="fcoo-phase-wrap">
             <div className="phase-item">
               <div className="phase-number">01</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="fcoo-phase-kicker">
                   Days 1–30
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="fcoo-phase-title">
                   Diagnose + Design
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-phase-copy">
                   We audit your current operating structure — how decisions move, how jobs get owned, where accountability breaks down. You get a written install plan specific to your business.
                 </p>
               </div>
@@ -301,28 +295,28 @@ export default function FractionalCOOPage() {
             <div className="phase-item">
               <div className="phase-number">02</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="fcoo-phase-kicker">
                   Days 31–60
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="fcoo-phase-title">
                   Install Cadence + Accountability
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-phase-copy">
                   We run your first leadership sessions, activate the ownership matrix, install the scoreboard, and build decision thresholds. The system goes live with us in the room.
                 </p>
               </div>
             </div>
 
-            <div className="phase-item" style={{ paddingBottom: 0 }}>
+            <div className="phase-item fcoo-phase-last">
               <div className="phase-number">03</div>
               <div>
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.375rem' }}>
+                <p className="fcoo-phase-kicker">
                   Days 61–90
                 </p>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+                <h3 className="fcoo-phase-title">
                   Stabilization + Handoff
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-phase-copy">
                   We coach your team through the operating model, close the gaps, and lock in the rhythm. By day 90, the system runs on its own. That&apos;s the only acceptable exit condition.
                 </p>
               </div>
@@ -335,14 +329,11 @@ export default function FractionalCOOPage() {
       <section className="section" aria-labelledby="proof-heading">
         <div className="container-inner">
           <span className="eyebrow">Outcomes</span>
-          <h2 id="proof-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '3rem' }}>
+          <h2 id="proof-heading" className="text-headline fcoo-proof-title">
             What actually changes in the first 90 days.
           </h2>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }}
-            className="md:grid-cols-2"
-          >
+          <div className="fcoo-card-grid md:grid-cols-2">
             {[
               { metric: '90-min all-hands → 45-min session', result: 'Fixed operating cadence with closed-loop follow-up. Every item closes with a named owner.' },
               { metric: '~40% of owner\'s day reclaimed', result: 'Decision thresholds installed. Field leads resolve issues at the threshold level without calling the owner.' },
@@ -350,17 +341,17 @@ export default function FractionalCOOPage() {
               { metric: '2-week unassisted operation', result: 'Team ran the business independently while the owner traveled. Zero escalations.' },
             ].map((o) => (
               <div key={o.metric} className="card">
-                <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.8125rem', fontWeight: 600, color: 'var(--color-accent)', marginBottom: '0.5rem' }}>
+                <p className="fcoo-metric">
                   {o.metric}
                 </p>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                <p className="fcoo-card-copy">
                   {o.result}
                 </p>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
+          <div className="fcoo-proof-link-wrap">
             <Link href="/proof" className="btn-ghost">
               Read detailed outcome examples →
             </Link>
@@ -372,41 +363,41 @@ export default function FractionalCOOPage() {
       <section className="section" aria-labelledby="faq-heading">
         <div className="container-inner">
           <span className="eyebrow">FAQ</span>
-          <h2 id="faq-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <h2 id="faq-heading" className="text-headline fcoo-faq-title">
             Common questions about fractional COO for contractors.
           </h2>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="fcoo-faq-wrap">
             {faqs.map((faq, i) => (
-              <div key={i} style={{ borderTop: '1px solid var(--color-line)', padding: '1.5rem 0' }}>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+              <div key={i} className="fcoo-faq-item">
+                <h3 className="fcoo-faq-question">
                   {faq.q}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="fcoo-faq-answer">
                   {faq.a}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="fcoo-divider" />
           </div>
         </div>
       </section>
 
       {/* ── ECOSYSTEM ──────────────────────────── */}
       <section className="section" aria-label="Related services">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+        <div className="container-inner fcoo-faq-wrap">
+          <div className="fcoo-ecosystem-card">
+            <p className="fcoo-ecosystem-kicker">
               Before the operations install
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+            <p className="fcoo-ecosystem-copy">
               If your fundamentals — entity structure, accounting foundation, insurance, and licensing — aren&apos;t set,
               start with{' '}
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="fcoo-ecosystem-link">
                 Contractor Setup Install
               </a>.
               If you need margin clarity first, install{' '}
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="fcoo-ecosystem-link">
                 Contractor Job Costing
               </a>.
             </p>
@@ -417,7 +408,7 @@ export default function FractionalCOOPage() {
       {/* ── RELATED PAGES ──────────────────────── */}
       <section className="section" aria-label="Related pages">
         <div className="container-inner">
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="fcoo-actions">
             <Link href="/fractional-coo-vs-eos" className="btn-ghost">
               Fractional COO vs EOS →
             </Link>
@@ -432,23 +423,20 @@ export default function FractionalCOOPage() {
       </section>
 
       {/* ── FINAL CTA ──────────────────────────── */}
-      <section
-        aria-labelledby="cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section aria-labelledby="cta-heading" className="fcoo-final-cta-section">
+        <div className="container-inner fcoo-final-cta-inner">
           <h2
             id="cta-heading"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '560px', marginBottom: '1rem' }}
+            className="fcoo-final-cta-title"
           >
             Find out what the install looks like for your operation.
           </h2>
-          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '460px', marginBottom: '2.5rem' }}>
+          <p className="fcoo-final-cta-copy">
             30-minute discovery call. We assess your current structure and tell you exactly
             what changes — and whether it&apos;s the right fit.
           </p>
           <BookingButton label="Book a Discovery Call" source="fractional_coo_footer_cta" />
-          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
+          <p className="fcoo-final-cta-note">
             Straight assessment. No obligation. No boilerplate sales process.
           </p>
         </div>
