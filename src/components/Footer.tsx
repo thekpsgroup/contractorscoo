@@ -64,11 +64,11 @@ export function Footer() {
         </div>
 
         {/* Other installs */}
-        <div style={{ borderTop: '1px solid var(--color-line)', marginTop: '2rem', paddingTop: '1.5rem' }}>
-          <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.75rem' }}>
+        <div className="footer-ecosystem">
+          <p className="footer-ecosystem-label">
             The KPS Group Service Ecosystem
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div className="footer-ecosystem-list">
             <div>
               <a
                 href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network"
@@ -78,7 +78,7 @@ export function Footer() {
               >
                 Contractor Setup Install →
               </a>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.25rem' }}>Foundation install for new contractors. Entity, banking, books, operating rhythm.</p>
+              <p className="footer-ecosystem-desc">Foundation install for new contractors. Entity, banking, books, operating rhythm.</p>
             </div>
             <div>
               <a
@@ -89,13 +89,13 @@ export function Footer() {
               >
                 Contractor Job Costing →
               </a>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.25rem' }}>Job costing & cash flow for $750K–$8M contractors. Know your margin. Fix your cash flow.</p>
+              <p className="footer-ecosystem-desc">Job costing & cash flow for $750K–$8M contractors. Know your margin. Fix your cash flow.</p>
             </div>
             <div>
-              <span className="footer-link" style={{ color: 'var(--color-fg)', cursor: 'default' }}>
+              <span className="footer-link footer-link-static">
                 Contractors COO
               </span>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.25rem' }}>Operations leadership for $1M–$10M teams. Cadence, accountability, execution rhythm.</p>
+              <p className="footer-ecosystem-desc">Operations leadership for $1M–$10M teams. Cadence, accountability, execution rhythm.</p>
             </div>
           </div>
         </div>

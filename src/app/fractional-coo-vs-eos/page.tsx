@@ -216,21 +216,21 @@ export default function FractionalCooVsEosPage() {
       <section className="section-lg" aria-label="Fractional COO vs EOS comparison">
         <div className="container-inner">
           <span className="eyebrow">Fractional COO vs EOS</span>
-          <h1 className="text-display" style={{ maxWidth: '780px', marginBottom: '1.5rem' }}>
+          <h1 className="text-display eos-hero-title">
             EOS Is a Framework. This Is an Install. Here&apos;s the Difference.
           </h1>
-          <p className="text-subhead" style={{ maxWidth: '580px', marginBottom: '2.5rem' }}>
+          <p className="text-subhead eos-hero-subhead">
             EOS gives you a system to self-implement over two years. We build the system inside
             your business in 90 days. For contractor teams at $1M–$10M, the difference between
             a framework and an install is the difference between knowing and doing.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="eos-hero-actions">
             <BookingButton label="Book a Discovery Call" source="eos_compare_hero" />
             <Link href="/proof" className="btn-ghost">
               See outcome examples →
             </Link>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--color-muted-2)', marginTop: '0.875rem' }}>
+          <p className="eos-hero-note">
             30 minutes. We assess your operation and show you what the install looks like.
           </p>
         </div>
@@ -240,22 +240,22 @@ export default function FractionalCooVsEosPage() {
       <section className="section" aria-labelledby="problem-heading">
         <div className="container-inner">
           <span className="eyebrow">The Mismatch</span>
-          <h2 id="problem-heading" className="text-headline" style={{ maxWidth: '640px', marginBottom: '2rem' }}>
+          <h2 id="problem-heading" className="text-headline eos-problem-title">
             EOS was built for office-based businesses with leadership teams. Most contractors have neither.
           </h2>
-          <div style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+          <div className="eos-problem-body">
+            <p className="eos-body-copy">
               The Entrepreneurial Operating System works when you have a leadership team that can
               self-implement between quarterly sessions. That&apos;s the model: an implementer
               facilitates, your team executes. The gap between sessions is where the real work happens.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="eos-body-copy">
               For a $3M contractor with two field leads, an office manager, and an owner who runs
               everything? The gap between sessions is where EOS dies. Nobody has time to build the
               scoreboard. Nobody enforces the L10 agenda. The rocks go unreviewed. By the next
               quarterly session, the team has regressed to default — and the owner is still the bottleneck.
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.8 }}>
+            <p className="eos-body-copy">
               The principles in <em>Traction</em> are sound. Accountability charts, meeting cadence,
               measurables, quarterly priorities — all useful concepts. The failure point is not the
               framework. It&apos;s the assumption that your team can build and sustain these systems
@@ -269,71 +269,56 @@ export default function FractionalCooVsEosPage() {
       <section className="section" aria-labelledby="compare-heading">
         <div className="container-inner">
           <span className="eyebrow">Side-by-Side</span>
-          <h2 id="compare-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '3rem' }}>
+          <h2 id="compare-heading" className="text-headline eos-compare-title">
             EOS vs. 90-day operational install — point by point.
           </h2>
 
-          <div style={{ maxWidth: '900px' }}>
+          <div className="eos-compare-wrap">
             {/* Header row — desktop only */}
-            <div
-              style={{
-                display: 'none',
-                gridTemplateColumns: '10rem 1fr 1fr',
-                gap: '1.5rem',
-                paddingBottom: '1rem',
-                borderBottom: '1px solid var(--color-line)',
-              }}
-              className="md:grid"
-            >
+            <div className="eos-compare-head md:grid">
               <div />
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)' }}>
+              <p className="eos-compare-head-muted">
                 EOS / Traction
               </p>
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)' }}>
+              <p className="eos-compare-head-accent">
                 90-Day COO Install
               </p>
             </div>
 
             {comparison.map((row) => (
-              <div
-                key={row.dimension}
-                style={{ borderBottom: '1px solid var(--color-line)', padding: '1.25rem 0' }}
-              >
+              <div key={row.dimension} className="eos-compare-row">
                 {/* Desktop: grid row */}
-                <div
-                  style={{ display: 'none', gridTemplateColumns: '10rem 1fr 1fr', gap: '1.5rem' }}
-                  className="md:grid"
-                >
-                  <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-fg)', letterSpacing: '-0.01em' }}>
+                <div className="eos-compare-grid md:grid">
+                  <p className="eos-compare-dimension">
                     {row.dimension}
                   </p>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
+                  <p className="eos-compare-copy">
                     {row.eos}
                   </p>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
+                  <p className="eos-compare-copy">
                     {row.coo}
                   </p>
                 </div>
 
                 {/* Mobile: stacked */}
                 <div className="md:hidden">
-                  <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-fg)', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>
+                  <p className="eos-compare-dimension eos-compare-dimension-mobile">
                     {row.dimension}
                   </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <div className="eos-compare-stack">
                     <div>
-                      <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)' }}>
+                      <span className="eos-compare-head-muted">
                         EOS{' '}
                       </span>
-                      <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6, marginTop: '0.125rem' }}>
+                      <p className="eos-compare-copy eos-compare-copy-mobile">
                         {row.eos}
                       </p>
                     </div>
                     <div>
-                      <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)' }}>
+                      <span className="eos-compare-head-accent">
                         COO Install{' '}
                       </span>
-                      <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6, marginTop: '0.125rem' }}>
+                      <p className="eos-compare-copy eos-compare-copy-mobile">
                         {row.coo}
                       </p>
                     </div>
@@ -349,19 +334,16 @@ export default function FractionalCooVsEosPage() {
       <section className="section" aria-labelledby="fit-heading">
         <div className="container-inner">
           <span className="eyebrow">Who Each Fits</span>
-          <h2 id="fit-heading" className="text-headline" style={{ maxWidth: '560px', marginBottom: '3rem' }}>
+          <h2 id="fit-heading" className="text-headline eos-fit-title">
             Honest assessment: when EOS makes sense — and when it doesn&apos;t.
           </h2>
 
-          <div
-            style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem', maxWidth: '900px' }}
-            className="md:grid-cols-2"
-          >
+          <div className="eos-fit-grid md:grid-cols-2">
             <div className="card">
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+              <p className="eos-compare-head-muted eos-fit-kicker">
                 EOS may work if
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <ul className="eos-fit-list">
                 {[
                   'You have 5+ people in defined leadership roles',
                   'Your leadership team can self-implement between sessions',
@@ -369,19 +351,19 @@ export default function FractionalCooVsEosPage() {
                   'You have 18–24 months to see full results',
                   'You want a framework, not hands-on installation',
                 ].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-muted-2)', flexShrink: 0 }}>—</span>
+                  <li key={item} className="eos-fit-item">
+                    <span className="eos-fit-bullet-muted">—</span>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="card" style={{ borderColor: 'var(--color-accent-dark)' }}>
-              <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '0.875rem' }}>
+            <div className="card eos-fit-card-accent">
+              <p className="eos-compare-head-accent eos-fit-kicker">
                 The 90-day install fits if
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <ul className="eos-fit-list">
                 {[
                   'You\'re a contractor at $1M–$10M, still owner-operated',
                   'Your team has field crews and no formal management layer',
@@ -389,8 +371,8 @@ export default function FractionalCooVsEosPage() {
                   'You want someone to build the system, not just explain it',
                   'You\'ve tried frameworks before and they didn\'t stick',
                 ].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>
-                    <span style={{ color: 'var(--color-accent)', fontWeight: 700, flexShrink: 0 }}>→</span>
+                  <li key={item} className="eos-fit-item">
+                    <span className="eos-fit-bullet-accent">→</span>
                     {item}
                   </li>
                 ))}
@@ -402,18 +384,12 @@ export default function FractionalCooVsEosPage() {
 
       {/* ── MID-PAGE CTA ──────────────────────── */}
       <section className="section" aria-label="Book a call">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div
-            style={{
-              backgroundColor: 'var(--color-accent-deeper)',
-              borderRadius: '0.375rem',
-              padding: '2.5rem',
-            }}
-          >
-            <h2 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)', fontWeight: 800, color: '#ffffff', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+        <div className="container-inner eos-mid-wrap">
+          <div className="eos-mid-panel">
+            <h2 className="eos-mid-title">
               Not sure which approach fits your business?
             </h2>
-            <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+            <p className="eos-mid-copy">
               30-minute discovery call. We&apos;ll assess your current structure and tell you
               directly whether the install makes sense — or whether a different approach fits better.
             </p>
@@ -426,14 +402,14 @@ export default function FractionalCooVsEosPage() {
       <section className="section" aria-labelledby="install-heading">
         <div className="container-inner">
           <span className="eyebrow">What You Get</span>
-          <h2 id="install-heading" className="text-headline" style={{ maxWidth: '580px', marginBottom: '0.625rem' }}>
+          <h2 id="install-heading" className="text-headline eos-install-title">
             The 90-day install: six deliverables, built for contractors.
           </h2>
-          <p className="text-subhead" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <p className="text-subhead eos-install-subhead">
             Every deliverable is installed inside your business — not presented in a slide deck.
           </p>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="eos-install-wrap">
             {[
               { num: '01', title: 'Weekly Leadership Cadence', body: 'Fixed meeting rhythm. 8-point agenda built for contractor operations. Every item closes with a named owner and deadline.' },
               { num: '02', title: 'Ownership Matrix', body: 'Every function — estimating, field ops, billing, purchasing, sub management — assigned to a single named owner. Not an accountability chart on a whiteboard. A working document your team references daily.' },
@@ -442,24 +418,24 @@ export default function FractionalCooVsEosPage() {
               { num: '05', title: 'Follow-Through Protocol', body: 'Closed-loop tracking. Every decision maps to a named owner and deadline. Checked before the next session. No recycled discussions.' },
               { num: '06', title: 'Leadership Coaching', body: 'Weekly working sessions for the full 90 days. We build the system alongside your people, run the first sessions with you in the room, and coach until the cadence holds without you.' },
             ].map((d) => (
-              <div key={d.num} style={{ borderTop: '1px solid var(--color-line)', padding: '1.75rem 0', display: 'flex', gap: '1.5rem' }}>
-                <span style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', color: 'var(--color-accent)', flexShrink: 0, paddingTop: '0.2rem', width: '2rem' }}>
+              <div key={d.num} className="eos-install-item">
+                <span className="eos-install-num">
                   {d.num}
                 </span>
                 <div>
-                  <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--color-fg)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                  <h3 className="eos-install-item-title">
                     {d.title}
                   </h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.65 }}>
+                  <p className="eos-install-item-copy">
                     {d.body}
                   </p>
                 </div>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="eos-divider" />
           </div>
 
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+          <div className="eos-install-links">
             <Link href="/offer" className="btn-ghost">
               See the full 90-day offer →
             </Link>
@@ -474,40 +450,40 @@ export default function FractionalCooVsEosPage() {
       <section className="section" aria-labelledby="faq-heading">
         <div className="container-inner">
           <span className="eyebrow">FAQ</span>
-          <h2 id="faq-heading" className="text-headline" style={{ maxWidth: '520px', marginBottom: '3rem' }}>
+          <h2 id="faq-heading" className="text-headline eos-faq-title">
             Questions about EOS vs. fractional COO for contractors.
           </h2>
 
-          <div style={{ maxWidth: '680px' }}>
+          <div className="eos-faq-wrap">
             {faqs.map((faq, i) => (
-              <div key={i} style={{ borderTop: '1px solid var(--color-line)', padding: '1.5rem 0' }}>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-fg)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
+              <div key={i} className="eos-faq-item">
+                <h3 className="eos-faq-question">
                   {faq.q}
                 </h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+                <p className="eos-faq-answer">
                   {faq.a}
                 </p>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--color-line)' }} />
+            <div className="eos-divider" />
           </div>
         </div>
       </section>
 
       {/* ── ECOSYSTEM ──────────────────────────── */}
       <section className="section" aria-label="Related services">
-        <div className="container-inner" style={{ maxWidth: '680px' }}>
-          <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-line)', borderRadius: '0.375rem', padding: '1.5rem' }}>
-            <p style={{ fontFamily: 'var(--font-geist-mono, monospace)', fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-muted-2)', marginBottom: '0.875rem' }}>
+        <div className="container-inner eos-mid-wrap">
+          <div className="eos-ecosystem-card">
+            <p className="eos-compare-head-muted eos-fit-kicker">
               The full foundation
             </p>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
+            <p className="eos-faq-answer">
               Need financial clarity alongside operational structure? Start with{' '}
-              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorjobcosting.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="eos-ecosystem-link">
                 Contractor Job Costing
               </a>.
               If your fundamentals (entity, accounting, insurance) aren&apos;t set, start with{' '}
-              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+              <a href="https://www.contractorsetup.com/?utm_source=contractorscoo&utm_medium=referral&utm_campaign=network" target="_blank" rel="noopener noreferrer" className="eos-ecosystem-link">
                 Contractor Setup Install
               </a>.
             </p>
@@ -518,7 +494,7 @@ export default function FractionalCooVsEosPage() {
       {/* ── RELATED PAGES ──────────────────────── */}
       <section className="section" aria-label="Related pages">
         <div className="container-inner">
-          <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap' }}>
+          <div className="eos-install-links">
             <Link href="/fractional-coo-contractors" className="btn-ghost">
               Fractional COO for contractors →
             </Link>
@@ -533,24 +509,21 @@ export default function FractionalCooVsEosPage() {
       </section>
 
       {/* ── FINAL CTA ──────────────────────────── */}
-      <section
-        aria-labelledby="cta-heading"
-        style={{ backgroundColor: 'var(--color-accent-deeper)', borderBottom: 'none' }}
-      >
-        <div className="container-inner" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section aria-labelledby="cta-heading" className="eos-final-cta-section">
+        <div className="container-inner eos-final-cta-inner">
           <h2
             id="cta-heading"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#ffffff', maxWidth: '560px', marginBottom: '1rem' }}
+            className="eos-final-cta-title"
           >
             Skip the 2-year framework. Install the system in 90 days.
           </h2>
-          <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: '460px', marginBottom: '2.5rem' }}>
+          <p className="eos-final-cta-copy">
             30-minute discovery call. We assess your operation, show you what the install
             covers, and give you a straight answer on whether it fits — or whether EOS
             makes more sense for your stage.
           </p>
           <BookingButton label="Book a Discovery Call" source="eos_compare_footer_cta" />
-          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.6)', marginTop: '1rem' }}>
+          <p className="eos-final-cta-note">
             Honest assessment. If EOS is the better fit, we&apos;ll tell you that.
           </p>
         </div>
