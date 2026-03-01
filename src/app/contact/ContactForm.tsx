@@ -25,6 +25,8 @@ export function ContactForm() {
   const [data,     setData]    = useState<FormData>(initialData);
   const [status,   setStatus]  = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [hp,       setHp]      = useState('');
+  const [mountedAt]            = useState(() => Date.now());
 
   const set = (field: keyof FormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -39,7 +41,7 @@ export function ContactForm() {
       const res = await fetch('/api/contact', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(data),
+        body:    JSON.stringify({ ...data, _hp: hp, _t: mountedAt }),
       });
 
       const json = await res.json() as { ok?: boolean; error?: string };
@@ -103,6 +105,19 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        {/* Honeypot — invisible to humans, filled by bots */}
+        <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={hp}
+            onChange={(e) => setHp(e.target.value)}
+          />
+        </div>
         {/* Name + Company */}
         <div
           style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.25rem' }}

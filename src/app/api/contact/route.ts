@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { spamCheck, looksLikeGibberish } from '../spamCheck';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -142,12 +143,24 @@ export async function POST(req: NextRequest) {
     challenge?: string;
     email?:     string;
     phone?:     string;
+    _hp?:       string;
+    _t?:        number;
   };
 
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
+  }
+
+  /* ── Spam gate ─────────────────────────────────────────────────────────── */
+  const spam = spamCheck(req, body);
+  if (spam === 'rejected') {
+    // Silent 200 — don't reveal detection to bots
+    return NextResponse.json({ ok: true }, { status: 200 });
+  }
+  if (spam) {
+    return NextResponse.json({ error: spam }, { status: 429 });
   }
 
   // Strip control chars (prevents email header injection in the subject line)
@@ -165,6 +178,15 @@ export async function POST(req: NextRequest) {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: 'A valid email address is required.' }, { status: 422 });
+  }
+
+  /* ── Gibberish gate — catches human-entered random text ────────────────── */
+  if (
+    looksLikeGibberish(name) ||
+    looksLikeGibberish(company) ||
+    (phone && /[a-zA-Z]{4,}/.test(phone))
+  ) {
+    return NextResponse.json({ ok: true }, { status: 200 });
   }
 
   const { error } = await resend.emails.send({
