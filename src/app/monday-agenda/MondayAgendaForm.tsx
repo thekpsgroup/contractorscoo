@@ -8,6 +8,8 @@ export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
   const [name,  setName]      = useState('');
   const [status, setStatus]   = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [hp,       setHp]      = useState('');
+  const [mountedAt]            = useState(() => Date.now());
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
       const res = await fetch('/api/subscribe', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email, name }),
+        body:    JSON.stringify({ email, name, _hp: hp, _t: mountedAt }),
       });
 
       const data = await res.json() as { ok?: boolean; error?: string };
@@ -75,6 +77,19 @@ export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      {/* Honeypot — invisible to humans, filled by bots */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+        <label htmlFor="agenda-website">Website</label>
+        <input
+          id="agenda-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={hp}
+          onChange={(e) => setHp(e.target.value)}
+        />
+      </div>
       <div
         style={{
           display:       'flex',

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { spamCheck } from '../spamCheck';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -142,12 +143,24 @@ export async function POST(req: NextRequest) {
     challenge?: string;
     email?:     string;
     phone?:     string;
+    _hp?:       string;
+    _t?:        number;
   };
 
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
+  }
+
+  /* ── Spam gate ─────────────────────────────────────────────────────────── */
+  const spam = spamCheck(req, body);
+  if (spam === 'rejected') {
+    // Silent 200 — don't reveal detection to bots
+    return NextResponse.json({ ok: true }, { status: 200 });
+  }
+  if (spam) {
+    return NextResponse.json({ error: spam }, { status: 429 });
   }
 
   // Strip control chars (prevents email header injection in the subject line)
