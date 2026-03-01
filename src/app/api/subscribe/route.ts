@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { spamCheck } from '../spamCheck';
+import { spamCheck, looksLikeGibberish } from '../spamCheck';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -186,6 +186,10 @@ export async function POST(req: NextRequest) {
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: 'A valid email address is required.' }, { status: 422 });
+  }
+
+  if (name && looksLikeGibberish(name)) {
+    return NextResponse.json({ ok: true }, { status: 200 });
   }
 
   /* ── 1. Add to Resend Audience ─────────────────────────────────────────── */

@@ -60,3 +60,29 @@ export function spamCheck(
 
   return null;
 }
+
+/* ── Gibberish detection ──────────────────────────────────────────────────── */
+
+/**
+ * Returns true if the text looks like randomly-generated gibberish
+ * (e.g. "vAdlcUKVtycZzfSTqYmOXKCg"). Checks for erratic case mixing,
+ * long consonant runs, and abnormally low vowel ratios.
+ */
+export function looksLikeGibberish(text: string): boolean {
+  const alpha = text.replace(/[^a-zA-Z]/g, '');
+  if (alpha.length < 4) return false;
+
+  // Erratic mid-word case transitions (e.g. "vAdlcUKV")
+  // Real names have ≤1 per word (e.g. "McDonald")
+  const caseFlips = (alpha.match(/[a-z][A-Z]/g) ?? []).length;
+  if (caseFlips >= 3) return true;
+
+  // Long runs of consonants (5+) — extremely rare in real names/words
+  if (/[^aeiouAEIOU\s]{5,}/.test(alpha)) return true;
+
+  // Very low vowel ratio — random strings skew consonant-heavy
+  const vowels = alpha.replace(/[^aeiouAEIOU]/g, '').length;
+  if (alpha.length >= 6 && vowels / alpha.length < 0.15) return true;
+
+  return false;
+}
