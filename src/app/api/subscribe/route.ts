@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { spamCheck, looksLikeGibberish } from '../spamCheck';
+import { spamCheck, looksLikeGibberish, verifyTurnstile } from '../spamCheck';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -165,7 +165,7 @@ function buildEmailHtml(name: string): string {
 
 /* ── POST /api/subscribe ──────────────────────────────────────────────────── */
 export async function POST(req: NextRequest) {
-  let body: { name?: string; email?: string; _hp?: string; _t?: number };
+  let body: { name?: string; email?: string; _hp?: string; _t?: number; _captcha?: string };
   try {
     body = await req.json();
   } catch {
@@ -179,6 +179,10 @@ export async function POST(req: NextRequest) {
   }
   if (spam) {
     return NextResponse.json({ error: spam }, { status: 429 });
+  }
+
+  if (!(await verifyTurnstile(body._captcha))) {
+    return NextResponse.json({ ok: true }, { status: 200 });
   }
 
   const email = (body.email ?? '').trim().toLowerCase();

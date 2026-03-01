@@ -1,7 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Script from 'next/script';
 import { trackEvent } from '@/components/Analytics';
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 interface FormData {
   name: string;
@@ -27,6 +30,24 @@ export function ContactForm() {
   const [errorMsg, setErrorMsg] = useState('');
   const [hp,       setHp]      = useState('');
   const [mountedAt]            = useState(() => Date.now());
+  const [captchaToken, setCaptchaToken] = useState('');
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef  = useRef<string | null>(null);
+
+  const renderWidget = useCallback(() => {
+    if (!TURNSTILE_SITE_KEY || !turnstileRef.current || widgetIdRef.current !== null) return;
+    widgetIdRef.current = window.turnstile?.render(turnstileRef.current, {
+      sitekey:  TURNSTILE_SITE_KEY,
+      callback: setCaptchaToken,
+      size:     'invisible',
+      theme:    'dark',
+    }) ?? null;
+  }, []);
+
+  useEffect(() => {
+    // If the script already loaded before this component mounted
+    if (window.turnstile) renderWidget();
+  }, [renderWidget]);
 
   const set = (field: keyof FormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -41,7 +62,7 @@ export function ContactForm() {
       const res = await fetch('/api/contact', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ ...data, _hp: hp, _t: mountedAt }),
+        body:    JSON.stringify({ ...data, _hp: hp, _t: mountedAt, _captcha: captchaToken }),
       });
 
       const json = await res.json() as { ok?: boolean; error?: string };
@@ -104,6 +125,13 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      {TURNSTILE_SITE_KEY && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="afterInteractive"
+          onReady={renderWidget}
+        />
+      )}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
         {/* Honeypot — invisible to humans, filled by bots */}
         <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
@@ -222,6 +250,7 @@ export function ContactForm() {
           </div>
         </div>
 
+        {TURNSTILE_SITE_KEY && <div ref={turnstileRef} />}
         {/* Submit */}
         <div>
           <button

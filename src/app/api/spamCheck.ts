@@ -86,3 +86,30 @@ export function looksLikeGibberish(text: string): boolean {
 
   return false;
 }
+
+/* ── Cloudflare Turnstile verification ────────────────────────────────────── */
+const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
+const SITEVERIFY_URL   = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+
+/**
+ * Verifies a Turnstile token with Cloudflare. Returns true if valid.
+ * Passes gracefully (returns true) when TURNSTILE_SECRET_KEY is not configured
+ * so dev/preview environments work without keys.
+ */
+export async function verifyTurnstile(token: string | undefined): Promise<boolean> {
+  if (!TURNSTILE_SECRET) return true; // not configured — skip
+  if (!token) return false;           // configured but no token — reject
+
+  try {
+    const res = await fetch(SITEVERIFY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret: TURNSTILE_SECRET, response: token }),
+    });
+    const data = (await res.json()) as { success: boolean };
+    return data.success;
+  } catch {
+    // Network failure — let the submission through rather than block a real user
+    return true;
+  }
+}

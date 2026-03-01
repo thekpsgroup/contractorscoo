@@ -1,7 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Script from 'next/script';
 import { trackEvent } from '@/components/Analytics';
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
   const [email, setEmail]     = useState('');
@@ -10,6 +13,23 @@ export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
   const [errorMsg, setErrorMsg] = useState('');
   const [hp,       setHp]      = useState('');
   const [mountedAt]            = useState(() => Date.now());
+  const [captchaToken, setCaptchaToken] = useState('');
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef  = useRef<string | null>(null);
+
+  const renderWidget = useCallback(() => {
+    if (!TURNSTILE_SITE_KEY || !turnstileRef.current || widgetIdRef.current !== null) return;
+    widgetIdRef.current = window.turnstile?.render(turnstileRef.current, {
+      sitekey:  TURNSTILE_SITE_KEY,
+      callback: setCaptchaToken,
+      size:     'invisible',
+      theme:    'dark',
+    }) ?? null;
+  }, []);
+
+  useEffect(() => {
+    if (window.turnstile) renderWidget();
+  }, [renderWidget]);
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -20,7 +40,7 @@ export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
       const res = await fetch('/api/subscribe', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email, name, _hp: hp, _t: mountedAt }),
+        body:    JSON.stringify({ email, name, _hp: hp, _t: mountedAt, _captcha: captchaToken }),
       });
 
       const data = await res.json() as { ok?: boolean; error?: string };
@@ -77,6 +97,13 @@ export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      {TURNSTILE_SITE_KEY && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="afterInteractive"
+          onReady={renderWidget}
+        />
+      )}
       {/* Honeypot — invisible to humans, filled by bots */}
       <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
         <label htmlFor="agenda-website">Website</label>
@@ -129,6 +156,7 @@ export function MondayAgendaForm({ compact = false }: { compact?: boolean }) {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+        {TURNSTILE_SITE_KEY && <div ref={turnstileRef} />}
         <button
           type="submit"
           disabled={status === 'submitting'}

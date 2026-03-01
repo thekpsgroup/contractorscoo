@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { spamCheck, looksLikeGibberish } from '../spamCheck';
+import { spamCheck, looksLikeGibberish, verifyTurnstile } from '../spamCheck';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -145,6 +145,7 @@ export async function POST(req: NextRequest) {
     phone?:     string;
     _hp?:       string;
     _t?:        number;
+    _captcha?:  string;
   };
 
   try {
@@ -161,6 +162,10 @@ export async function POST(req: NextRequest) {
   }
   if (spam) {
     return NextResponse.json({ error: spam }, { status: 429 });
+  }
+
+  if (!(await verifyTurnstile(body._captcha))) {
+    return NextResponse.json({ ok: true }, { status: 200 });
   }
 
   // Strip control chars (prevents email header injection in the subject line)
